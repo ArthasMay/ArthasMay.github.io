@@ -77,6 +77,9 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# 修改后
 deploy:
-  type: git
-  repo: https://github.com/ArthasMay/ArthasMay.github.io.git
+- type: git
+  # 下方的gh_token会被.travis.yml中sed命令替换
+  repo: https://gh_token@github.com/ArthasMay/ArthasMay.github.io.git
+  branch: master
