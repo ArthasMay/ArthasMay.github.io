@@ -9,4 +9,9 @@ categories: JavaScript
 ---
 
 ## setTimeout里面的回调函数也是闭包
+
 * 返回值类型Timeout._onTimeout:() => { … }就是回调函数，是一个闭包，所以能捕获作用域中的变量
+
+## 
+
+* 

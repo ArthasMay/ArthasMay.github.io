@@ -3,7 +3,8 @@ title: node-01 | CommonJS模块规范
 p: node/node-01
 date: 2019-10-17 12:51:47
 tags:
-- node 
+- node
+categories: Node.js
 ---
 
 ## CommonJS规范
@@ -140,8 +141,11 @@ $ webpack --devtool none --mode development --target node index.js
 ```
 1. index.js 和 lib.js 都被打包到函数里，key为文件名
   * CommonJS规范要求每个函数有独立的作用域，js创建作用域的方法就是函数（什么是作用域，参考浏览器原理）
-2. __webpack_require__ 函数就是require的实现
+2. __webpack_require__ 函数就是webpack对require的实现
 3. webpack打包的源码解读
   * (funcntion(modules){})({}) webpack打包的js脚本的结构
 
 
+## 未完成
+* ES6的模块规范：查看webpack打包后的js脚本文件
+* 了解AMD和CMD的模块规范，他们是如何在浏览器端实现async加载的
