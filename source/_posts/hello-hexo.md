@@ -151,11 +151,31 @@ deploy:
 
 ### 待完善
 * SEO的优化
-* Hexo使用图片
+* ~~Hexo使用图片~~
+
+### hexo使用图片（2019.10.19）
+
+1. 安装插件
+
+``` bash
+# hexo博客源文件根目录下运行
+$ npm install https://github.com/CodeFalling/hexo-asset-image --save
+```
+
+2. 修改_congig.yml文件配置
+``` yml
+post_asset_folder:true
+```
+
+3. hexo n xxx 生成同名文件夹
+```
+![xxx](xxx/xxx.png)
+```
 
 ## 参考
 [Hexo遇上Travis-CI：可能是最通俗易懂的自动发布博客图文教程](https://blog.csdn.net/Xiong_IT/article/details/78675874)
 可惜图挂了，后面自己补上。。。
+
 
 
 
