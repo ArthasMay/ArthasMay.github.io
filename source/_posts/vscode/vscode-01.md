@@ -32,7 +32,7 @@ categories: 环境配置
 
 ### 常用的snippts
 ``` Vue scaffold: => scss
-"Print to console": {
+"Scaffold": {
 	"prefix": "vue",
 	"body": [
 		"<template>",
@@ -53,6 +53,6 @@ categories: 环境配置
 		"</style>",
 		"$2"
 	],
-	"description": "Log output to console"
+	"description": "Scaffold for vue page"
 }
 ```
