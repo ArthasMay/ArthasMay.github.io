@@ -147,7 +147,7 @@ deploy:
   branch: master
 ```
 
-好了到了这里，访问[ArthasMay的技术小栈](https://arthasmay.github.io/)就可以愉快的玩耍了。以后的技术学习和研究就都记载在这里了。
+好了到了这里，访问[ArthasMay的技术小栈](https://arthasmay.github.io/)就可以愉快的玩耍了。以后的技术学习和预研就都记载在这里了。
 
 ### 待完善
 * SEO的优化
