@@ -582,7 +582,9 @@ function interview(round) {
       await Promise.all([
         interview(1)
         interview(2)
-      ])
+      ]).then(result => {
+        // result是一个数组，可以取出对应promise返回的resolve的结果
+      })
     } catch (e) {
       return console.log('cry at'  + e.round);
     }
