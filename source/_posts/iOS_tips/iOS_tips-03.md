@@ -1,5 +1,5 @@
 ---
-title: iOS03 | 大话组件化
+title: iOS_tips_03 | 大话组件化
 p: iOS_tips/iOS_tips-03.md
 date: 2019-12-04 10:17:56
 tags: 
@@ -45,7 +45,7 @@ $pod spsc create RTKit
 ```
 
 4. spec文件的配置:
-spec文件是Ruby的脚本文件，这边只列举一些常用的配置
+  * spec文件是Ruby的脚本文件，这边只列举一些常用的配置
 ``` ruby
 Pod::Spec.new do |s|
   # 私有库名
@@ -79,6 +79,7 @@ end
   * 后面会拆分成submodules，这块的内容后面补充
 
 5. 上传私有库源码
+  * 
 ``` bash
 # 将本地代码关联和上传远程仓库
 $git init
@@ -92,19 +93,21 @@ $git push --tags
 ```
 
 6. 校验.podspec文件
-
+  * 
 ``` bash
 # 在podspec所在目录执行 or 指定校验文件
 $pod spec lint //[xxx]
 ```
 
 7. 将依赖库的spec文件push到spec仓库
+  * 
 ``` bash
 # 仓库名 spec文件名字
 $pod repo push RTPrivateSpecs RTNetwork.podspec
 ```
 注意：
 如果创建的用来存储podspec的仓库处于无文件的空状态，那在pod repo push的时候会碰到下面的问题
+  * 
 ```
 创建一个空的仓库后，git pull/push 报错,报错信息如下
 Your configuration specifies to merge with the ref 'refs/heads/master' from the remote, but no such ref was fetched.
@@ -114,6 +117,7 @@ Your configuration specifies to merge with the ref 'refs/heads/master' from the 
 
 8. 验证私有库的使用
 
+  * 
 ``` bash
 # 查看私有库的文件树：
 $tree -L 2
@@ -125,7 +129,7 @@ $tree -L 2
 ```
 
 9. 项目验证
-在Podfile文件添加：
+  * 在Podfile文件添加：
 ``` ruby
 # podfile写入依赖
 source https://code.xxx.com/xxx/rtprivatespecs.git
