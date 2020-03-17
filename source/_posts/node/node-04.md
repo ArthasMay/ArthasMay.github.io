@@ -64,7 +64,7 @@ categories: Node.js
 #### Protocol Buffer
 
 * Protocol Buffer 和 XML、JSON一样都是结构数据序列化的工具，但它们的数据格式有比较大的区别：
-  * PB序列化之后得到的数据不是可读字符串，二是二进制流
+  * PB序列化之后得到的数据不是可读字符串，而是二进制流
   * 其次，XML 和 JSON 格式的数据信息都包含在了序列化之后的数据中，不需要任何其它信息就能还原序列化之后的数据；但使用 Protocol Buffer 需要事先定义数据的格式(.proto 协议文件)，还原一个序列化之后的数据需要使用到这个定义好的数据格式（可以理解为解析规则的配置文件）
   * 最后，在传输数据量较大的需求场景下，Protocol Buffer 比 XML、JSON 更小（3到10倍）、更快（20到100倍）、使用 & 维护更简单；而且 Protocol Buffer 可以跨平台、跨语音使用
 
@@ -210,5 +210,8 @@ socket.on('data', (buffer) => {
     * 不完整包
 * 错误处理
 
+## TODO: Buffer的大端和小端
+
 ## 参考
 [一篇帮你彻底弄懂NodeJs中的Buffer](https://blog.csdn.net/qq_34629352/article/details/88037778)
+
