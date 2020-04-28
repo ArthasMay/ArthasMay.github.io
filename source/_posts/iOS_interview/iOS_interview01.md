@@ -64,6 +64,6 @@ open var next: UIResponder? { get }
 1. 可以构建基于UIViewController的多层级视图之间轻量级通信机制，减少代理和通知的使用。
 2. 但是在使用过程中发现，如果window上添加子视图遮盖ViewController的话，点击上面window的视图，ViewController上如果有基于响应链的通信，也是会触发，从而出现Bug
 
-任务：实现上面通信机制的swift版本，并且验证是否有Bug和bug问题所在
+任务：实现上面通信机制的swift版本，并且验证是否有bug和bug问题所在
 
 ## iOS渲染原理
