@@ -1,6 +1,6 @@
 ---
 title: iOS_Opt01 | 实现一个流畅的页面
-p: iOS_Opt/iOS_Opt01
+p: iOS/iOS_Opt/iOS_Opt01
 date: 2020-03-20 12:00:56
 tags:
 - iOS性能优化

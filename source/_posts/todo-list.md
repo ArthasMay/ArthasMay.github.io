@@ -9,7 +9,7 @@ tags:
 * RxSwift + MVVM 搭建新的项目框架
 
 ## 想要做的东西
-1. node 实现一个图片压缩工具 (electron 实现一个GUI)
+1. node 实现一个图片压缩工具 (electron 实现一个GUI) electron
 2. ~~go 实现一个图片服务器，用于存储hexo博客的图片资源（这个通过hexo的插件实现了）~~
 3. 搭建 appiun + selenium 自动化测试平台(产品化的东西)
 
@@ -51,6 +51,7 @@ tags:
 * 准备一些大厂的面试题
 * Flutter & iOS的面试题
 * 算法和数据结构，计算机原理性的东西
+
 
 
 

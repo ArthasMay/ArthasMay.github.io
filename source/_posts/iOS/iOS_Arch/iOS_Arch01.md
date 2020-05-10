@@ -1,6 +1,6 @@
 ---
 title: iOS架构思考&实践01 | 架构的意义
-p: iOS_Arch/iOS_Arch01
+p: iOS/iOS_Arch/iOS_Arch01
 date: 2020-01-20 12:08:47
 tags:
 ---

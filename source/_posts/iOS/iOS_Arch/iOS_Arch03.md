@@ -1,6 +1,6 @@
 ---
 title: iOS_Arch02 | 设计模式和数据驱动
-p: iOS_Arch/iOS_Arch03
+p: iOS/iOS_Arch/iOS_Arch03
 date: 2020-03-12 16:16:44
 tags:
 ---

@@ -172,6 +172,11 @@ post_asset_folder:true
 ![xxx](xxx/xxx.png)
 ```
 
+### 后续维护的问题
+
+1. 在node14版本之后，hexo报错的问题
+travis更改node配置，node版本固定而非使用stable版本
+
 ## 参考
 [Hexo遇上Travis-CI：可能是最通俗易懂的自动发布博客图文教程](https://blog.csdn.net/Xiong_IT/article/details/78675874)
 可惜图挂了，后面自己补上。。。

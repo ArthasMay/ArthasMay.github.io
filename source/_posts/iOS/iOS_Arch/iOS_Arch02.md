@@ -1,6 +1,6 @@
 ---
 title: iOS架构思考&实践02 | App页面层级结构的组织
-p: iOS_Arch/iOS_Arch02
+p: iOS/iOS_Arch/iOS_Arch02
 date: 2020-03-04 13:38:14
 tags:
 ---
