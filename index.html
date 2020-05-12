@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Stay foolish, stay hungry!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arthas的技术小栈">
+<meta property="og:url" content="http://arthasmay.github.io/index.html">
+<meta property="og:site_name" content="Arthas的技术小栈">
+<meta property="og:description" content="Stay foolish, stay hungry!">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arthas的技术小栈">
+<meta name="twitter:description" content="Stay foolish, stay hungry!">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://arthasmay.github.io/">
+
+
+
+
+
+  <title>Arthas的技术小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Arthas的技术小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知其然，知其所以然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2020/05/12/hello-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/12/hello-hexo/" itemprop="url">Hexo + Next + GHPage/Travis CI 搭建个人技术博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T00:04:35+00:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Hexo的官方介绍"><a href="#Hexo的官方介绍" class="headerlink" title="Hexo的官方介绍"></a>Hexo的官方介绍</h2><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h4 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h4 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h4 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="主题（theme）的选择"><a href="#主题（theme）的选择" class="headerlink" title="主题（theme）的选择"></a>主题（theme）的选择</h2><p><a href="http://theme-next.iissnan.com" target="_blank" rel="noopener">NexT站点</a> 推荐主题NexT，至于为什么? 精于心，简于形这条slogan就足够了，相信你也会喜欢上这款简洁的主题的。</p>
+<h2 id="使用GH-github-page-Travis-CI发布"><a href="#使用GH-github-page-Travis-CI发布" class="headerlink" title="使用GH(github page) + Travis CI发布"></a>使用GH(github page) + Travis CI发布</h2><ul>
+<li>gh提供稳定的发布hexo的静态站点</li>
+<li>TravisCI简化发布流程，在push之后自动构建</li>
+</ul>
+<h3 id="Guthub上创建博客托管仓库"><a href="#Guthub上创建博客托管仓库" class="headerlink" title="Guthub上创建博客托管仓库"></a>Guthub上创建博客托管仓库</h3><ol>
+<li>创建名为xxx.github.io的repo，xxx是自己github的注册名（大小写不敏感）</li>
+<li>repo准备两条分支(也可以分两个仓库，这里就使用两个branch)<ul>
+<li>master: 托管生成的静态文件</li>
+<li>hexo: 托管源代码</li>
+</ul>
+</li>
+<li>关联本地hexo仓库和github上远程仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git init </span><br><span class="line">$ git remote add origin git@github.com:ArthasMay/ArthasMay.github.io.git</span><br><span class="line">$ git pull orign master // 如果远程repo有文件的话，在本地仓库merge</span><br><span class="line">$ git branch -b hexo</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"commit message"</span></span><br><span class="line">$ git push hexo:hexo</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="配置Github-Token"><a href="#配置Github-Token" class="headerlink" title="配置Github Token"></a>配置Github Token</h3><p>那既然需要使用travis自动化更新你的博客，travis自然需要读写你的github上的repo。github提供了token机制来供外部访问你的仓库。<br>进入<a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a>，生成一个供travis读写你的github用的token，至于token的权限，选择repo就够了。</p>
+<h3 id="配置Travis-CI"><a href="#配置Travis-CI" class="headerlink" title="配置Travis CI"></a>配置Travis CI</h3><p>使用github账号登陆travis，如果没有github账号的同学，可以参考《如何提交代码到Github》注册一个自己的github账号。</p>
+<h4 id="在Travis进入仓库同步管理"><a href="#在Travis进入仓库同步管理" class="headerlink" title="在Travis进入仓库同步管理"></a>在Travis进入仓库同步管理</h4><p>进入<a href="https://travis-ci.org/profile" target="_blank" rel="noopener">https://travis-ci.org/profile</a>，打开刚才托管的hexo博客源码仓库同步开关，不一定是博客网站repo。由于笔者直接把本地hexo博客源码托管到了arthasmay.github.io的hexo分支，所以也就是打开网站repo。如果你不是采取的分支管理，而是将hexo博客源码托管道独立repo，打开对应的github repo开关即可。</p>
+<h4 id="Travis-配置"><a href="#Travis-配置" class="headerlink" title="Travis 配置"></a>Travis 配置</h4><ul>
+<li>只在.travis.yml文件存在时编译，必选！</li>
+<li>当仓库/分支发生更新时编译，也就是push后进行编译的意思，一般会需要选择，方便自动化构建。</li>
+<li>加了GH_TOEKN等变量，value值为刚才预备工作中准备的token字符串</li>
+</ul>
+<h4 id="编写-travis-yml文件"><a href="#编写-travis-yml文件" class="headerlink" title="编写.travis.yml文件"></a>编写.travis.yml文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># 指定语言环境</span><br><span class="line">language: node_js</span><br><span class="line"># 指定需要sudo权限</span><br><span class="line">sudo: required</span><br><span class="line"># 指定node_js版本</span><br><span class="line">node_js: </span><br><span class="line">  - stable</span><br><span class="line"># 指定缓存模块，可选。缓存可加快编译速度。</span><br><span class="line">cache:</span><br><span class="line">  directories:</span><br><span class="line">    - node_modules</span><br><span class="line"></span><br><span class="line"># 指定博客源码分支，因人而异。hexo博客源码托管在独立repo则不用设置此项</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - hexo </span><br><span class="line"></span><br><span class="line">before_install:</span><br><span class="line">  - npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"># Start: Build Lifecycle</span><br><span class="line">install:</span><br><span class="line">  - npm install</span><br><span class="line">  - npm install hexo-deployer-git --save</span><br><span class="line"></span><br><span class="line"># 执行清缓存，生成网页操作</span><br><span class="line">script:</span><br><span class="line">  - hexo clean</span><br><span class="line">  - hexo generate</span><br><span class="line"></span><br><span class="line"># 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署</span><br><span class="line">after_script:</span><br><span class="line">  - git config user.name &quot;arthasmay&quot;</span><br><span class="line">  - git config user.email &quot;arthasmay@gmail.com&quot;</span><br><span class="line">  # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！</span><br><span class="line">  - sed -i &quot;s/gh_token/$&#123;GH_TOKEN&#125;/g&quot; ./_config.yml</span><br><span class="line">  - hexo deploy</span><br><span class="line"># End: Build LifeCycle</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改下-config-yml文件的deploy节点-hexo博客目录下的，这里是卡到我了"><a href="#修改下-config-yml文件的deploy节点-hexo博客目录下的，这里是卡到我了" class="headerlink" title="修改下_config.yml文件的deploy节点(hexo博客目录下的，这里是卡到我了)"></a>修改下_config.yml文件的deploy节点(hexo博客目录下的，这里是卡到我了)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 修改前</span><br><span class="line">deploy:</span><br><span class="line">  - type: git</span><br><span class="line">    repo: git@github.com:arthasmay/arthasmay.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 修改后</span><br><span class="line">deploy:</span><br><span class="line">- type: git</span><br><span class="line">  # 下方的gh_token会被.travis.yml中sed命令替换</span><br><span class="line">  repo: https://gh_token@github.com/xiong-it/xiong-it.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>好了到了这里，访问<a href="https://arthasmay.github.io/">ArthasMay的技术小栈</a>就可以愉快的玩耍了。以后的技术学习和预研就都记载在这里了。</p>
+<h3 id="待完善"><a href="#待完善" class="headerlink" title="待完善"></a>待完善</h3><ul>
+<li>SEO的优化</li>
+<li><del>Hexo使用图片</del></li>
+</ul>
+<h3 id="hexo使用图片（2019-10-19）"><a href="#hexo使用图片（2019-10-19）" class="headerlink" title="hexo使用图片（2019.10.19）"></a>hexo使用图片（2019.10.19）</h3><ol>
+<li>安装插件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo博客源文件根目录下运行</span></span><br><span class="line">$ npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>修改_congig.yml文件配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hexo n xxx 生成同名文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![xxx](xxx/xxx.png)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="后续维护的问题"><a href="#后续维护的问题" class="headerlink" title="后续维护的问题"></a>后续维护的问题</h3><ol>
+<li>在node14版本之后，hexo报错的问题<br>travis更改node配置，node版本固定而非使用stable版本</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/Xiong_IT/article/details/78675874" target="_blank" rel="noopener">Hexo遇上Travis-CI：可能是最通俗易懂的自动发布博客图文教程</a><br>可惜图挂了，后面自己补上。。。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2020/05/10/iOS/iOS_SwiftTips/iOS_SwiftTips01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/iOS/iOS_SwiftTips/iOS_SwiftTips01/" itemprop="url">SwiftTips01 | Swift的一些语法特性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T21:59:24+00:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SwiftTips/" itemprop="url" rel="index">
+                    <span itemprop="name">SwiftTips</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、闭包"><a href="#一、闭包" class="headerlink" title="一、闭包"></a>一、闭包</h2><h3 id="逃逸闭包-escaping"><a href="#逃逸闭包-escaping" class="headerlink" title="逃逸闭包(@escaping)"></a>逃逸闭包(@escaping)</h3><ul>
+<li>逃逸闭包的概念：将closure当做参数传入一个函数中，但是这个closure在函数执行完之后才在特定时机触发执行（OC的block Copy捕获作为Stack block时也是为了异步调用）</li>
+<li>逃逸闭包的表现形式<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 类实例存储属性捕获，RxSwift中Observale Observer的创建使用了大量的escaping closure</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> _handler: (<span class="type">Any</span>) -&gt; <span class="type">String</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">init</span>(<span class="number">_</span> eventHandler: @escaping (<span class="type">Any</span>) -&gt; <span class="type">String</span>) &#123;</span><br><span class="line">    _handler = eventHandler</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2. 外部变量捕获</span></span><br><span class="line"><span class="keyword">var</span> completionHandlers: [() -&gt; <span class="type">Void</span>] = []</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">someFunctionWithEscapingClosure</span><span class="params">(completionHandler: @escaping <span class="params">()</span></span></span> -&gt; <span class="type">Void</span>) &#123;</span><br><span class="line">  completionHandlers.append(completionHandler)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2020/05/10/iOS/iOS_RxSwift/iOS_RxSwift01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/iOS/iOS_RxSwift/iOS_RxSwift01/" itemprop="url">RxSwift01 | 函数响应式编程思想</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T13:01:24+00:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="函数响应式编程（FRP）编程思想的基本概念"><a href="#函数响应式编程（FRP）编程思想的基本概念" class="headerlink" title="函数响应式编程（FRP）编程思想的基本概念"></a>函数响应式编程（FRP）编程思想的基本概念</h2><h3 id="1-函数式编程范式"><a href="#1-函数式编程范式" class="headerlink" title="1. 函数式编程范式"></a>1. 函数式编程范式</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2020/03/20/iOS/iOS_Opt/iOS_Opt01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/20/iOS/iOS_Opt/iOS_Opt01/" itemprop="url">iOS_Opt01 | 实现一个流畅的页面</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T12:00:56+00:00">
+                2020-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="iOS的页面渲染"><a href="#iOS的页面渲染" class="headerlink" title="iOS的页面渲染"></a>iOS的页面渲染</h2><h2 id="代码层面的优化"><a href="#代码层面的优化" class="headerlink" title="代码层面的优化"></a>代码层面的优化</h2><h2 id="CoreAnimation的监控和优化"><a href="#CoreAnimation的监控和优化" class="headerlink" title="CoreAnimation的监控和优化"></a>CoreAnimation的监控和优化</h2><h2 id="Image的优化"><a href="#Image的优化" class="headerlink" title="Image的优化"></a>Image的优化</h2><h3 id="image的decode的优化"><a href="#image的decode的优化" class="headerlink" title="image的decode的优化"></a>image的decode的优化</h3><h3 id="重采样"><a href="#重采样" class="headerlink" title="重采样"></a>重采样</h3><h3 id="内存的优化"><a href="#内存的优化" class="headerlink" title="内存的优化"></a>内存的优化</h3><h2 id="源码层面的解读"><a href="#源码层面的解读" class="headerlink" title="源码层面的解读"></a>源码层面的解读</h2><h3 id="SDWebImage"><a href="#SDWebImage" class="headerlink" title="SDWebImage"></a>SDWebImage</h3><h3 id="FastImageCache"><a href="#FastImageCache" class="headerlink" title="FastImageCache"></a>FastImageCache</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2020/03/12/iOS/iOS_Arch/iOS_Arch03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/12/iOS/iOS_Arch/iOS_Arch03/" itemprop="url">iOS_Arch02 | 设计模式和数据驱动</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T16:16:44+00:00">
+                2020-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>这么多年的iOS开发，也或多或少接触过使用了MVVM的中型App，但是过往接触的iOS项目其实或多或少只是遵守了若干的MVVM架构的思想拆分，而在数据流扭转，双向绑定等方面是没有实现的。</p>
+<ul>
+<li>MVVM: 为了解决MVC中Controller的问题，需要将Controller的功能代码拆分到ViewModel层</li>
+<li>数据流流转和驱动(View和Model的双向绑定，VM作为数据流处理的黑盒子)</li>
+</ul>
+<h2 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h2><p>其实在Vue这样成熟的MVVM框架中，实现双向绑定的基础也离不开观察者模式。而在iOS中可以采用的成熟的观察者模式有两种方式:</p>
+<ul>
+<li>KVO</li>
+<li>函数响应式</li>
+</ul>
+<h2 id="RxSwift"><a href="#RxSwift" class="headerlink" title="RxSwift"></a>RxSwift</h2><p>RxSwift + MVVM + ObjectMapper 构建MVVM和数据驱动层的主题架构，PromiseKit + SwiftyJSON为业务拓展做的补充</p>
+<h2 id="RxSwift-MVVM-ObjectMapper"><a href="#RxSwift-MVVM-ObjectMapper" class="headerlink" title="RxSwift + MVVM + ObjectMapper"></a>RxSwift + MVVM + ObjectMapper</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2020/03/10/iOS/iOS_SourceCode/iOS_SourceCode01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/10/iOS/iOS_SourceCode/iOS_SourceCode01/" itemprop="url">iOS_lib_01 | Moya的使用和源码分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T16:37:11+00:00">
+                2020-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Moya"><a href="#Moya" class="headerlink" title="Moya"></a>Moya</h2><h2 id="Moya的使用"><a href="#Moya的使用" class="headerlink" title="Moya的使用"></a>Moya的使用</h2><p>Moya的基本使用方法很简单:</p>
+<ul>
+<li>创建TargetType的数据结构: 通常是enum</li>
+<li>创建MoyaProvider实例, 调用request方法，传入对应的TargetType</li>
+</ul>
+<p>基本的使用方法就不赘述了，这篇文章主要是记录下Moya的思想， 以及如何在App的现行架构里面引入Moya，并且方便的代码的维护和拓展，所以在这里侧重想关注下面几点</p>
+<ul>
+<li>Moya的Pipe机制和插件机制</li>
+<li>Moya如何定制通用业务请求</li>
+<li>Moya + RxSwift（RxMoya的使用）</li>
+</ul>
+<h2 id="Moya的Pipe和Plugin"><a href="#Moya的Pipe和Plugin" class="headerlink" title="Moya的Pipe和Plugin"></a>Moya的Pipe和Plugin</h2><h2 id="Moya如何定制通用业务请求"><a href="#Moya如何定制通用业务请求" class="headerlink" title="Moya如何定制通用业务请求"></a>Moya如何定制通用业务请求</h2><p>在实际项目开发中，如何维护和拓展网络层代码是很必要的</p>
+<ul>
+<li>APIService的模块化，集中式管理和拓展（规范大于思想，规范就是为了团队项目在合理的层次统一管理单一功能的代码并维护和拓展）</li>
+<li>APIService 和 App架构设计</li>
+<li>业务处理：特殊业务(token失效的code码的统一处理)、Log日志追踪、DNS优化</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2020/03/04/iOS/iOS_Arch/iOS_Arch02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/04/iOS/iOS_Arch/iOS_Arch02/" itemprop="url">iOS架构思考&实践02 | App页面层级结构的组织</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-04T13:38:14+00:00">
+                2020-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>搭建一个高可用，易拓展的App的架构，对之后的业务升级和产品开发的效率都是有着积极作用的。从这篇文章开始，笔者将根据多年的开发经验总结和技术博客的认知理解，尝试搭建一个完整的app架构。<br>上篇文章我根据自己的理解，将App架构拆分为表现层和服务层，表现层侧重于App的UI和交互，是业务代码的直接承载层，设计优秀的表象层能够更好的服务于业务的成长</p>
+<h2 id="表现层"><a href="#表现层" class="headerlink" title="表现层"></a>表现层</h2><h3 id="表现层的涉及内容"><a href="#表现层的涉及内容" class="headerlink" title="表现层的涉及内容"></a>表现层的涉及内容</h3><ul>
+<li>页面的组织结构和解耦: 不管是MVVM还是MVC，ViewController都是App架构最基本的单元，页面的切换和业务的流转都是以ViewController为基础，View、ViewModel、model都是围绕ViewController组织代码的</li>
+<li>设计模式的选择: MVVM 数据的双向绑定（数据驱动UI，响应UI交互）</li>
+<li>Page的设计: Page状态管理(网络状态、上拉刷新和下拉加载更多、loading、空白占位、网络层的接入、页面数据缓存策略的设计以及骨架屏等)</li>
+<li>基本Page样式的构建: 业务中常用的瀑布流（CollectionView）、表单页面(TableView)、更加复杂的嵌套结构和性能优化(IGListKit)</li>
+<li>Widgets的梳理: UI设计规范和高复用的UI组件库(Loading、Toast、Float、Dialog)</li>
+<li>动画: 转场动画的设计和动画kit的设计</li>
+<li>hybird技术: flutter 和 web的容器设计</li>
+<li>通信: 页面之内是通过数据双向绑定，页面之间（组件化组件之间）</li>
+<li>渲染性能</li>
+</ul>
+<h2 id="解决千变万化的导航栏"><a href="#解决千变万化的导航栏" class="headerlink" title="解决千变万化的导航栏"></a>解决千变万化的导航栏</h2><p>如果从事iOS开发时间够长的话，你一定曾经导航栏虐过，特别是近两年App对UI的追求和设计，越来越多的App对页面进行了定制化设计，更改NavigationBar的交互(渐变，模糊等等)。但是如果只对UINavigationController进行简单的使用和组织，后面由于navigationbar的更改导致的问题会让你头疼不已</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">edgesForExtendedLayout</span><br><span class="line">automaticallyAdjustsScrollViewInsets -&gt; scrollV.contentInset :(<span class="type">UIScrollView</span>.contentInsetAdjustmentBehavior -&gt; <span class="type">UIScrollView</span>.adjustedContentInset)</span><br><span class="line">extendedLayoutIncludesOpaqueBars</span><br><span class="line">navigationBar.isTranslucent</span><br></pre></td></tr></table></figure>
+
+<p>我相信上面的几个方法和属性都曾经为难过你，还有iOS11开始的留海。所以相信我，你需要对你项目中的导航栏设计一下</p>
+<p>####</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">一、</span><br><span class="line"><span class="type">UIVIewController</span>.edgesForExtendedLayout = .<span class="keyword">none</span>（isTranslucent = <span class="literal">true</span> / <span class="literal">false</span>时都是）</span><br><span class="line">非全屏布局</span><br><span class="line"><span class="type">UIViewController</span>.view的大小就是不会往bar下面延伸(<span class="type">UIViewController</span>视图层级查看是从导航栏下面开始的)</span><br><span class="line"><span class="number">1</span>. 隐藏navigationbar，view的大小会根据navigationbar, tabbar的隐藏与否变化</span><br><span class="line"><span class="number">2</span>. 由于之前的navigationbar是一个导航栈只拥有一个，所以在各个页面切换的更改全局导航栏，会导致view的大小上上下下，而且侧滑返回的动画不好处理</span><br><span class="line"><span class="number">3</span>. edgesForExtendedLayout = .<span class="keyword">none</span>， <span class="type">View</span>的子视图<span class="type">ScrollView</span>的contentInset不会变化，即该设置属性无效</span><br><span class="line"></span><br><span class="line">二、</span><br><span class="line">isTranslucent = <span class="literal">true</span> 时：</span><br><span class="line"><span class="type">UIVIewController</span>.edgesForExtendedLayout = <span class="type">UIRectEdgeAll</span>(默认)</span><br><span class="line">全屏布局</span><br><span class="line"><span class="number">1</span>. <span class="type">UIVIewController</span>.contentInsetAdjustmentBehavior = <span class="literal">true</span>/ <span class="type">UIScrollView</span>.contentInsetAdjustmentBehavior = .auto</span><br><span class="line">自动更改scrollview的contentInset</span><br><span class="line">只要上面有透明的bar(<span class="type">NavigatiobBar</span>, <span class="type">TabBar</span>, <span class="type">StatusBar</span>), <span class="type">View</span>的子视图是<span class="type">ScrollView</span>就会变化，当<span class="type">ScrollView</span>的<span class="type">Y</span> &gt; <span class="type">NavigationBar</span>的<span class="type">Bottom</span>, <span class="type">ScrollView</span>的contentInset也是会偏移的，引起<span class="type">Bug</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. <span class="type">UIVIewController</span>.contentInsetAdjustmentBehavior = <span class="literal">false</span>/ <span class="type">UIScrollView</span>.contentInsetAdjustmentBehavior = .<span class="literal">false</span></span><br><span class="line">不调整<span class="type">ScrollView</span>的内边距contentInset</span><br><span class="line"></span><br><span class="line">三、extendedLayoutIncludesOpaqueBars = <span class="literal">false</span>（默认）-&gt; 穿过不透明（有透明度）的bar</span><br><span class="line">只在isTranslucent = <span class="literal">false</span>时设置有效，也是影响<span class="type">UIViewController</span>的大小</span><br><span class="line">extendedLayoutIncludesOpaqueBars = <span class="literal">true</span> 这时候contentInsetAdjustmentBehavior也会影响<span class="type">ScrollView</span>的contentInset</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<ol>
+<li>edgesForExtendedLayout 在 isTranslucent = true(默认)时影响是否全屏布局<br>.all全屏是默认 .none变小</li>
+<li>三、extendedLayoutIncludesOpaqueBars 在 isTranslucent = false 时影响是否全屏布局<br>false非全屏默认 true全屏</li>
+<li>UIVIewController.contentInsetAdjustmentBehavior = true/ UIScrollView.contentInsetAdjustmentBehavior = .auto 管理透明bar对ScrollView的contentInset的影响，非全屏（上面两种情况）下一般无表现</li>
+</ol>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>每一个ViewController拥有一个独立的UINavigationBar: 千变万化的导航栏最大的痛点就是每个RootNavigationController是共享一个bar的</li>
+<li>使用全屏布局，让UIViewController的View的frame和ScrollView的内容遵循一个规范，尺寸统一处理后不变</li>
+</ol>
+<h3 id="RTRootNavigationController的引入"><a href="#RTRootNavigationController的引入" class="headerlink" title="RTRootNavigationController的引入"></a>RTRootNavigationController的引入</h3><p>独立导航栏的处理方法很多: </p>
+<ol>
+<li>隐藏全局导航，自定义View替代，这种方案简单，但是需要完全模仿一个完整的系统导航栏效果，处理粗糙的话就会细节上不过关，譬如左滑返回的阴影效果消失</li>
+<li>RTRootNavigationController是github上找到的优雅的解决方案，设计精巧，代码质量也很高<h3 id="RTRootNavigationController的思路解析"><a href="#RTRootNavigationController的思路解析" class="headerlink" title="RTRootNavigationController的思路解析"></a>RTRootNavigationController的思路解析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- RTRootNavigationController</span><br><span class="line">-- RTContainerController</span><br><span class="line">--- RTContainerNavigationController</span><br><span class="line">---- RTWrappedViewController</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>RTRootNavigationController 的导航栈里面不能直接管理UINavigationController，所以在RTContainerNavigationController外面包一层RTContainerController容器</li>
+<li>RTWrappedViewController的NavigatonController和bar是RTContainerNavigationController的，导航行为代理给RTRootNavigationController管理</li>
+</ul>
+<h3 id="根据源码整理了一个Swift版本-但是还有一些待确定的细节，后续会做一个源码解析的总结"><a href="#根据源码整理了一个Swift版本-但是还有一些待确定的细节，后续会做一个源码解析的总结" class="headerlink" title="根据源码整理了一个Swift版本(但是还有一些待确定的细节，后续会做一个源码解析的总结)"></a>根据源码整理了一个Swift版本(但是还有一些待确定的细节，后续会做一个源码解析的总结)</h3><h3 id="关于pushReplace这类的方法"><a href="#关于pushReplace这类的方法" class="headerlink" title="关于pushReplace这类的方法"></a>关于pushReplace这类的方法</h3><p>笔者在使用VueRouter的时候，发现pushReplace这类的方法，在实际开发的页面切换中是很有价值的：譬如引导页切换App的tab的时候，直接设置window.root有点简单粗暴的，pushReplace这类的方法是有价值的。iOS通过管理NavigationController管理的导航栈ViewControllers来在pop的时候模拟pushReplace，其实在push的时候控制对Page的解耦来说更有价值，特别是在使用路由的时候。</p>
+<h2 id="路由的引入"><a href="#路由的引入" class="headerlink" title="路由的引入"></a>路由的引入</h2><h3 id="路由的作用"><a href="#路由的作用" class="headerlink" title="路由的作用"></a>路由的作用</h3><p>不管是前端还是后端，router的作用实质上市一样的，即是用来进行逻辑分发，在前端主要表现为Page的切换，在后端则作为逻辑分发的中间件。<br>前端引入路由可以进一步的进行解耦拆分：</p>
+<ul>
+<li>由可组织控制的自定义scheme规则来管理页面的切换跳转</li>
+<li>业务加大后，若要使用业务组件化，又路由层分发业务组件</li>
+</ul>
+<h3 id="路由的选择"><a href="#路由的选择" class="headerlink" title="路由的选择"></a>路由的选择</h3><p>RTURLNavigator: 基于Swift的轻量级路由</p>
+<ul>
+<li>完全遵守URL协议</li>
+<li>可以在此开源库的基础上进行业务层路由的组织</li>
+</ul>
+<h2 id="App的主要组织结构和Router的结合"><a href="#App的主要组织结构和Router的结合" class="headerlink" title="App的主要组织结构和Router的结合"></a>App的主要组织结构和Router的结合</h2><p>由于使用了RTRootNavigationController，需要对URLNavigator中进行页面切换的部分需要重写</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2020/01/20/iOS/iOS_Arch/iOS_Arch01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/20/iOS/iOS_Arch/iOS_Arch01/" itemprop="url">iOS架构思考&实践01 | 架构的意义</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-20T12:08:47+00:00">
+                2020-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="架构的意义"><a href="#架构的意义" class="headerlink" title="架构的意义"></a>架构的意义</h2><p>在如今App和前端开发的</p>
+<h2 id="App架构的思考点"><a href="#App架构的思考点" class="headerlink" title="App架构的思考点"></a>App架构的思考点</h2><h3 id="有关架构的一些思考"><a href="#有关架构的一些思考" class="headerlink" title="有关架构的一些思考"></a>有关架构的一些思考</h3><ol>
+<li>约定和松散<br>笔者认为一个App的架构应该关注到架构的约定和松散，约定是指在设计架构中制定开发人员必须遵守的规则和拓展架构的思想准则，约定通常也会覆盖一些共同实现功能，减少代码的差异性和维护成本。松散是指保留代码的未来拓展性，约定可以看做是制作功能的配方，松散则是指提供基本工具和材料去自由组合。</li>
+</ol>
+<h2 id="App架构的实践点"><a href="#App架构的实践点" class="headerlink" title="App架构的实践点"></a>App架构的实践点</h2><h3 id="App架构的分层"><a href="#App架构的分层" class="headerlink" title="App架构的分层"></a>App架构的分层</h3><p>按照笔者的工作经验，一个中型App的主要分层应该从总体上区分为表现层（display layer）和 服务层（service layer）<br>表现层</p>
+<ol>
+<li>设计模式</li>
+<li>表现层架构</li>
+<li>路由、通信、页面元素组织归纳</li>
+<li>业务层的解耦和横向竖向拓展</li>
+<li>跨平台技术的UI表现</li>
+</ol>
+<p>服务层</p>
+<ol>
+<li>系统服务的中间层（这部分很轻）<br>通知、地图、照片</li>
+<li>三方服务的中间层<br>推送、监控、分享</li>
+<li>性能层<ul>
+<li>网络</li>
+<li>数据库和文件系统的设计</li>
+<li>系统组件或功能的性能优化(譬如对WKWebView的优化，GCD的封装)</li>
+<li>算法优化加速</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/12/22/playground/linux/system_01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/22/playground/linux/system_01/" itemprop="url">程序员的折腾：Manjara的安装和环境配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-22T13:36:53+00:00">
+                2019-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/12/04/iOS/iOS_Awesome/iOS_Awesome02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/04/iOS/iOS_Awesome/iOS_Awesome02/" itemprop="url">iOS组件化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T10:17:56+00:00">
+                2019-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是组件化开发"><a href="#什么是组件化开发" class="headerlink" title="什么是组件化开发"></a>什么是组件化开发</h2><h2 id="为什么需要组件化开发"><a href="#为什么需要组件化开发" class="headerlink" title="为什么需要组件化开发"></a>为什么需要组件化开发</h2><h2 id="组件化技术预研"><a href="#组件化技术预研" class="headerlink" title="组件化技术预研"></a>组件化技术预研</h2><h3 id="CocoaPods私有仓库"><a href="#CocoaPods私有仓库" class="headerlink" title="CocoaPods私有仓库"></a>CocoaPods私有仓库</h3><p>CocoaPods私有仓库的搭建是组件化开发一个很重要的技术点，除非是完全迁移到Swift + Carthage的团队，但是现阶段动态化的框架方案极度依赖OC的runtime能力，所以暂时CocoaPods的私有库还是主流(当然Swift私有库也是可以通过pod的framework的方式管理)。</p>
+<h4 id="CocoaPods-tools规划"><a href="#CocoaPods-tools规划" class="headerlink" title="CocoaPods tools规划"></a>CocoaPods tools规划</h4><ol>
+<li>RTPrivateSpecs仓库: 管理所有私有库的podspec文件</li>
+<li>RTNetwork、RTKit这类仓库: 存储私有库源码</li>
+<li>通过 GUI 管理私有仓库的 update、push和打tag等私有库的CI</li>
+</ol>
+<h4 id="创建pods私有库的流程"><a href="#创建pods私有库的流程" class="headerlink" title="创建pods私有库的流程"></a>创建pods私有库的流程</h4><h5 id="一、创建spec-Repo"><a href="#一、创建spec-Repo" class="headerlink" title="一、创建spec Repo:"></a>一、创建spec Repo:</h5><ol>
+<li><p>在Gitlab上创建Pods私有仓库: RTPrivateSpecs<br>这个仓库是用来保存未来所有私有库.podspec文件，包括版本的管理</p>
+</li>
+<li><p>添加私有库 RTPrivateSpecs 的私有Spec Repo     </p>
+<ul>
+<li>.cocoapods/repos 中的master是官方的Spec Repo</li>
+<li>执行添加Spec Repo的命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># XXPrivateSpecs: 私有Spec Repo的仓库name</span></span><br><span class="line"><span class="comment"># https://github.com/xxx/mySpecs.git: 私有Spec Repo的仓库地址，如果团队要使用SSH, 请确保所有人已经配置好ssh</span></span><br><span class="line"><span class="variable">$pod</span> repo add XXPrivateSpecs https://github.com/xxx/mySpecs.git</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>创建私有库源码库:</p>
+<ul>
+<li>创建私有源码库的两种方式:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据Pods官方模板创建:</span></span><br><span class="line"><span class="variable">$pod</span> lib create RTKit</span><br><span class="line"><span class="comment"># 自定义源码库，添加.podspec </span></span><br><span class="line"><span class="variable">$pod</span> spsc create RTKit</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>spec文件的配置:</p>
+<ul>
+<li>spec文件是Ruby的脚本文件，这边只列举一些常用的配置<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Pod::Spec.new <span class="keyword">do</span> <span class="params">|s|</span></span><br><span class="line">  <span class="comment"># 私有库名</span></span><br><span class="line">  s.name         = <span class="string">'RTKit'</span></span><br><span class="line">  <span class="comment"># 摘要介绍</span></span><br><span class="line">  s.summary      = <span class="string">'Network layer for iOS.'</span></span><br><span class="line">  <span class="comment"># 版本号: 这个必须和source的tag对应好</span></span><br><span class="line">  s.version      = <span class="string">'0.0.1'</span></span><br><span class="line">  <span class="comment"># 这个必须在git仓库配置的，不然后面执行pod repo push的时候是不会验证通过的</span></span><br><span class="line">  s.license      = &#123; <span class="symbol">:type</span> =&gt; <span class="string">'MIT'</span>, <span class="symbol">:file</span> =&gt; <span class="string">'LICENSE'</span> &#125;</span><br><span class="line">  s.authors      = &#123; <span class="string">'arthas'</span> =&gt; <span class="string">'arthasmay@gmail.com'</span> &#125;</span><br><span class="line">  s.social_media_url = <span class="string">'https://arthasmay.github.io'</span></span><br><span class="line">  s.homepage     = <span class="string">'https://github.com/../RTKit'</span></span><br><span class="line">  s.platform     = <span class="symbol">:ios</span>, <span class="string">'7.0'</span></span><br><span class="line">  s.ios.deployment_target = <span class="string">'10.0'</span></span><br><span class="line">  <span class="comment"># 源码仓库，最好是https的，防止团队有成员没有配置ssh</span></span><br><span class="line">  s.source       = &#123; <span class="symbol">:git</span> =&gt; <span class="string">'git@code.xxx.com:xxx/rtnetwork.git'</span>, <span class="symbol">:tag</span> =&gt; s.version.to_s &#125;</span><br><span class="line">  </span><br><span class="line">  s.requires_arc = <span class="literal">true</span></span><br><span class="line">  s.source_files = <span class="string">'*.&#123;h,m&#125;'</span></span><br><span class="line">  s.public_header_files = <span class="string">'*.&#123;h&#125;'</span></span><br><span class="line">  </span><br><span class="line">  s.frameworks = <span class="string">'UIKit'</span>, <span class="string">'CoreFoundation'</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<p>踩坑的地方：</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/75e19c92df50" target="_blank" rel="noopener">Podsepc语法说明</a></li>
+<li>MIT license 中必须和 s.author 对应，arthas&lt;<a href="mailto:arthasmay@gmail.com" target="_blank" rel="noopener">arthasmay@gmail.com</a>&gt;，我觉得不需要</li>
+<li>后面会拆分成submodules，这块的内容后面补充</li>
+</ul>
+<ol start="5">
+<li><p>上传私有库源码</p>
+<ul>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将本地代码关联和上传远程仓库</span></span><br><span class="line"><span class="variable">$git</span> init</span><br><span class="line"><span class="variable">$git</span> remote add origin git@code.xxx.com:xxx/rtcao.git</span><br><span class="line"><span class="variable">$git</span> add . </span><br><span class="line"><span class="variable">$git</span> commit -m <span class="string">"Commit tag 0.0.1"</span></span><br><span class="line"><span class="variable">$git</span> push -u origin master</span><br><span class="line"><span class="comment"># 打上pods版本version对应的tag</span></span><br><span class="line"><span class="variable">$git</span> tag 0.0.1</span><br><span class="line"><span class="variable">$git</span> push --tags</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>校验.podspec文件</p>
+<ul>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在podspec所在目录执行 or 指定校验文件</span></span><br><span class="line"><span class="variable">$pod</span> spec lint //[xxx]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>将依赖库的spec文件push到spec仓库</p>
+<ul>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 仓库名 spec文件名字</span></span><br><span class="line"><span class="variable">$pod</span> repo push RTPrivateSpecs RTNetwork.podspec</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<p>注意：<br>如果创建的用来存储podspec的仓库处于无文件的空状态，那在pod repo push的时候会碰到下面的问题</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">创建一个空的仓库后，git pull/push 报错,报错信息如下</span><br><span class="line">Your configuration specifies to merge with the ref &apos;refs/heads/master&apos; from the remote, but no such ref was fetched.</span><br><span class="line">这是正常的，在本地目录添加一个文件，commit 后 push 即可。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><a href="https://segmentfault.com/a/1190000012787100" target="_blank" rel="noopener">错误解决参考</a></p>
+<ol start="8">
+<li><p>验证私有库的使用</p>
+<ul>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看私有库的文件树：</span></span><br><span class="line"><span class="variable">$tree</span> -L 2</span><br><span class="line"><span class="comment"># 文件树：</span></span><br><span class="line">.</span><br><span class="line">├── README.md</span><br><span class="line">└── RTKit</span><br><span class="line">    └── 0.0.1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>项目验证</p>
+<ul>
+<li>在Podfile文件添加：<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># podfile写入依赖</span></span><br><span class="line">source <span class="symbol">https:</span>/<span class="regexp">/code.xxx.com/xxx</span><span class="regexp">/rtprivatespecs.git</span></span><br><span class="line"><span class="regexp">pod 'RTKit'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<p>执行pod install</p>
+<h5 id="Pods私有仓库的升级-文档待完善"><a href="#Pods私有仓库的升级-文档待完善" class="headerlink" title="Pods私有仓库的升级(文档待完善)"></a>Pods私有仓库的升级(文档待完善)</h5><h4 id="Pods相关GUI工具-工具开发待完成"><a href="#Pods相关GUI工具-工具开发待完成" class="headerlink" title="Pods相关GUI工具(工具开发待完成)"></a>Pods相关GUI工具(工具开发待完成)</h4><h3 id="动态化方案"><a href="#动态化方案" class="headerlink" title="动态化方案"></a>动态化方案</h3><h4 id="路由：逻辑-页面和业务逻辑的分发"><a href="#路由：逻辑-页面和业务逻辑的分发" class="headerlink" title="路由：逻辑(页面和业务逻辑的分发)"></a>路由：逻辑(页面和业务逻辑的分发)</h4><h4 id="hybird开发：Web-amp-flutter的跨平台开发"><a href="#hybird开发：Web-amp-flutter的跨平台开发" class="headerlink" title="hybird开发：Web &amp; flutter的跨平台开发"></a>hybird开发：Web &amp; flutter的跨平台开发</h4><h3 id="组件化的颗粒度选择"><a href="#组件化的颗粒度选择" class="headerlink" title="组件化的颗粒度选择"></a>组件化的颗粒度选择</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Arthas</p>
+              <p class="site-description motion-element" itemprop="description">Stay foolish, stay hungry!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arthas</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

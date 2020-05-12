@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="node,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="express框架express官方列举的features Robust routing Focus on high performance Super-high test coverage HTTP helpers (redirection, caching, etc) View system supporting 14+ template engines Content negotiation">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js(三) | Web框架：express &amp; koa">
+<meta property="og:url" content="http://arthasmay.github.io/2019/10/19/node/node-03/index.html">
+<meta property="og:site_name" content="Arthas的技术小栈">
+<meta property="og:description" content="express框架express官方列举的features Robust routing Focus on high performance Super-high test coverage HTTP helpers (redirection, caching, etc) View system supporting 14+ template engines Content negotiation">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-05-12T00:04:35.139Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js(三) | Web框架：express &amp; koa">
+<meta name="twitter:description" content="express框架express官方列举的features Robust routing Focus on high performance Super-high test coverage HTTP helpers (redirection, caching, etc) View system supporting 14+ template engines Content negotiation">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://arthasmay.github.io/2019/10/19/node/node-03/">
+
+
+
+
+
+  <title>Node.js(三) | Web框架：express & koa | Arthas的技术小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Arthas的技术小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知其然，知其所以然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/19/node/node-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Node.js(三) | Web框架：express & koa</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T20:44:38+00:00">
+                2019-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="express框架"><a href="#express框架" class="headerlink" title="express框架"></a>express框架</h2><h3 id="express官方列举的features"><a href="#express官方列举的features" class="headerlink" title="express官方列举的features"></a>express官方列举的features</h3><ul>
+<li>Robust routing</li>
+<li>Focus on high performance</li>
+<li>Super-high test coverage</li>
+<li>HTTP helpers (redirection, caching, etc)</li>
+<li>View system supporting 14+ template engines</li>
+<li>Content negotiation</li>
+<li>Executable for generating applications quickly</li>
+</ul>
+<p>解读</p>
+<ol>
+<li><p>Robust routing：健壮的路由</p>
+<ul>
+<li>后端路由系统：一个请求包进来，服务器会把这个请求包分发给不同的逻辑单元处理，这个分发的过程就是路由</li>
+<li>express 可以快速实现路由</li>
+</ul>
+</li>
+<li><p>Focus on high performance：高性能 &amp; Super-high test coverage 单元测试覆盖</p>
+<ul>
+<li>设计思路关注高性能，舍弃了一些复杂的功能</li>
+<li>完整的单元测试功能覆盖</li>
+</ul>
+</li>
+<li><p>HTTP helpers (redirection, caching, etc)：处理重定向和缓存<br>Content negotiation：内容协商</p>
+<ul>
+<li><p>重定向的规范：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. server返回302状态码</span><br><span class="line">2. 带上location：redirect url的header</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cache 304的缓存机制：（<strong>TODO：必须知道</strong>）</p>
+</li>
+<li><p>Content negotiation 识别accept头，返回符合accept的数据格式</p>
+</li>
+</ul>
+</li>
+<li><p>View system supporting 14+ template engines：模板引擎</p>
+</li>
+<li><p>Executable for generating applications quickly：脚手架</p>
+</li>
+</ol>
+<p>1，3，4 功能是为了减轻开发负担<br>5 为了快速上手，对于大项目价值不大</p>
+<h3 id="express核心功能：路由"><a href="#express核心功能：路由" class="headerlink" title="express核心功能：路由"></a>express核心功能：路由</h3><ul>
+<li>request/response简化<ul>
+<li>request: pathname、query等</li>
+<li>response: send()、json()、jsonp()等</li>
+</ul>
+</li>
+</ul>
+<h3 id="express的中间件能力"><a href="#express的中间件能力" class="headerlink" title="express的中间件能力"></a>express的中间件能力</h3><ul>
+<li>什么是中间件能力：可以将复杂的逻辑拆分成不同模块（可以分模块和文件处理，这样可以更好的维护代码）</li>
+<li>express中间件的逻辑拆分模式</li>
+</ul>
+<ol>
+<li>一个个拆分的模块（函数）顺序完成</li>
+<li>express中间件还有执行完可以返回执行之前中间件剩余逻辑的能力（洋葱模型）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 未使用express的洋葱模型(串行执行中间件未返回res结果给外面层)</span></span><br><span class="line">app.get(<span class="string">'/game'</span>, </span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (playerwon &gt;= <span class="number">3</span> || sameCount == <span class="number">9</span>) &#123;</span><br><span class="line">      res.status(<span class="number">500</span>)</span><br><span class="line">      res.send(<span class="string">'我不会再玩了'</span>)</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 通过next执行后续中间件</span></span><br><span class="line">    next()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> query = req.query</span><br><span class="line">    <span class="keyword">const</span> playerAction = query.action</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!playerAction) &#123;</span><br><span class="line">      res.status(<span class="number">400</span>)</span><br><span class="line">      res.send()</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (lastAction == playerAction) &#123;</span><br><span class="line">      sameCount++</span><br><span class="line">      <span class="keyword">if</span> (sameCount &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">        res.status(<span class="number">400</span>)</span><br><span class="line">        res.send(<span class="string">'你作弊！我再也不玩了'</span>)</span><br><span class="line">        sameCount = <span class="number">9</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125; </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      sameCount = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    lastAction = playerAction</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把用户操作挂在response上传递给下一个中间件</span></span><br><span class="line">    res.playerAction = playerAction</span><br><span class="line">    next()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> playerAction = res.playerAction</span><br><span class="line">    <span class="keyword">const</span> result = game(playerAction)</span><br><span class="line"></span><br><span class="line">    res.status(<span class="number">200</span>)</span><br><span class="line">    <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">      res.send(<span class="string">'平局'</span>)</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span>) &#123;</span><br><span class="line">      res.send(<span class="string">'你输了'</span>)</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      res.send(<span class="string">'你赢了'</span>)</span><br><span class="line">      res.playerWon = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (res.playerWon) &#123;</span><br><span class="line">      playerwon++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="详解express中间件的洋葱模型"><a href="#详解express中间件的洋葱模型" class="headerlink" title="详解express中间件的洋葱模型"></a>详解express中间件的洋葱模型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用express的洋葱模型</span></span><br><span class="line">app.get(<span class="string">'/game'</span>, </span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (playerwon &gt;= <span class="number">3</span> || sameCount == <span class="number">9</span>) &#123;</span><br><span class="line">      res.status(<span class="number">500</span>)</span><br><span class="line">      res.send(<span class="string">'我不会再玩了'</span>)</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 通过next执行后续中间件</span></span><br><span class="line">    next()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当后续中间件执行完之后，会执行到这个位置</span></span><br><span class="line">    <span class="keyword">if</span> (response.playerWon) &#123;</span><br><span class="line">      playerWinCount++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> query = req.query</span><br><span class="line">    <span class="keyword">const</span> playerAction = query.action</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!playerAction) &#123;</span><br><span class="line">      res.status(<span class="number">400</span>)</span><br><span class="line">      res.send()</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (lastAction == playerAction) &#123;</span><br><span class="line">      sameCount++</span><br><span class="line">      <span class="keyword">if</span> (sameCount &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">        res.status(<span class="number">400</span>)</span><br><span class="line">        res.send(<span class="string">'你作弊！我再也不玩了'</span>)</span><br><span class="line">        sameCount = <span class="number">9</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125; </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      sameCount = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    lastAction = playerAction</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把用户操作挂在response上传递给下一个中间件</span></span><br><span class="line">    res.playerAction = playerAction</span><br><span class="line">    next()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> playerAction = res.playerAction</span><br><span class="line">    <span class="keyword">const</span> result = game(playerAction)</span><br><span class="line"></span><br><span class="line">    res.status(<span class="number">200</span>)</span><br><span class="line">    <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">      res.send(<span class="string">'平局'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span>) &#123;</span><br><span class="line">      res.send(<span class="string">'你输了'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      res.send(<span class="string">'你赢了'</span>)</span><br><span class="line">      res.playerWon = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (res.playerWon) &#123;</span><br><span class="line">      playerwon++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>洋葱模型：</p>
+<ul>
+<li>顶层中间件就像洋葱外皮</li>
+<li>逻辑穿过洋葱外皮进入内核中间件</li>
+<li>执行完内层中间件又可以穿出到洋葱外皮中间件</li>
+</ul>
+<p>express洋葱模型的作用<br>在顶层next()上下记录时间，可以统计所有中间件的执行时间(处理http过程总共时间)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="built_in">Date</span>.now()</span><br><span class="line">next()</span><br><span class="line"><span class="keyword">const</span> end = <span class="built_in">Date</span>.now()</span><br></pre></td></tr></table></figure>
+
+<h3 id="express洋葱模型的缺陷"><a href="#express洋葱模型的缺陷" class="headerlink" title="express洋葱模型的缺陷"></a>express洋葱模型的缺陷</h3><p>处理异步非阻塞操作会失效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟非阻塞I/O的操作</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">  response.status(<span class="number">200</span>);</span><br><span class="line">  <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">      response.send(<span class="string">'平局'</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span>) &#123;</span><br><span class="line">      response.send(<span class="string">'你输了'</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      response.send(<span class="string">'你赢了'</span>)</span><br><span class="line">      response.playerWon = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">500</span>)</span><br><span class="line"><span class="comment">// 赢三次的功能失效了</span></span><br></pre></td></tr></table></figure>
+
+<p>express的洋葱缺陷原因：express对异步的支持不完善</p>
+<ul>
+<li>express是一个普通函数(未支持异步操作)，next是阻塞执行的，所有的中间件是在一个事件循环（在chrome调试台表现是在一个函数调用栈里的）中的执行的</li>
+<li>setTimeout or 异步操作是在另一个（下一个）事件循环中的，设置的response.playerWon在上个时间循环中已经结束了</li>
+</ul>
+<h2 id="koa框架"><a href="#koa框架" class="headerlink" title="koa框架"></a>koa框架</h2><ul>
+<li>中间件：express中间件异步洋葱模型失效，koa是可以通过async function实现中间件的，await可以中断异步执行，实现支持异步的洋葱模型</li>
+<li>context：挂载req，res</li>
+<li>砍掉了路由，希望路由挂到中间件里面(微内核的架构思想) koa-mount</li>
+</ul>
+<h3 id="koa代码实例"><a href="#koa代码实例" class="headerlink" title="koa代码实例"></a>koa代码实例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// koa 简单实用示例</span></span><br><span class="line"><span class="keyword">const</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> mount = <span class="built_in">require</span>(<span class="string">'koa-mount'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">const</span> game = <span class="built_in">require</span>(<span class="string">'./game.js'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> playerwon = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> lastAction = <span class="literal">null</span></span><br><span class="line"><span class="keyword">let</span> sameCount = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> koa()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(</span><br><span class="line">  mount(<span class="string">'/favicon.ico'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    ctx.status = <span class="number">200</span></span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里要接受许多中间件的话，不是像express一样的书写方式，app.use()只接受一个中间件or另一个koa实例</span></span><br><span class="line"><span class="keyword">const</span> gamekoa = <span class="keyword">new</span> koa()</span><br><span class="line"></span><br><span class="line"><span class="comment">// koa 挂载中间件的方式</span></span><br><span class="line">gamekoa.use(</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (playerwon &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">      ctx.status = <span class="number">500</span></span><br><span class="line">      ctx.body = <span class="string">'我不会再玩了'</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> next()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 就能获得一个准确的洋葱模型效果</span></span><br><span class="line">    <span class="keyword">if</span> (ctx.playerWon) &#123;</span><br><span class="line">      playerwon++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">gamekoa.use(</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> query = ctx.query</span><br><span class="line">    <span class="keyword">const</span> playerAction = query.action</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!playerAction) &#123;</span><br><span class="line">      ctx.status = <span class="number">400</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (sameCount == <span class="number">9</span>) &#123;</span><br><span class="line">      ctx.status = <span class="number">500</span></span><br><span class="line">      ctx.body = <span class="string">'我不会再玩了'</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    lastAction || (lastAction = playerAction)</span><br><span class="line">    <span class="keyword">if</span> (lastAction == playerAction) &#123;</span><br><span class="line">      sameCount++</span><br><span class="line">      <span class="keyword">if</span> (sameCount &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">        ctx.status = <span class="number">400</span></span><br><span class="line">        ctx.body = <span class="string">'你作弊！我再也不玩了'</span></span><br><span class="line">        sameCount = <span class="number">9</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      sameCount = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    lastAction = playerAction</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把用户操作挂在response上传递给下一个中间件</span></span><br><span class="line">    ctx.playerAction = playerAction</span><br><span class="line">    <span class="keyword">await</span> next()</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">gamekoa.use(</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> playerAction = ctx.playerAction</span><br><span class="line">    <span class="keyword">const</span> result = game(playerAction)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        ctx.status = <span class="number">200</span></span><br><span class="line">        <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">          ctx.body = <span class="string">'平局'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span>) &#123;</span><br><span class="line">          ctx.body = <span class="string">'你输了'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          ctx.body = <span class="string">'你赢了'</span></span><br><span class="line">          ctx.playerWon = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        resolve()</span><br><span class="line">      &#125;, <span class="number">500</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">app.use(</span><br><span class="line">  mount(</span><br><span class="line">    <span class="string">'/game'</span>,</span><br><span class="line">    gamekoa)</span><br><span class="line">) </span><br><span class="line"></span><br><span class="line">app.use(</span><br><span class="line">  mount(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    ctx.body = fs.readFileSync(__dirname + <span class="string">'/index.html'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">5000</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="koa核心功能"><a href="#koa核心功能" class="headerlink" title="koa核心功能"></a>koa核心功能</h3><ol>
+<li><p>比express更极致的 request/response 简化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctx.status = <span class="number">200</span></span><br><span class="line">ctx.body = <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 async function 实现中间件</p>
+<ul>
+<li>有 “暂停执行” 的能力</li>
+<li>在异步的情况下也符合洋葱模型()</li>
+</ul>
+</li>
+</ol>
+<p><strong>能把前面的中间件暂停掉，先把后面的中间件执行完后继续执行前面的中间件</strong></p>
+<p><strong>有了上面强大的并且支持异步的洋葱模型，koa得以把所有功能移到中间件执行</strong></p>
+<ol start="3">
+<li>精简内核，所有额外的功能都移到中间件执行</li>
+</ol>
+<h2 id="express-和-koa的对比"><a href="#express-和-koa的对比" class="headerlink" title="express 和 koa的对比"></a>express 和 koa的对比</h2><ul>
+<li>express 门槛更低，koa更强大优雅</li>
+<li>express 封装更多东西，开发更快速，koa可定制性更高</li>
+</ul>
+<p>总结：<br>express适合小型，koa适合大型，可扩展能力强</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node/" rel="tag"># node</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/19/node/node-02/" rel="next" title="Node.js(二) | 异步编程">
+                <i class="fa fa-chevron-left"></i> Node.js(二) | 异步编程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/21/node/node-04/" rel="prev" title="Node.js(四) | RPC通信">
+                Node.js(四) | RPC通信 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Arthas</p>
+              <p class="site-description motion-element" itemprop="description">Stay foolish, stay hungry!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#express框架"><span class="nav-number">1.</span> <span class="nav-text">express框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#express官方列举的features"><span class="nav-number">1.1.</span> <span class="nav-text">express官方列举的features</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#express核心功能：路由"><span class="nav-number">1.2.</span> <span class="nav-text">express核心功能：路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#express的中间件能力"><span class="nav-number">1.3.</span> <span class="nav-text">express的中间件能力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详解express中间件的洋葱模型"><span class="nav-number">1.4.</span> <span class="nav-text">详解express中间件的洋葱模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#express洋葱模型的缺陷"><span class="nav-number">1.5.</span> <span class="nav-text">express洋葱模型的缺陷</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#koa框架"><span class="nav-number">2.</span> <span class="nav-text">koa框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#koa代码实例"><span class="nav-number">2.1.</span> <span class="nav-text">koa代码实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#koa核心功能"><span class="nav-number">2.2.</span> <span class="nav-text">koa核心功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#express-和-koa的对比"><span class="nav-number">3.</span> <span class="nav-text">express 和 koa的对比</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arthas</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

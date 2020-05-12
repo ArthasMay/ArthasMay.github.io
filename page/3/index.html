@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Stay foolish, stay hungry!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arthas的技术小栈">
+<meta property="og:url" content="http://arthasmay.github.io/page/3/index.html">
+<meta property="og:site_name" content="Arthas的技术小栈">
+<meta property="og:description" content="Stay foolish, stay hungry!">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arthas的技术小栈">
+<meta name="twitter:description" content="Stay foolish, stay hungry!">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://arthasmay.github.io/page/3/">
+
+
+
+
+
+  <title>Arthas的技术小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Arthas的技术小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知其然，知其所以然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/21/node/node-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/21/node/node-04/" itemprop="url">Node.js(四) | RPC通信</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T01:49:18+00:00">
+                2019-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="RPC调用-站在前端的角度来说"><a href="#RPC调用-站在前端的角度来说" class="headerlink" title="RPC调用(站在前端的角度来说)"></a>RPC调用(站在前端的角度来说)</h2><h3 id="RPC定义"><a href="#RPC定义" class="headerlink" title="RPC定义"></a>RPC定义</h3><ul>
+<li><p>Remote Procedure Call(远程过程调用)</p>
+</li>
+<li><p>和Ajax有什么相同点</p>
+<ul>
+<li>都是两个计算机之间的网络通信（Ajax是 client &lt;-&gt; server, RPC是 server &lt;-&gt; server）</li>
+<li>需要双方约定一个数据格式</li>
+</ul>
+</li>
+<li><p>和Ajax有什么不同点</p>
+<ul>
+<li>一般不使用DNS作为寻址服务（http 一般使用DNS寻址服务，而RPC调用一般在内网，使用DNS划不来）</li>
+<li>应用层协议一般不使用http（RPC使用二进制协议，性能有优势)</li>
+<li>基于TCP或UDP协议（http都是基于tcp）</li>
+</ul>
+</li>
+</ul>
+<h3 id="详解RPC"><a href="#详解RPC" class="headerlink" title="详解RPC"></a>详解RPC</h3><ul>
+<li>寻址/负载均衡<ul>
+<li>Ajax: 使用DNS进行寻址（TODO: 详解http协议簇）</li>
+<li>RPC: 使用特有服务进行寻址（TODO: 画出RPC寻址示意图）</li>
+</ul>
+</li>
+<li>TCP通讯方式（TODO：http的通讯方式演进）<ul>
+<li>单工通讯</li>
+<li>半双工通讯</li>
+<li>全工通讯（实现难度和成本是增加的，全双工最难）</li>
+</ul>
+</li>
+<li>二进制协议<ul>
+<li>更小的数据包体积</li>
+<li>更快的编解码速率</li>
+</ul>
+</li>
+</ul>
+<h3 id="BFF的RPC实现"><a href="#BFF的RPC实现" class="headerlink" title="BFF的RPC实现"></a>BFF的RPC实现</h3><ul>
+<li>寻址和负载均衡由运维消化</li>
+<li>BFF需要理解和实现多路复用和二进制协议</li>
+</ul>
+<h2 id="RPC的二进制协议"><a href="#RPC的二进制协议" class="headerlink" title="RPC的二进制协议"></a>RPC的二进制协议</h2><h3 id="详解Buffer"><a href="#详解Buffer" class="headerlink" title="详解Buffer"></a>详解Buffer</h3><h4 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h4><ul>
+<li>Stream 是对输入输出设备的抽象，这里的设备可以是文件、网络或内存</li>
+<li>Stream 是有方向的，文件和网络读取数据是输入流，写入文件是输出流</li>
+<li>举个例子：<br>我们现在有一大罐水需要浇一片菜地，如果我们将水罐的水一下全部倒入菜地，首先得需要有多么大的力气（这里的力气好比计算机中的硬件性能）才可搬得动。如果，我们拿来了水管将水一点一点流入我们的菜地，这个时候不要这么大力气就可完成。</li>
+<li>流可以理解成水流这种抽象概念</li>
+</ul>
+<h4 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h4><p>数据的移动肯定是为了处理和读取，每段时间的都会有最小或最大数据量</p>
+<ul>
+<li>数据到达的速度比进程消耗的快，少数先达到的数据就会在等待区等候被处理</li>
+<li>数据到达的速度比进程消耗的慢，先达到的数据需要等待一定量的数据到达之后才能被处理<br>这里的等待区就指的缓冲区（Buffer），它是计算机中的一个小物理单位，通常位于计算机的 RAM 中，对Buffer的操作就是<br>查询Buffer里面的数据</li>
+</ul>
+<h4 id="Protocol-Buffer"><a href="#Protocol-Buffer" class="headerlink" title="Protocol Buffer"></a>Protocol Buffer</h4><ul>
+<li>Protocol Buffer 和 XML、JSON一样都是结构数据序列化的工具，但它们的数据格式有比较大的区别：<ul>
+<li>PB序列化之后得到的数据不是可读字符串，而是二进制流</li>
+<li>其次，XML 和 JSON 格式的数据信息都包含在了序列化之后的数据中，不需要任何其它信息就能还原序列化之后的数据；但使用 Protocol Buffer 需要事先定义数据的格式(.proto 协议文件)，还原一个序列化之后的数据需要使用到这个定义好的数据格式（可以理解为解析规则的配置文件）</li>
+<li>最后，在传输数据量较大的需求场景下，Protocol Buffer 比 XML、JSON 更小（3到10倍）、更快（20到100倍）、使用 &amp; 维护更简单；而且 Protocol Buffer 可以跨平台、跨语音使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="Node-js中的Buffer模块"><a href="#Node-js中的Buffer模块" class="headerlink" title="Node.js中的Buffer模块"></a>Node.js中的Buffer模块</h3><h3 id="protocol-buffers-Node-js-支持pb的库"><a href="#protocol-buffers-Node-js-支持pb的库" class="headerlink" title="protocol-buffers: Node.js 支持pb的库"></a>protocol-buffers: Node.js 支持pb的库</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> protobuf = <span class="built_in">require</span>(<span class="string">'protocol-buffers'</span>)</span><br><span class="line"><span class="keyword">const</span> schema = protobuf(fs.readFileSync(__dirname + <span class="string">'/test.proto'</span>, <span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(schema)</span><br><span class="line"><span class="comment">// console.log(schema.toJSON)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> buffer = schema.Column.encode(&#123;</span><br><span class="line">  id: <span class="number">1</span>,</span><br><span class="line">  name: <span class="string">"Node.js"</span>,</span><br><span class="line">  price: <span class="number">80.4</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(schema.Column.decode(buffer))</span><br></pre></td></tr></table></figure>
+
+<p>由于js内核原因，浮点型会出现进度不标准的问题</p>
+<h3 id="Node-js-net搭建多路复用的-RPC-通道"><a href="#Node-js-net搭建多路复用的-RPC-通道" class="headerlink" title="Node.js net搭建多路复用的 RPC 通道"></a>Node.js net搭建多路复用的 RPC 通道</h3><h4 id="单工通信"><a href="#单工通信" class="headerlink" title="单工通信"></a>单工通信</h4><h4 id="半双工通信"><a href="#半双工通信" class="headerlink" title="半双工通信"></a>半双工通信</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// server.js</span></span><br><span class="line"><span class="keyword">const</span> net = <span class="built_in">require</span>(<span class="string">'net'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = net.createServer(<span class="function">(<span class="params">socket</span>) =&gt;</span> &#123;</span><br><span class="line">  socket.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">buffer</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log(buffer, buffer.toString());</span></span><br><span class="line">    <span class="keyword">const</span> lessonid = buffer.readInt32BE()</span><br><span class="line">    <span class="built_in">console</span>.log(lessonid);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      socket.write(</span><br><span class="line">        Buffer.from(data[lessonid])</span><br><span class="line">      )</span><br><span class="line">    &#125;, <span class="number">10</span> + <span class="built_in">Math</span>.random() * <span class="number">1000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">4000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">  <span class="number">136797</span>: <span class="string">"01 | 课程介绍"</span>,</span><br><span class="line">  <span class="number">136798</span>: <span class="string">"02 | 内容综述"</span>,</span><br><span class="line">  <span class="number">136799</span>: <span class="string">"03 | Node.js是什么？"</span>,</span><br><span class="line">  <span class="number">136800</span>: <span class="string">"04 | Node.js可以用来做什么？"</span>,</span><br><span class="line">  <span class="number">136801</span>: <span class="string">"05 | 课程实战项目介绍"</span>,</span><br><span class="line">  <span class="number">136803</span>: <span class="string">"06 | 什么是技术预研？"</span>,</span><br><span class="line">  <span class="number">136804</span>: <span class="string">"07 | Node.js开发环境安装"</span>,</span><br><span class="line">  <span class="number">136806</span>: <span class="string">"08 | 第一个Node.js程序：石头剪刀布游戏"</span>,</span><br><span class="line">  <span class="number">136807</span>: <span class="string">"09 | 模块：CommonJS规范"</span>,</span><br><span class="line">  <span class="number">136808</span>: <span class="string">"10 | 模块：使用模块规范改造石头剪刀布游戏"</span>,</span><br><span class="line">  <span class="number">136809</span>: <span class="string">"11 | 模块：npm"</span>,</span><br><span class="line">  <span class="number">141994</span>: <span class="string">"12 | 模块：Node.js内置模块"</span>,</span><br><span class="line">  <span class="number">143517</span>: <span class="string">"13 | 异步：非阻塞I/O"</span>,</span><br><span class="line">  <span class="number">143557</span>: <span class="string">"14 | 异步：异步编程之callback"</span>,</span><br><span class="line">  <span class="number">143564</span>: <span class="string">"15 | 异步：事件循环"</span>,</span><br><span class="line">  <span class="number">143644</span>: <span class="string">"16 | 异步：异步编程之Promise"</span>,</span><br><span class="line">  <span class="number">146470</span>: <span class="string">"17 | 异步：异步编程之async/await"</span>,</span><br><span class="line">  <span class="number">146569</span>: <span class="string">"18 | HTTP：什么是HTTP服务器？"</span>,</span><br><span class="line">  <span class="number">146582</span>: <span class="string">"19 | HTTP：简单实现一个HTTP服务器"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// client.js</span></span><br><span class="line"><span class="keyword">const</span> net = <span class="built_in">require</span>(<span class="string">'net'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> socket = <span class="keyword">new</span> net.Socket(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">socket.connect(&#123;</span><br><span class="line">  host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">  port: <span class="number">4000</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// socket.write('Hello, server!!!')</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> lessonids = [</span><br><span class="line">  <span class="string">"136797"</span>,</span><br><span class="line">  <span class="string">"136798"</span>,</span><br><span class="line">  <span class="string">"136799"</span>,</span><br><span class="line">  <span class="string">"136800"</span>,</span><br><span class="line">  <span class="string">"136801"</span>,</span><br><span class="line">  <span class="string">"136803"</span>,</span><br><span class="line">  <span class="string">"136804"</span>,</span><br><span class="line">  <span class="string">"136806"</span>,</span><br><span class="line">  <span class="string">"136807"</span>,</span><br><span class="line">  <span class="string">"136808"</span>,</span><br><span class="line">  <span class="string">"136809"</span>,</span><br><span class="line">  <span class="string">"141994"</span>,</span><br><span class="line">  <span class="string">"143517"</span>,</span><br><span class="line">  <span class="string">"143557"</span>,</span><br><span class="line">  <span class="string">"143564"</span>,</span><br><span class="line">  <span class="string">"143644"</span>,</span><br><span class="line">  <span class="string">"146470"</span>,</span><br><span class="line">  <span class="string">"146569"</span>,</span><br><span class="line">  <span class="string">"146582"</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> buffer = Buffer.alloc(<span class="number">4</span>)</span><br><span class="line"><span class="keyword">let</span> index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * lessonids.length)</span><br><span class="line">buffer.writeInt32BE(</span><br><span class="line">  lessonids[index]</span><br><span class="line">)</span><br><span class="line">socket.write(buffer)</span><br><span class="line"></span><br><span class="line">socket.on(<span class="string">'data'</span>, (buffer) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(lessonids[index], buffer.toString())</span><br><span class="line"></span><br><span class="line">  buffer = Buffer.alloc(<span class="number">4</span>)</span><br><span class="line">  index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * lessonids.length)</span><br><span class="line">  buffer.writeInt32BE(</span><br><span class="line">    lessonids[index]</span><br><span class="line">  )</span><br><span class="line">  socket.write(buffer)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>为什么半双工不能不停发包呢： 涉及到时序问题（并发请求会导致res包和req包匹配不上的问题，出现乱序返回包的问题）</li>
+</ul>
+<h4 id="全双工通信"><a href="#全双工通信" class="headerlink" title="全双工通信"></a>全双工通信</h4><p>半双工 =&gt; 支持全双工</p>
+<ul>
+<li>在请求加上时序号：解决返回包乱序的问题</li>
+<li>解决粘包问题：粘包切分<ul>
+<li>粘包：TCP底层机制会自动把同时发的包自动拼接起来一次发送</li>
+</ul>
+</li>
+</ul>
+<h4 id="net模块"><a href="#net模块" class="headerlink" title="net模块"></a>net模块</h4><ul>
+<li>单工/半双工的通信通道搭建</li>
+<li>全双工通信通道搭建<ul>
+<li>关键在于应用层协议需要有标记包号的字段</li>
+<li>处理以下的情况，需要有标记包长的字段<ul>
+<li>粘包</li>
+<li>不完整包</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>错误处理</li>
+</ul>
+<h2 id="TODO-Buffer的大端和小端"><a href="#TODO-Buffer的大端和小端" class="headerlink" title="TODO: Buffer的大端和小端"></a>TODO: Buffer的大端和小端</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/qq_34629352/article/details/88037778" target="_blank" rel="noopener">一篇帮你彻底弄懂NodeJs中的Buffer</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/19/node/node-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/19/node/node-03/" itemprop="url">Node.js(三) | Web框架：express & koa</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T20:44:38+00:00">
+                2019-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="express框架"><a href="#express框架" class="headerlink" title="express框架"></a>express框架</h2><h3 id="express官方列举的features"><a href="#express官方列举的features" class="headerlink" title="express官方列举的features"></a>express官方列举的features</h3><ul>
+<li>Robust routing</li>
+<li>Focus on high performance</li>
+<li>Super-high test coverage</li>
+<li>HTTP helpers (redirection, caching, etc)</li>
+<li>View system supporting 14+ template engines</li>
+<li>Content negotiation</li>
+<li>Executable for generating applications quickly</li>
+</ul>
+<p>解读</p>
+<ol>
+<li><p>Robust routing：健壮的路由</p>
+<ul>
+<li>后端路由系统：一个请求包进来，服务器会把这个请求包分发给不同的逻辑单元处理，这个分发的过程就是路由</li>
+<li>express 可以快速实现路由</li>
+</ul>
+</li>
+<li><p>Focus on high performance：高性能 &amp; Super-high test coverage 单元测试覆盖</p>
+<ul>
+<li>设计思路关注高性能，舍弃了一些复杂的功能</li>
+<li>完整的单元测试功能覆盖</li>
+</ul>
+</li>
+<li><p>HTTP helpers (redirection, caching, etc)：处理重定向和缓存<br>Content negotiation：内容协商</p>
+<ul>
+<li><p>重定向的规范：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. server返回302状态码</span><br><span class="line">2. 带上location：redirect url的header</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cache 304的缓存机制：（<strong>TODO：必须知道</strong>）</p>
+</li>
+<li><p>Content negotiation 识别accept头，返回符合accept的数据格式</p>
+</li>
+</ul>
+</li>
+<li><p>View system supporting 14+ template engines：模板引擎</p>
+</li>
+<li><p>Executable for generating applications quickly：脚手架</p>
+</li>
+</ol>
+<p>1，3，4 功能是为了减轻开发负担<br>5 为了快速上手，对于大项目价值不大</p>
+<h3 id="express核心功能：路由"><a href="#express核心功能：路由" class="headerlink" title="express核心功能：路由"></a>express核心功能：路由</h3><ul>
+<li>request/response简化<ul>
+<li>request: pathname、query等</li>
+<li>response: send()、json()、jsonp()等</li>
+</ul>
+</li>
+</ul>
+<h3 id="express的中间件能力"><a href="#express的中间件能力" class="headerlink" title="express的中间件能力"></a>express的中间件能力</h3><ul>
+<li>什么是中间件能力：可以将复杂的逻辑拆分成不同模块（可以分模块和文件处理，这样可以更好的维护代码）</li>
+<li>express中间件的逻辑拆分模式</li>
+</ul>
+<ol>
+<li>一个个拆分的模块（函数）顺序完成</li>
+<li>express中间件还有执行完可以返回执行之前中间件剩余逻辑的能力（洋葱模型）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 未使用express的洋葱模型(串行执行中间件未返回res结果给外面层)</span></span><br><span class="line">app.get(<span class="string">'/game'</span>, </span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (playerwon &gt;= <span class="number">3</span> || sameCount == <span class="number">9</span>) &#123;</span><br><span class="line">      res.status(<span class="number">500</span>)</span><br><span class="line">      res.send(<span class="string">'我不会再玩了'</span>)</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 通过next执行后续中间件</span></span><br><span class="line">    next()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> query = req.query</span><br><span class="line">    <span class="keyword">const</span> playerAction = query.action</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!playerAction) &#123;</span><br><span class="line">      res.status(<span class="number">400</span>)</span><br><span class="line">      res.send()</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (lastAction == playerAction) &#123;</span><br><span class="line">      sameCount++</span><br><span class="line">      <span class="keyword">if</span> (sameCount &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">        res.status(<span class="number">400</span>)</span><br><span class="line">        res.send(<span class="string">'你作弊！我再也不玩了'</span>)</span><br><span class="line">        sameCount = <span class="number">9</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125; </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      sameCount = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    lastAction = playerAction</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把用户操作挂在response上传递给下一个中间件</span></span><br><span class="line">    res.playerAction = playerAction</span><br><span class="line">    next()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> playerAction = res.playerAction</span><br><span class="line">    <span class="keyword">const</span> result = game(playerAction)</span><br><span class="line"></span><br><span class="line">    res.status(<span class="number">200</span>)</span><br><span class="line">    <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">      res.send(<span class="string">'平局'</span>)</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span>) &#123;</span><br><span class="line">      res.send(<span class="string">'你输了'</span>)</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      res.send(<span class="string">'你赢了'</span>)</span><br><span class="line">      res.playerWon = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (res.playerWon) &#123;</span><br><span class="line">      playerwon++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="详解express中间件的洋葱模型"><a href="#详解express中间件的洋葱模型" class="headerlink" title="详解express中间件的洋葱模型"></a>详解express中间件的洋葱模型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用express的洋葱模型</span></span><br><span class="line">app.get(<span class="string">'/game'</span>, </span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (playerwon &gt;= <span class="number">3</span> || sameCount == <span class="number">9</span>) &#123;</span><br><span class="line">      res.status(<span class="number">500</span>)</span><br><span class="line">      res.send(<span class="string">'我不会再玩了'</span>)</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 通过next执行后续中间件</span></span><br><span class="line">    next()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当后续中间件执行完之后，会执行到这个位置</span></span><br><span class="line">    <span class="keyword">if</span> (response.playerWon) &#123;</span><br><span class="line">      playerWinCount++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> query = req.query</span><br><span class="line">    <span class="keyword">const</span> playerAction = query.action</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!playerAction) &#123;</span><br><span class="line">      res.status(<span class="number">400</span>)</span><br><span class="line">      res.send()</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (lastAction == playerAction) &#123;</span><br><span class="line">      sameCount++</span><br><span class="line">      <span class="keyword">if</span> (sameCount &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">        res.status(<span class="number">400</span>)</span><br><span class="line">        res.send(<span class="string">'你作弊！我再也不玩了'</span>)</span><br><span class="line">        sameCount = <span class="number">9</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125; </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      sameCount = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    lastAction = playerAction</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把用户操作挂在response上传递给下一个中间件</span></span><br><span class="line">    res.playerAction = playerAction</span><br><span class="line">    next()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> playerAction = res.playerAction</span><br><span class="line">    <span class="keyword">const</span> result = game(playerAction)</span><br><span class="line"></span><br><span class="line">    res.status(<span class="number">200</span>)</span><br><span class="line">    <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">      res.send(<span class="string">'平局'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span>) &#123;</span><br><span class="line">      res.send(<span class="string">'你输了'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      res.send(<span class="string">'你赢了'</span>)</span><br><span class="line">      res.playerWon = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (res.playerWon) &#123;</span><br><span class="line">      playerwon++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>洋葱模型：</p>
+<ul>
+<li>顶层中间件就像洋葱外皮</li>
+<li>逻辑穿过洋葱外皮进入内核中间件</li>
+<li>执行完内层中间件又可以穿出到洋葱外皮中间件</li>
+</ul>
+<p>express洋葱模型的作用<br>在顶层next()上下记录时间，可以统计所有中间件的执行时间(处理http过程总共时间)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="built_in">Date</span>.now()</span><br><span class="line">next()</span><br><span class="line"><span class="keyword">const</span> end = <span class="built_in">Date</span>.now()</span><br></pre></td></tr></table></figure>
+
+<h3 id="express洋葱模型的缺陷"><a href="#express洋葱模型的缺陷" class="headerlink" title="express洋葱模型的缺陷"></a>express洋葱模型的缺陷</h3><p>处理异步非阻塞操作会失效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟非阻塞I/O的操作</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">  response.status(<span class="number">200</span>);</span><br><span class="line">  <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">      response.send(<span class="string">'平局'</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span>) &#123;</span><br><span class="line">      response.send(<span class="string">'你输了'</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      response.send(<span class="string">'你赢了'</span>)</span><br><span class="line">      response.playerWon = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">500</span>)</span><br><span class="line"><span class="comment">// 赢三次的功能失效了</span></span><br></pre></td></tr></table></figure>
+
+<p>express的洋葱缺陷原因：express对异步的支持不完善</p>
+<ul>
+<li>express是一个普通函数(未支持异步操作)，next是阻塞执行的，所有的中间件是在一个事件循环（在chrome调试台表现是在一个函数调用栈里的）中的执行的</li>
+<li>setTimeout or 异步操作是在另一个（下一个）事件循环中的，设置的response.playerWon在上个时间循环中已经结束了</li>
+</ul>
+<h2 id="koa框架"><a href="#koa框架" class="headerlink" title="koa框架"></a>koa框架</h2><ul>
+<li>中间件：express中间件异步洋葱模型失效，koa是可以通过async function实现中间件的，await可以中断异步执行，实现支持异步的洋葱模型</li>
+<li>context：挂载req，res</li>
+<li>砍掉了路由，希望路由挂到中间件里面(微内核的架构思想) koa-mount</li>
+</ul>
+<h3 id="koa代码实例"><a href="#koa代码实例" class="headerlink" title="koa代码实例"></a>koa代码实例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// koa 简单实用示例</span></span><br><span class="line"><span class="keyword">const</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> mount = <span class="built_in">require</span>(<span class="string">'koa-mount'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">const</span> game = <span class="built_in">require</span>(<span class="string">'./game.js'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> playerwon = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> lastAction = <span class="literal">null</span></span><br><span class="line"><span class="keyword">let</span> sameCount = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> koa()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(</span><br><span class="line">  mount(<span class="string">'/favicon.ico'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    ctx.status = <span class="number">200</span></span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里要接受许多中间件的话，不是像express一样的书写方式，app.use()只接受一个中间件or另一个koa实例</span></span><br><span class="line"><span class="keyword">const</span> gamekoa = <span class="keyword">new</span> koa()</span><br><span class="line"></span><br><span class="line"><span class="comment">// koa 挂载中间件的方式</span></span><br><span class="line">gamekoa.use(</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (playerwon &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">      ctx.status = <span class="number">500</span></span><br><span class="line">      ctx.body = <span class="string">'我不会再玩了'</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> next()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 就能获得一个准确的洋葱模型效果</span></span><br><span class="line">    <span class="keyword">if</span> (ctx.playerWon) &#123;</span><br><span class="line">      playerwon++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">gamekoa.use(</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> query = ctx.query</span><br><span class="line">    <span class="keyword">const</span> playerAction = query.action</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!playerAction) &#123;</span><br><span class="line">      ctx.status = <span class="number">400</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (sameCount == <span class="number">9</span>) &#123;</span><br><span class="line">      ctx.status = <span class="number">500</span></span><br><span class="line">      ctx.body = <span class="string">'我不会再玩了'</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    lastAction || (lastAction = playerAction)</span><br><span class="line">    <span class="keyword">if</span> (lastAction == playerAction) &#123;</span><br><span class="line">      sameCount++</span><br><span class="line">      <span class="keyword">if</span> (sameCount &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">        ctx.status = <span class="number">400</span></span><br><span class="line">        ctx.body = <span class="string">'你作弊！我再也不玩了'</span></span><br><span class="line">        sameCount = <span class="number">9</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      sameCount = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    lastAction = playerAction</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把用户操作挂在response上传递给下一个中间件</span></span><br><span class="line">    ctx.playerAction = playerAction</span><br><span class="line">    <span class="keyword">await</span> next()</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">gamekoa.use(</span><br><span class="line">  <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> playerAction = ctx.playerAction</span><br><span class="line">    <span class="keyword">const</span> result = game(playerAction)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        ctx.status = <span class="number">200</span></span><br><span class="line">        <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">          ctx.body = <span class="string">'平局'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span>) &#123;</span><br><span class="line">          ctx.body = <span class="string">'你输了'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          ctx.body = <span class="string">'你赢了'</span></span><br><span class="line">          ctx.playerWon = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        resolve()</span><br><span class="line">      &#125;, <span class="number">500</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">app.use(</span><br><span class="line">  mount(</span><br><span class="line">    <span class="string">'/game'</span>,</span><br><span class="line">    gamekoa)</span><br><span class="line">) </span><br><span class="line"></span><br><span class="line">app.use(</span><br><span class="line">  mount(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    ctx.body = fs.readFileSync(__dirname + <span class="string">'/index.html'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">5000</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="koa核心功能"><a href="#koa核心功能" class="headerlink" title="koa核心功能"></a>koa核心功能</h3><ol>
+<li><p>比express更极致的 request/response 简化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctx.status = <span class="number">200</span></span><br><span class="line">ctx.body = <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 async function 实现中间件</p>
+<ul>
+<li>有 “暂停执行” 的能力</li>
+<li>在异步的情况下也符合洋葱模型()</li>
+</ul>
+</li>
+</ol>
+<p><strong>能把前面的中间件暂停掉，先把后面的中间件执行完后继续执行前面的中间件</strong></p>
+<p><strong>有了上面强大的并且支持异步的洋葱模型，koa得以把所有功能移到中间件执行</strong></p>
+<ol start="3">
+<li>精简内核，所有额外的功能都移到中间件执行</li>
+</ol>
+<h2 id="express-和-koa的对比"><a href="#express-和-koa的对比" class="headerlink" title="express 和 koa的对比"></a>express 和 koa的对比</h2><ul>
+<li>express 门槛更低，koa更强大优雅</li>
+<li>express 封装更多东西，开发更快速，koa可定制性更高</li>
+</ul>
+<p>总结：<br>express适合小型，koa适合大型，可扩展能力强</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/19/node/node-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/19/node/node-02/" itemprop="url">Node.js(二) | 异步编程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T15:53:48+00:00">
+                2019-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="异步：非阻塞I-O"><a href="#异步：非阻塞I-O" class="headerlink" title="异步：非阻塞I/O"></a>异步：非阻塞I/O</h2><h3 id="非阻塞I-O定义"><a href="#非阻塞I-O定义" class="headerlink" title="非阻塞I/O定义"></a>非阻塞I/O定义</h3><ul>
+<li>I/O 即Input/Output, 一个系统的输入和输出</li>
+<li>阻塞I/O和阻塞I/O的区别在于系统接收输入再到输出期间，能不能接收其他输入</li>
+</ul>
+<h3 id="Node架构设计"><a href="#Node架构设计" class="headerlink" title="Node架构设计"></a>Node架构设计</h3><p><img src="/2019/10/19/node/node-02/node_arch.png" alt="Node.js架构图"></p>
+<ul>
+<li>系统边界：左边和LibUV（event queue + event loop）在一个node线程里面</li>
+<li>其他c++工作线程</li>
+<li>node将任务分发给其他线程</li>
+</ul>
+<h2 id="异步：异步编程之callback"><a href="#异步：异步编程之callback" class="headerlink" title="异步：异步编程之callback"></a>异步：异步编程之callback</h2><h3 id="Node回调函数格式规范"><a href="#Node回调函数格式规范" class="headerlink" title="Node回调函数格式规范"></a>Node回调函数格式规范</h3><ul>
+<li>error-first callback</li>
+<li>Node-style callback</li>
+</ul>
+<p>所有callback函数都要遵循一个参数格式：第一个参数是error， 后面的参数才是结果</p>
+<h3 id="为什么需要遵循error-first范式"><a href="#为什么需要遵循error-first范式" class="headerlink" title="为什么需要遵循error-first范式"></a>为什么需要遵循error-first范式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  interview(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'smile'</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'cry'</span>, e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &lt; <span class="number">0.1</span>) &#123;</span><br><span class="line">      callback(<span class="string">'success'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>try-catch机制：try-catch是根据当前函数调用栈从栈顶往下抛的，throw 抛出的错误从栈顶往下寻找try-catch(被try-catch包裹)，如果throw的error没有被catch，就会抛到全局，node.js程序会崩溃</li>
+<li>为什么上面的error会被抛到全局（throw 是在interview函数里面，被trycatch包裹的）：是因为事件循环，node里面每一个事件循环都是一个全新的调用栈，throw error是在setTimeOut函数里面，是在另一个事件循环被回调的，所以这里的try-catch是不能捕获到抛出的error的，被抛到了node.js全局的</li>
+<li>node回调规范： 第一个参数不为空，代表这次非阻塞I/O(异步任务调用)失败了</li>
+</ul>
+<figure class="highlight js"><figcaption><span>node.js 回调规范</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">interview(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (res <span class="keyword">instanceof</span> <span class="built_in">Error</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'cry'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'smile'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &lt; <span class="number">0.8</span>) &#123;</span><br><span class="line">      ** 错误的时候，cb的第一个参数为<span class="literal">null</span> **</span><br><span class="line">      callback(<span class="literal">null</span>, <span class="string">'success'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      callback(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>)) </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="回调函数的异步流程控制的问题：回调地狱"><a href="#回调函数的异步流程控制的问题：回调地狱" class="headerlink" title="回调函数的异步流程控制的问题：回调地狱"></a>回调函数的异步流程控制的问题：回调地狱</h3><ul>
+<li>异步串行控制：回调地狱</li>
+<li>异步并发控制：计数器判断代码（冗余代码）</li>
+</ul>
+<figure class="highlight js"><figcaption><span>异步串行调用 callback hell</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> interview(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'cry at 1st round'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  interview(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'cry at 2st round'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    interview(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'cry at 3st round'</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'smile'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><figcaption><span>异步并行调用</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span></span><br><span class="line">interview(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'cry'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  count ++</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (count === <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'smile'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">interview(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'cry'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  count++</span><br><span class="line">  <span class="keyword">if</span> (count === <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'smile'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &lt; <span class="number">0.8</span>) &#123;</span><br><span class="line">      callback(<span class="literal">null</span>, <span class="string">'success'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      callback(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>之前在永辉写iOS的方式就是这样的并行调用处理，代码看起来好丑</li>
+<li>TODO: 后面可以在iOS里面看下异步流程控制的解决方案：阿里的coroutine框架coobjc</li>
+</ul>
+<p>npm社区的解决方案：</p>
+<ul>
+<li>async.js(思路可以参考下)</li>
+<li>thunk 编程范式</li>
+</ul>
+<h2 id="异步：事件循环"><a href="#异步：事件循环" class="headerlink" title="异步：事件循环"></a>异步：事件循环</h2><p>事件循环是非阻塞I/O的基础</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// eventloop 示例代码</span></span><br><span class="line"><span class="keyword">const</span> eventloop = &#123;</span><br><span class="line">  queue: [],        <span class="comment">// 事件队列</span></span><br><span class="line">  timeoutqueue:[],  <span class="comment">// 延时队列</span></span><br><span class="line">  fsqueue: [],      <span class="comment">// 文件队列</span></span><br><span class="line"></span><br><span class="line">  loop() &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">this</span>.queue.length) &#123;</span><br><span class="line">      <span class="keyword">var</span> callback = <span class="keyword">this</span>.queue.shift()</span><br><span class="line">      callback()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.fsqueue.forEach(<span class="function"><span class="params">callback</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (done) &#123;</span><br><span class="line">        callback()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.timeoutqueue.forEach(<span class="function"><span class="params">callback</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (done) &#123;</span><br><span class="line">        callback()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    setTimeout(<span class="keyword">this</span>.loop.bind(<span class="keyword">this</span>), <span class="number">50</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  add(callback) &#123;</span><br><span class="line">    <span class="keyword">this</span>.queue.push(callback)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">eventloop.loop()</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  eventloop.add(</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">&#125;, <span class="number">500</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  eventloop.add(</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">&#125;, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="理解：每一个事件循环都是一个全新的函数调用栈"><a href="#理解：每一个事件循环都是一个全新的函数调用栈" class="headerlink" title="理解：每一个事件循环都是一个全新的函数调用栈"></a>理解：每一个事件循环都是一个全新的函数调用栈</h3><p>chrome debug查看函数调用栈<br><img src="/2019/10/19/node/node-02/stack.png" alt="debug"></p>
+<ul>
+<li>栈底部的函数由谁触发的：在node.js中底部函数是eventloop触发的一个时间，就是上面代码执行的callback</li>
+<li>这个callback就是调用栈的底部，在这个callback之前执行的都是c++代码，在callback之后的调用才是我们的js代码</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &lt; <span class="number">0.8</span>) &#123;</span><br><span class="line">      callback(<span class="literal">null</span>, <span class="string">'success'</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// throw new Error('fail')</span></span><br><span class="line">      callback(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>理解：为什么上面的 throw new Error(‘fail’) 会将错误抛到全局</p>
+<ul>
+<li><p>settimeout就是把回调函数foo提交到eventloop里面，形成一个eventloop里面的timeout事件</p>
+</li>
+<li><p>500ms之后，eventloop检查到需要调用foo这个回调函数</p>
+</li>
+<li><p>调用foo，形成一个新的函数调用栈，foo在调用栈底部，没有trycatch可以捕获throw的error，所以error被抛到了全局</p>
+</li>
+<li><p>interview这个函数和setTitmeout的回调函数看着写在一起，但是完全不在一个调用栈里面（遥远距离）</p>
+</li>
+</ul>
+<h2 id="异步：异步编程之Promise"><a href="#异步：异步编程之Promise" class="headerlink" title="异步：异步编程之Promise"></a>异步：异步编程之Promise</h2><ul>
+<li>Promise<ul>
+<li>在当前的<strong>事件循环</strong>得不到结果，但未来的<strong>事件循环</strong>会给到你结果</li>
+<li>是一个状态机<ul>
+<li>pending 状态未定</li>
+<li>fulfilled/resolved 正确状态</li>
+<li>rejected 错误状态<br><img src="/2019/10/19/node/node-02/promise.png" alt="Promise状态机"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">      resolve()</span><br><span class="line">      reject(<span class="keyword">new</span> <span class="built_in">Error</span>())</span><br><span class="line">    &#125;, <span class="number">500</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(promise)</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(promise)</span><br><span class="line">  &#125;, <span class="number">800</span>)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>将上面代码粘贴到开发者模式下的chrome执行，可以打印出promise的状态</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Uncaught (<span class="keyword">in</span> promise) <span class="built_in">Error</span></span><br><span class="line">    at &lt;anonymous&gt;:<span class="number">4</span>:<span class="number">14</span></span><br><span class="line">(anonymous) @ VM56:<span class="number">4</span></span><br><span class="line">setTimeout (<span class="keyword">async</span>)</span><br><span class="line">(anonymous) @ VM56:<span class="number">3</span></span><br><span class="line">(anonymous) @ VM56:<span class="number">2</span></span><br><span class="line">(anonymous) @ VM56:<span class="number">13</span></span><br></pre></td></tr></table></figure>
+
+<p>reject的error 如果没有catch的话，错误会被抛向全局</p>
+<h3 id="resolve-和-reject-的状态无法互相转换"><a href="#resolve-和-reject-的状态无法互相转换" class="headerlink" title="resolve 和 reject 的状态无法互相转换"></a>resolve 和 reject 的状态无法互相转换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve()</span><br><span class="line">    &#125;, <span class="number">300</span>)</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      reject()</span><br><span class="line">    &#125;, <span class="number">500</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(promise)</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(promise)</span><br><span class="line">  &#125;, <span class="number">800</span>)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>console的打印：<br>Promise {<pending>}<br>Promise {<resolved>: undefined} resolve状态不能转换到reject状态</resolved></pending></p>
+<p>.then 和 .catch</p>
+<ul>
+<li>resolved状态的Promise会回调后面的第一个.then</li>
+<li>rejected状态的Promise会回调后面的第一个.catch</li>
+<li>任何一个rejected状态后面没有.catch的Promise，都会造成浏览器/node环境的全局错误</li>
+</ul>
+<h3 id="then-catch-执行之后返回新的Promise-解决异步流程控制的基础"><a href="#then-catch-执行之后返回新的Promise-解决异步流程控制的基础" class="headerlink" title=".then .catch 执行之后返回新的Promise(解决异步流程控制的基础)"></a>.then .catch 执行之后返回新的Promise(解决异步流程控制的基础)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// return or throw</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> promise = interview()</span><br><span class="line">  <span class="keyword">var</span> promise2 = promise</span><br><span class="line">    .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// return 'accept'        // promise2 resolved</span></span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'refuse'</span>) <span class="comment">// promise2 rejected</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// .catch((e) =&gt; &#123;</span></span><br><span class="line">    <span class="comment">//   return 'accept'</span></span><br><span class="line">    <span class="comment">// &#125;)</span></span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(promise);</span><br><span class="line">    <span class="built_in">console</span>.log(promise2)</span><br><span class="line">  &#125;, <span class="number">800</span>);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        resolve(<span class="string">'success'</span>)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">500</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回Promise</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> promise = interview();</span><br><span class="line">  <span class="keyword">var</span> promise2 = promise</span><br><span class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          resolve(<span class="string">'accept'</span>)</span><br><span class="line">        &#125;, <span class="number">400</span>);</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(promise);</span><br><span class="line">    <span class="built_in">console</span>.log(promise2);</span><br><span class="line">  &#125;, <span class="number">800</span>);</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(promise);</span><br><span class="line">    <span class="built_in">console</span>.log(promise2);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        resolve(<span class="string">'success'</span>)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">500</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="built_in">Promise</span> &#123;&lt;resolved&gt;: <span class="string">"success"</span>&#125;</span><br><span class="line">VM89:<span class="number">14</span> <span class="built_in">Promise</span> &#123;&lt;pending&gt;&#125;</span><br><span class="line">VM89:<span class="number">17</span> <span class="built_in">Promise</span> &#123;&lt;resolved&gt;: <span class="string">"success"</span>&#125;</span><br><span class="line">VM89:<span class="number">18</span> <span class="built_in">Promise</span> &#123;&lt;resolved&gt;: <span class="string">"accept"</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结：执行then和catch会返回一个新的Promise，该Promise最终状态根据then和catch的回调函数的执行结果决定</p>
+<ul>
+<li>如果回调函数最终是throw，该Promise是rejected状态</li>
+<li>如果回调函数最终是throw，该Promise是resolved状态</li>
+<li>如果回调函数最终return了一个Promise，该Promise回和回调函数return的Promise状态保持一致（因此可以在Promise的链式调用串行的执行多个异步任务）</li>
+</ul>
+<h3 id="Promise如何解决异步编程流程控制问题（串行和并行）"><a href="#Promise如何解决异步编程流程控制问题（串行和并行）" class="headerlink" title="Promise如何解决异步编程流程控制问题（串行和并行）"></a>Promise如何解决异步编程流程控制问题（串行和并行）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;</span><br><span class="line">  var promise = interview(1)</span><br><span class="line">    .then(() =&gt; &#123;</span><br><span class="line">      return interview(2)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(() =&gt; &#123;</span><br><span class="line">      return interview(3)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(() =&gt; &#123;</span><br><span class="line">      console.log(&apos;smile&apos;);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((e) =&gt; &#123;</span><br><span class="line">      console.log(&apos;cry at &apos; + e.round + &apos; round&apos;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">function interview(round) &#123;</span><br><span class="line">  return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(_ =&gt; &#123;</span><br><span class="line">      if (Math.random() &gt; 0.2) &#123;</span><br><span class="line">        resolve(&quot;success&quot;);</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        var error = new Error(&apos;fail&apos;)</span><br><span class="line">        error.round = round</span><br><span class="line">        reject(error);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, 500);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这样用Promise重构了串行异步的代码，代码看起来更加线性了，可维护行增强</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并发异步</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">Promise</span></span><br><span class="line">    .all([</span><br><span class="line">      interview(<span class="string">'ali'</span>),</span><br><span class="line">      interview(<span class="string">'tecent'</span>)</span><br><span class="line">    ])</span><br><span class="line">    .then(<span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'smile'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 捕获第一个rejected的Promise</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'cry for '</span> + e.name);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// 如果要知道所有并发的promise状态，只能先存下来</span></span><br><span class="line"><span class="comment">// var promise1 = new Promise(function(resolve, reject) &#123;&#125;);</span></span><br><span class="line"><span class="comment">// var promise2 = new Promise(function(resolve, reject) &#123;&#125;);</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &gt; <span class="number">0.2</span>) &#123;</span><br><span class="line">        resolve(<span class="string">"success"</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> error = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>)</span><br><span class="line">        error.name = name</span><br><span class="line">        reject(error);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="异步：异步编程者async-await（异步编程的终极解决方案）"><a href="#异步：异步编程者async-await（异步编程的终极解决方案）" class="headerlink" title="异步：异步编程者async/await（异步编程的终极解决方案）"></a>异步：异步编程者async/await（异步编程的终极解决方案）</h2><h3 id="AsysnFunction"><a href="#AsysnFunction" class="headerlink" title="AsysnFunction"></a>AsysnFunction</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    resolve(<span class="number">4</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line">[AsyncFunction]</span><br><span class="line">[<span class="built_in">Function</span>]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// return 4</span></span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'4)</span></span><br><span class="line"><span class="string">&#125;());</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(function() &#123;</span></span><br><span class="line"><span class="string">  return new Promise((resolve, reject) =&gt; &#123;</span></span><br><span class="line"><span class="string">    // resolve(4)</span></span><br><span class="line"><span class="string">    reject(new Error('</span><span class="number">4</span><span class="string">'))</span></span><br><span class="line"><span class="string">  &#125;)</span></span><br><span class="line"><span class="string">&#125;())</span></span><br><span class="line"><span class="string">// 输出</span></span><br><span class="line"><span class="string">Promise &#123; 4 &#125;</span></span><br><span class="line"><span class="string">Promise &#123; 4 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>async/await</p>
+<ul>
+<li>async function就是Promise语法糖封装(AsynFunction就是返回Promise的普通函数)</li>
+<li>异步编程的终极解决方案–以同步的方式写异步<ul>
+<li>await关键字可以“暂停”async function的执行</li>
+<li>await可以以同步的写法获取Promise的执行结果</li>
+<li>try-catch 可以获取await所得到的错误（即便是另一个函数调用栈抛出的？=&gt; 研究完v8对async/await的底层支持再来看）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> content = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve()</span><br><span class="line">      &#125;, <span class="number">500</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(content)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">4</span></span><br><span class="line">  &#125;()</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">  &#125;, <span class="number">800</span>)</span><br><span class="line">&#125;)()</span><br><span class="line">VM115:<span class="number">9</span> <span class="built_in">Promise</span> &#123;&lt;pending&gt;&#125;</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">VM115:<span class="number">13</span> <span class="built_in">Promise</span> &#123;&lt;resolved&gt;: <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  await 等待Promise的执行结果</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> content = <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="number">6</span>)</span><br><span class="line">      &#125;, <span class="number">500</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(content)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">4</span></span><br><span class="line">  &#125;()</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">  &#125;, <span class="number">800</span>)</span><br><span class="line">&#125;)()</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">VM133:<span class="number">9</span> <span class="number">6</span></span><br><span class="line">VM133:<span class="number">13</span> <span class="built_in">Promise</span> &#123;&lt;resolved&gt;: <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用await关键字，Promise抛出的错误是可以被trycatch捕获的</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> content = <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'8'</span>))</span><br><span class="line">        &#125;, <span class="number">500</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'error'</span>, error.message)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(content)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">4</span></span><br><span class="line">  &#125;()</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">  &#125;, <span class="number">800</span>)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决异步编程编程"><a href="#解决异步编程编程" class="headerlink" title="解决异步编程编程"></a>解决异步编程编程</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 串行控制</span></span><br><span class="line">(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">await</span> interview(<span class="number">1</span>)</span><br><span class="line">      <span class="keyword">await</span> interview(<span class="number">2</span>)</span><br><span class="line">      <span class="keyword">await</span> interview(<span class="number">3</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'cry at'</span>  + e.round);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params">round</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &gt; <span class="number">0.2</span>) &#123;</span><br><span class="line">        resolve(<span class="string">'success'</span>)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并发控制</span></span><br><span class="line">(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// await 后面可以跟任何Promise的, 可以返回一个Promise对象</span></span><br><span class="line">      <span class="keyword">await</span> <span class="built_in">Promise</span>.all([</span><br><span class="line">        interview(<span class="number">1</span>)</span><br><span class="line">        interview(<span class="number">2</span>)</span><br><span class="line">      ]).then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// result是一个数组，可以取出对应promise返回的resolve的结果</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'cry at'</span>  + e.round);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">interview</span>(<span class="params">round</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &gt; <span class="number">0.2</span>) &#123;</span><br><span class="line">        resolve(<span class="string">'success'</span>)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>总结：async/await 一个穿越事件循环的function</li>
+</ul>
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul>
+<li>仔细研究下v8对js异步编程的实现和支持，底层是如何用微任务和coroutine、generator支持js的异步编程语法的 </li>
+<li>flutter里面的dart的异步编程和这个是一样的，Future async/await</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/19/go/go-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/19/go/go-01/" itemprop="url">01 | Mac搭建Go开发环境</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T15:17:14+00:00">
+                2019-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Mac配置开发环境"><a href="#Mac配置开发环境" class="headerlink" title="Mac配置开发环境"></a>Mac配置开发环境</h2><h3 id="安装go"><a href="#安装go" class="headerlink" title="安装go"></a>安装go</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install go</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置go环境变量"><a href="#配置go环境变量" class="headerlink" title="配置go环境变量"></a>配置go环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .zshrc / .bash_profile</span></span><br><span class="line"><span class="built_in">export</span> GOPATH=/Users/silence/go</span><br><span class="line"><span class="built_in">export</span> GOBIN=<span class="variable">$GOPATH</span>/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOBIN</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> .zshrc</span><br><span class="line"><span class="comment"># 检查go环境变量</span></span><br><span class="line">$ go env</span><br></pre></td></tr></table></figure>
+
+<h3 id="VSCode配置"><a href="#VSCode配置" class="headerlink" title="VSCode配置"></a>VSCode配置</h3><p>由于国内墙的问题，需要自备梯子。IDE可以选择jetbrain产品，但是由于本人开发很杂，前端、Flutter、Node.js，所以还是希望在VSCode这个神器上配置go开发环境，之前也折腾失败过一次，后来在配置好梯子之后，成功安装好了Go插件依赖包，所以总结下来必须要梯子好。</p>
+<ol>
+<li><p>安装Go插件</p>
+</li>
+<li><p>打开VSCode配置文件，打开setting.json文件添加以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># go软件包位置</span><br><span class="line">&quot;go.goroot&quot;: &quot;/usr/local/Cellar/go/1.13/libexec&quot;, </span><br><span class="line">&quot;go.gopath&quot;: &quot;/Users/silence/go&quot;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导入gopath目录，创建main.go文件，然后VSCode会提示你安装依赖包，选择install all，如果梯子够长，应该能顺利安装好相关依赖。</p>
+</li>
+</ol>
+<p>顺利完成，愉快撸码…☺</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/18/todo-list/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/18/todo-list/" itemprop="url">Arthas的技术小栈</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T13:36:09+00:00">
+                2019-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="架构和优化层面的"><a href="#架构和优化层面的" class="headerlink" title="架构和优化层面的"></a>架构和优化层面的</h2><ul>
+<li>RxSwift + MVVM 搭建新的项目框架</li>
+</ul>
+<h2 id="想要做的东西"><a href="#想要做的东西" class="headerlink" title="想要做的东西"></a>想要做的东西</h2><ol>
+<li>node 实现一个图片压缩工具 (electron 实现一个GUI) electron</li>
+<li><del>go 实现一个图片服务器，用于存储hexo博客的图片资源（这个通过hexo的插件实现了）</del></li>
+<li>搭建 appiun + selenium 自动化测试平台(产品化的东西)</li>
+</ol>
+<h2 id="技术学习的路线"><a href="#技术学习的路线" class="headerlink" title="技术学习的路线"></a>技术学习的路线</h2><ol>
+<li>业余偏向服务端：go &amp; node.js</li>
+<li>工作偏向：前端，移动端，跨平台</li>
+<li>Nginx, 协议，算法，Docker， K8s</li>
+</ol>
+<h2 id="大前端架构方向"><a href="#大前端架构方向" class="headerlink" title="大前端架构方向"></a>大前端架构方向</h2><h2 id="swift-oc-的技术栈搭建一个iOS的项目架构"><a href="#swift-oc-的技术栈搭建一个iOS的项目架构" class="headerlink" title="swift + oc 的技术栈搭建一个iOS的项目架构"></a>swift + oc 的技术栈搭建一个iOS的项目架构</h2><ol>
+<li><p>架构主体设计</p>
+<ol>
+<li>支持组件化（UI组件化和项目组件化）</li>
+<li>支持响应式（函数响应式 or KVO）</li>
+<li>支持携程调用 (coobjc)</li>
+<li>设计模式 (MVC, MVP, MVVM, VIPER)</li>
+</ol>
+</li>
+<li><p>具体的技术细节</p>
+<ol>
+<li>底层持久化层的设计（缓存，WCDB, MMKV, Realm, CoreData,FMDB）</li>
+<li>WKWebView的接口层的设计和优化（Url Protocol, 性能）</li>
+<li>支持webscoket, scoket, PB二进制协议</li>
+<li>支持Flutter的跨平台技术方案</li>
+<li>开发性能调试dashboard（滴滴的技术方案 + 沪江的荷努斯之眼）</li>
+<li>支持埋点</li>
+</ol>
+</li>
+</ol>
+<h2 id="vue-webpack-实现前端可拓展的脚手架（移动端-PC端）"><a href="#vue-webpack-实现前端可拓展的脚手架（移动端-PC端）" class="headerlink" title="vue + webpack 实现前端可拓展的脚手架（移动端 + PC端）"></a>vue + webpack 实现前端可拓展的脚手架（移动端 + PC端）</h2><ul>
+<li>BFF</li>
+<li>SSR和服务端同构</li>
+</ul>
+<h2 id="go-实现一个表单生成器的产品（类似于问卷星）"><a href="#go-实现一个表单生成器的产品（类似于问卷星）" class="headerlink" title="go 实现一个表单生成器的产品（类似于问卷星）"></a>go 实现一个表单生成器的产品（类似于问卷星）</h2><h2 id="准备大前端的面试"><a href="#准备大前端的面试" class="headerlink" title="准备大前端的面试"></a>准备大前端的面试</h2><ul>
+<li>深入打好基础：JS、CSS 和 HTML以及HTML5</li>
+<li>深入Vue框架的源码和原理</li>
+<li>Node.js &amp; React的学习和理解</li>
+<li>准备一些大厂的面试题</li>
+<li>Flutter &amp; iOS的面试题</li>
+<li>算法和数据结构，计算机原理性的东西</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/17/node/node-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/17/node/node-01/" itemprop="url">Node.js(一) | CommonJS模块规范</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-17T12:51:47+00:00">
+                2019-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CommonJS规范"><a href="#CommonJS规范" class="headerlink" title="CommonJS规范"></a>CommonJS规范</h2><h3 id="script标签-加载脚本的缺点"><a href="#script标签-加载脚本的缺点" class="headerlink" title="(script标签)加载脚本的缺点"></a>(script标签)加载脚本的缺点</h3><ul>
+<li>脚本变多时，需要手动管理加载程序</li>
+<li>不同脚本之间的逻辑调用，需要通过全局变量的方式</li>
+<li>没有html怎么办？ node.js</li>
+</ul>
+<h3 id="CommonJS模块规范"><a href="#CommonJS模块规范" class="headerlink" title="CommonJS模块规范"></a>CommonJS模块规范</h3><ul>
+<li>Node.js应用并推广，CommonJS是同步加载的，因为server的脚本文件都是在本地，同步加载的block的影响不大</li>
+<li>后续也影响到浏览器端js的书写，借助webpack</li>
+</ul>
+<h3 id="require-amp-exports-module-exports"><a href="#require-amp-exports-module-exports" class="headerlink" title="require &amp; exports / module.exports"></a>require &amp; exports / module.exports</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// require是有返回值的，exports or module.exports</span></span><br><span class="line"><span class="keyword">var</span> lib = <span class="built_in">require</span>(<span class="string">'./lib'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// exports可以认为是module的默认的属性，没有声明module.exports = &#123;/* 对象、函数对象 */&#125;，require的输出# 就是exports对象</span></span><br><span class="line">exports.hello = <span class="string">'world'</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// module.exports = &#123;&#125;, require返回的就是后面导出的对象，exports可以被理解为覆盖了</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Webpack怎么实现CommonJS模块规范"><a href="#Webpack怎么实现CommonJS模块规范" class="headerlink" title="Webpack怎么实现CommonJS模块规范"></a>Webpack怎么实现CommonJS模块规范</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装全局webpack，</span></span><br><span class="line">$ webpack --devtool none --mode development --target node index.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看dist-main-js的源码"><a href="#查看dist-main-js的源码" class="headerlink" title="查看dist/main.js的源码"></a>查看dist/main.js的源码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">modules</span>) </span>&#123; <span class="comment">// webpackBootstrap</span></span><br><span class="line">  <span class="comment">// The module cache</span></span><br><span class="line">  <span class="keyword">var</span> installerModules = &#123;&#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">function</span> __webpack_require__(<span class="params">moduleId</span>) </span>&#123;<span class="comment">// moduleId就是path</span></span><br><span class="line">    <span class="comment">// Check if module is in cache</span></span><br><span class="line">    <span class="keyword">if</span> (installerModules[moduleId]) &#123;</span><br><span class="line">      <span class="keyword">return</span> installerModules[moduleId].exports;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Create a new module(and put it into the cache)</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">module</span> = installerModules[moduleId] = &#123;</span><br><span class="line">      i: moduleId,</span><br><span class="line">      l: <span class="literal">false</span>,</span><br><span class="line">      exports: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Execute the module function         </span></span><br><span class="line">    modules[moduleId].call(<span class="built_in">module</span>.exports, <span class="built_in">module</span>, <span class="built_in">module</span>.exports, __webpack_require__);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Flag the module as loaded</span></span><br><span class="line">    <span class="built_in">module</span>.l = <span class="literal">true</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Return the exports of the module</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">module</span>.exports;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// expose the modules object (__webpack_modules__)</span></span><br><span class="line">  __webpack_require__.m = modules;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// expose the module cache</span></span><br><span class="line">  __webpack_require__.c = installerModules;</span><br><span class="line"></span><br><span class="line"> 	<span class="comment">// define getter function for harmony exports</span></span><br><span class="line">  __webpack_require__.d = <span class="function"><span class="keyword">function</span>(<span class="params">exports, name, getter</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!__webpack_require__.o(exports, name)) &#123;</span><br><span class="line">      <span class="built_in">Object</span>.defineProperty(exports, name, &#123; <span class="attr">enumerable</span>: <span class="literal">true</span>, <span class="attr">get</span>: getter &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// define __esModule on exports</span></span><br><span class="line">  __webpack_require__.r = <span class="function"><span class="keyword">function</span>(<span class="params">exports</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">Symbol</span> !== <span class="string">'undefined'</span> &amp;&amp; <span class="built_in">Symbol</span>.toStringTag) &#123;</span><br><span class="line">      <span class="built_in">Object</span>.defineProperty(exports, <span class="built_in">Symbol</span>.toStringTag, &#123; <span class="attr">value</span>: <span class="string">'Module'</span> &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(exports, <span class="string">'__esModule'</span>, &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"> 	__webpack_require__.t = <span class="function"><span class="keyword">function</span>(<span class="params">value, mode</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(mode &amp; <span class="number">1</span>) value = __webpack_require__(value);</span><br><span class="line">    <span class="keyword">if</span>(mode &amp; <span class="number">8</span>) <span class="keyword">return</span> value;</span><br><span class="line">    <span class="keyword">if</span>((mode &amp; <span class="number">4</span>) &amp;&amp; <span class="keyword">typeof</span> value === <span class="string">'object'</span> &amp;&amp; value &amp;&amp; value.__esModule) <span class="keyword">return</span> value;</span><br><span class="line">    <span class="keyword">var</span> ns = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br><span class="line">    __webpack_require__.r(ns);</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(ns, <span class="string">'default'</span>, &#123; <span class="attr">enumerable</span>: <span class="literal">true</span>, <span class="attr">value</span>: value &#125;);</span><br><span class="line">    <span class="keyword">if</span>(mode &amp; <span class="number">2</span> &amp;&amp; <span class="keyword">typeof</span> value != <span class="string">'string'</span>) <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> value) __webpack_require__.d(ns, key, <span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123; <span class="keyword">return</span> value[key]; &#125;.bind(<span class="literal">null</span>, key));</span><br><span class="line">    <span class="keyword">return</span> ns;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// getDefaultExport function for compatibility with non-harmony modules</span></span><br><span class="line">  __webpack_require__.n = <span class="function"><span class="keyword">function</span>(<span class="params">module</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> getter = <span class="built_in">module</span> &amp;&amp; <span class="built_in">module</span>.__esModule ?</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getDefault</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">module</span>[<span class="string">'default'</span>]; &#125; :</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getModuleExports</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">module</span>; &#125;;</span><br><span class="line">    __webpack_require__.d(getter, <span class="string">'a'</span>, getter);</span><br><span class="line">  	<span class="keyword">return</span> getter;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Object.prototype.hasOwnProperty.call</span></span><br><span class="line">  __webpack_require__.o = <span class="function"><span class="keyword">function</span>(<span class="params">object, property</span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.hasOwnProperty.call(object, property); &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// __webpack_public_path__</span></span><br><span class="line">  __webpack_require__.p = <span class="string">""</span>;</span><br><span class="line">   </span><br><span class="line">  <span class="comment">// Load entry module and return exports</span></span><br><span class="line">  <span class="keyword">return</span> __webpack_require__(__webpack_require__.s = <span class="string">"./index.js"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">(&#123;</span><br><span class="line">  <span class="string">"./index.js"</span>: (<span class="function"><span class="keyword">function</span>(<span class="params">module, exports, __webpack_modules__</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'srart require'</span>)</span><br><span class="line">    <span class="keyword">var</span> lib = __webpack_require__(<span class="comment">/*! ./lib.js */</span> <span class="string">"./lib.js"</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'end require'</span>, lib)</span><br><span class="line">    lib.additional = <span class="string">'test'</span></span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="string">"./lib.js"</span>: (<span class="function"><span class="keyword">function</span>(<span class="params">module, exports</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello, geekbang'</span>)</span><br><span class="line">    exports.hello = <span class="string">'world'</span></span><br><span class="line">    exports.add = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> a + b</span><br><span class="line">    &#125;</span><br><span class="line">    exports.geekbang = &#123; <span class="attr">hello</span>: <span class="string">'world'</span> &#125;</span><br><span class="line">      <span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">minus</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(exports);</span><br><span class="line">    &#125;, <span class="number">2000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>index.js 和 lib.js 都被打包到函数里，key为文件名<ul>
+<li>CommonJS规范要求每个函数有独立的作用域，js创建作用域的方法就是函数（什么是作用域，参考浏览器原理）</li>
+</ul>
+</li>
+<li>__webpack_require__ 函数就是webpack对require的实现</li>
+<li>webpack打包的源码解读<ul>
+<li>(funcntion(modules){})({}) webpack打包的js脚本的结构</li>
+</ul>
+</li>
+</ol>
+<h2 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h2><ul>
+<li>ES6的模块规范：查看webpack打包后的js脚本文件</li>
+<li>了解AMD和CMD的模块规范，他们是如何在浏览器端实现async加载的</li>
+</ul>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><h2 id="Node-js内置模块"><a href="#Node-js内置模块" class="headerlink" title="Node.js内置模块"></a>Node.js内置模块</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/16/vscode/vscode-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/16/vscode/vscode-01/" itemprop="url">VSCode的Vue开发环境配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-16T09:56:32+00:00">
+                2019-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/环境配置/" itemprop="url" rel="index">
+                    <span itemprop="name">环境配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="添加快捷代码块"><a href="#添加快捷代码块" class="headerlink" title="添加快捷代码块"></a>添加快捷代码块</h2><h3 id="IDE配置"><a href="#IDE配置" class="headerlink" title="IDE配置"></a>IDE配置</h3><ol>
+<li>（cmd + ,）打开配置setting.json 写入下面配置<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 控制代码片段是否与其他建议一起显示及其排列的位置。</span><br><span class="line">"editor.snippetSuggestions": "top",</span><br><span class="line">// 控制编辑器是否应自动设置粘贴内容的格式。格式化程序必须可用并且能设置文档中某一范围的格式。</span><br><span class="line">"editor.formatOnPaste": true</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h3><ol>
+<li>cmd + shift + p 打开控制器</li>
+<li>选择 Configure User Snippets 创建代码块</li>
+</ol>
+<h3 id="模板解析"><a href="#模板解析" class="headerlink" title="模板解析"></a>模板解析</h3><ul>
+<li>prefix snippet的快捷缩写</li>
+<li>body 代码块主题</li>
+</ul>
+<h3 id="常用的snippts"><a href="#常用的snippts" class="headerlink" title="常用的snippts"></a>常用的snippts</h3><figure class="highlight html"><figcaption><span>(vue)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">"Scaffold": &#123;</span><br><span class="line">	"prefix": "vue",</span><br><span class="line">	"body": [</span><br><span class="line">		"<span class="tag">&lt;<span class="name">template</span>&gt;</span>",</span><br><span class="line">		"  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">\</span>"$<span class="attr">0</span>\"&gt;</span>\n",</span><br><span class="line">		"  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>",</span><br><span class="line">		"<span class="tag">&lt;/<span class="name">template</span>&gt;</span>\n",</span><br><span class="line">		"<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">\</span>"<span class="attr">text</span>/<span class="attr">javascript</span>\"&gt;</span>",</span><br><span class="line"><span class="javascript">		<span class="string">"export default &#123;"</span>,</span></span><br><span class="line"><span class="javascript">		<span class="string">"  data() &#123;"</span>,</span></span><br><span class="line"><span class="javascript">		<span class="string">"    return &#123;\n"</span>,</span></span><br><span class="line"><span class="javascript">		<span class="string">"    &#125;"</span>,</span></span><br><span class="line"><span class="javascript">		<span class="string">"  &#125;,"</span>,</span></span><br><span class="line"><span class="javascript">		<span class="string">"  components: &#123;\n"</span>,</span></span><br><span class="line"><span class="javascript">		<span class="string">"  &#125;"</span>,</span></span><br><span class="line"><span class="javascript">		<span class="string">"&#125;"</span>,</span></span><br><span class="line">		"<span class="tag">&lt;/<span class="name">script</span>&gt;</span>\n",</span><br><span class="line">		"<span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">\</span>"<span class="attr">stylus</span>\" <span class="attr">scoped</span>&gt;</span>",</span><br><span class="line">		"<span class="tag">&lt;/<span class="name">style</span>&gt;</span>",</span><br><span class="line">		"$2"</span><br><span class="line">	],</span><br><span class="line">	"description": "Scaffold for vue page"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Arthas</p>
+              <p class="site-description motion-element" itemprop="description">Stay foolish, stay hungry!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arthas</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="技术效率,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="架构和优化层面的 RxSwift + MVVM 搭建新的项目框架  想要做的东西 node 实现一个图片压缩工具 (electron 实现一个GUI) electron go 实现一个图片服务器，用于存储hexo博客的图片资源（这个通过hexo的插件实现了） 搭建 appiun + selenium 自动化测试平台(产品化的东西)  技术学习的路线 业余偏向服务端：go &amp;amp; node.js">
+<meta name="keywords" content="技术效率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arthas的技术小栈">
+<meta property="og:url" content="http://arthasmay.github.io/2019/10/18/todo-list/index.html">
+<meta property="og:site_name" content="Arthas的技术小栈">
+<meta property="og:description" content="架构和优化层面的 RxSwift + MVVM 搭建新的项目框架  想要做的东西 node 实现一个图片压缩工具 (electron 实现一个GUI) electron go 实现一个图片服务器，用于存储hexo博客的图片资源（这个通过hexo的插件实现了） 搭建 appiun + selenium 自动化测试平台(产品化的东西)  技术学习的路线 业余偏向服务端：go &amp;amp; node.js">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-05-12T00:04:35.139Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arthas的技术小栈">
+<meta name="twitter:description" content="架构和优化层面的 RxSwift + MVVM 搭建新的项目框架  想要做的东西 node 实现一个图片压缩工具 (electron 实现一个GUI) electron go 实现一个图片服务器，用于存储hexo博客的图片资源（这个通过hexo的插件实现了） 搭建 appiun + selenium 自动化测试平台(产品化的东西)  技术学习的路线 业余偏向服务端：go &amp;amp; node.js">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://arthasmay.github.io/2019/10/18/todo-list/">
+
+
+
+
+
+  <title>Arthas的技术小栈 | Arthas的技术小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Arthas的技术小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知其然，知其所以然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/18/todo-list/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Arthas的技术小栈</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T13:36:09+00:00">
+                2019-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="架构和优化层面的"><a href="#架构和优化层面的" class="headerlink" title="架构和优化层面的"></a>架构和优化层面的</h2><ul>
+<li>RxSwift + MVVM 搭建新的项目框架</li>
+</ul>
+<h2 id="想要做的东西"><a href="#想要做的东西" class="headerlink" title="想要做的东西"></a>想要做的东西</h2><ol>
+<li>node 实现一个图片压缩工具 (electron 实现一个GUI) electron</li>
+<li><del>go 实现一个图片服务器，用于存储hexo博客的图片资源（这个通过hexo的插件实现了）</del></li>
+<li>搭建 appiun + selenium 自动化测试平台(产品化的东西)</li>
+</ol>
+<h2 id="技术学习的路线"><a href="#技术学习的路线" class="headerlink" title="技术学习的路线"></a>技术学习的路线</h2><ol>
+<li>业余偏向服务端：go &amp; node.js</li>
+<li>工作偏向：前端，移动端，跨平台</li>
+<li>Nginx, 协议，算法，Docker， K8s</li>
+</ol>
+<h2 id="大前端架构方向"><a href="#大前端架构方向" class="headerlink" title="大前端架构方向"></a>大前端架构方向</h2><h2 id="swift-oc-的技术栈搭建一个iOS的项目架构"><a href="#swift-oc-的技术栈搭建一个iOS的项目架构" class="headerlink" title="swift + oc 的技术栈搭建一个iOS的项目架构"></a>swift + oc 的技术栈搭建一个iOS的项目架构</h2><ol>
+<li><p>架构主体设计</p>
+<ol>
+<li>支持组件化（UI组件化和项目组件化）</li>
+<li>支持响应式（函数响应式 or KVO）</li>
+<li>支持携程调用 (coobjc)</li>
+<li>设计模式 (MVC, MVP, MVVM, VIPER)</li>
+</ol>
+</li>
+<li><p>具体的技术细节</p>
+<ol>
+<li>底层持久化层的设计（缓存，WCDB, MMKV, Realm, CoreData,FMDB）</li>
+<li>WKWebView的接口层的设计和优化（Url Protocol, 性能）</li>
+<li>支持webscoket, scoket, PB二进制协议</li>
+<li>支持Flutter的跨平台技术方案</li>
+<li>开发性能调试dashboard（滴滴的技术方案 + 沪江的荷努斯之眼）</li>
+<li>支持埋点</li>
+</ol>
+</li>
+</ol>
+<h2 id="vue-webpack-实现前端可拓展的脚手架（移动端-PC端）"><a href="#vue-webpack-实现前端可拓展的脚手架（移动端-PC端）" class="headerlink" title="vue + webpack 实现前端可拓展的脚手架（移动端 + PC端）"></a>vue + webpack 实现前端可拓展的脚手架（移动端 + PC端）</h2><ul>
+<li>BFF</li>
+<li>SSR和服务端同构</li>
+</ul>
+<h2 id="go-实现一个表单生成器的产品（类似于问卷星）"><a href="#go-实现一个表单生成器的产品（类似于问卷星）" class="headerlink" title="go 实现一个表单生成器的产品（类似于问卷星）"></a>go 实现一个表单生成器的产品（类似于问卷星）</h2><h2 id="准备大前端的面试"><a href="#准备大前端的面试" class="headerlink" title="准备大前端的面试"></a>准备大前端的面试</h2><ul>
+<li>深入打好基础：JS、CSS 和 HTML以及HTML5</li>
+<li>深入Vue框架的源码和原理</li>
+<li>Node.js &amp; React的学习和理解</li>
+<li>准备一些大厂的面试题</li>
+<li>Flutter &amp; iOS的面试题</li>
+<li>算法和数据结构，计算机原理性的东西</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术效率/" rel="tag"># 技术效率</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/17/node/node-01/" rel="next" title="Node.js(一) | CommonJS模块规范">
+                <i class="fa fa-chevron-left"></i> Node.js(一) | CommonJS模块规范
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/19/go/go-01/" rel="prev" title="01 | Mac搭建Go开发环境">
+                01 | Mac搭建Go开发环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Arthas</p>
+              <p class="site-description motion-element" itemprop="description">Stay foolish, stay hungry!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构和优化层面的"><span class="nav-number">1.</span> <span class="nav-text">架构和优化层面的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#想要做的东西"><span class="nav-number">2.</span> <span class="nav-text">想要做的东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术学习的路线"><span class="nav-number">3.</span> <span class="nav-text">技术学习的路线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大前端架构方向"><span class="nav-number">4.</span> <span class="nav-text">大前端架构方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#swift-oc-的技术栈搭建一个iOS的项目架构"><span class="nav-number">5.</span> <span class="nav-text">swift + oc 的技术栈搭建一个iOS的项目架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-webpack-实现前端可拓展的脚手架（移动端-PC端）"><span class="nav-number">6.</span> <span class="nav-text">vue + webpack 实现前端可拓展的脚手架（移动端 + PC端）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go-实现一个表单生成器的产品（类似于问卷星）"><span class="nav-number">7.</span> <span class="nav-text">go 实现一个表单生成器的产品（类似于问卷星）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备大前端的面试"><span class="nav-number">8.</span> <span class="nav-text">准备大前端的面试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arthas</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

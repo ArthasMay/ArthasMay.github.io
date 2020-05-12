@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Stay foolish, stay hungry!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arthas的技术小栈">
+<meta property="og:url" content="http://arthasmay.github.io/page/2/index.html">
+<meta property="og:site_name" content="Arthas的技术小栈">
+<meta property="og:description" content="Stay foolish, stay hungry!">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arthas的技术小栈">
+<meta name="twitter:description" content="Stay foolish, stay hungry!">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://arthasmay.github.io/page/2/">
+
+
+
+
+
+  <title>Arthas的技术小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Arthas的技术小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知其然，知其所以然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/11/28/iOS/iOS_Awesome/iOS_Awesome01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/28/iOS/iOS_Awesome/iOS_Awesome01/" itemprop="url">iOS_Awesome_01 | 一些iOS常见的问题和答案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-28T14:03:48+00:00">
+                2019-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、关于-stdc-废弃的解决方案"><a href="#一、关于-stdc-废弃的解决方案" class="headerlink" title="一、关于 stdc++ 废弃的解决方案"></a>一、关于 stdc++ 废弃的解决方案</h2><h2 id="二、CocoaPods-1-8版本"><a href="#二、CocoaPods-1-8版本" class="headerlink" title="二、CocoaPods 1.8版本"></a>二、CocoaPods 1.8版本</h2><h3 id="通过CDN的加速，解决拉取repo过大的问题"><a href="#通过CDN的加速，解决拉取repo过大的问题" class="headerlink" title="通过CDN的加速，解决拉取repo过大的问题"></a>通过CDN的加速，解决拉取repo过大的问题</h3><h3 id="通过pods的方式搭建组件化开发"><a href="#通过pods的方式搭建组件化开发" class="headerlink" title="通过pods的方式搭建组件化开发"></a>通过pods的方式搭建组件化开发</h3><h2 id="如糖App的项目配置更改"><a href="#如糖App的项目配置更改" class="headerlink" title="如糖App的项目配置更改"></a>如糖App的项目配置更改</h2><h3 id="1-修改-gitignore文件"><a href="#1-修改-gitignore文件" class="headerlink" title="1. 修改.gitignore文件"></a>1. 修改.gitignore文件</h3><h2 id="如糖App项目的一些疑难记录点"><a href="#如糖App项目的一些疑难记录点" class="headerlink" title="如糖App项目的一些疑难记录点"></a>如糖App项目的一些疑难记录点</h2><h3 id="2-9-17"><a href="#2-9-17" class="headerlink" title="2.9.17"></a>2.9.17</h3><ul>
+<li>首页Cell使用SDWebImage加载GIF时 sd_setImage 策略为 DownloadProgressive 事发生Crash（EXC_BAD_ADDRESS） (params) {</li>
+<li></li>
+<li>}<br>影响版本 iOS10以下，应该是ImageIO的实现有所影响</li>
+<li>Swift #available 编译条件不起作用：Other Swift Flags: -Xfrontend -disable-availability-checking 这两个编译参数影响<br>后面修改整个版本兼容方式吧 </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/11/18/vue/vue-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/18/vue/vue-02/" itemprop="url">Vue01 | Vue细节实现：封装高可用的Axios模块</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-18T14:03:05+00:00">
+                2019-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="为什么要对Axios二次封装？"><a href="#为什么要对Axios二次封装？" class="headerlink" title="为什么要对Axios二次封装？"></a>为什么要对Axios二次封装？</h3><p>Axios其实是对 Node的Http以及对XMLHttpRequest的封装，使用了Es6中的Promise的异步调用的方式，其API对开发者来说其实已经是很友善了。而在项目中对Axios的二次封装主要是为了桥接项目的业务，因为Axios本身只是抽象的调用层，项目中的一些具体业务并未处理，所以需要根据后端的的架构（前后端鉴权方式，业务Code码层面的设计）、API设计风格（最好是面向规范的Restful设计）以及面对复杂的异步调用（由于没有BFF的数据裁剪，一般公司前后端分离之后复杂的串行和并行是经常要面对的）等问题。</p>
+<h4 id="Vue项目的网络层设计"><a href="#Vue项目的网络层设计" class="headerlink" title="Vue项目的网络层设计"></a>Vue项目的网络层设计</h4><ol>
+<li>网络请求代码的聚合和复用，支持模块化的扩展（类似于vuex的模块化的横向拓展）</li>
+<li>对用户状态方式的处理（常见的两种后端鉴权方式：（1）cookie &amp; session （2）JWT）</li>
+<li>对服务端设计的业务code码的集中式处理</li>
+<li>面对标准RESTFUL的api的请求方式设计</li>
+<li>自动重试机制分层设计 &amp; 复杂异步的调用的api设计（支持async/await函数）</li>
+<li>如何设计生产环境和开发环境等设置</li>
+<li>底层信息的Cache(localStorage &amp; sessionStorage)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 整个网络层涉及的文件层级</span><br><span class="line">api</span><br><span class="line">└── login               // 对应的业务模块</span><br><span class="line">    └── index.js</span><br><span class="line">└── dashboard</span><br><span class="line">    └── index.js</span><br><span class="line">├── base.js             // 基础的设置</span><br><span class="line">└── index.js            // 导出的出口文件</span><br><span class="line">utils</span><br><span class="line">└── network             // 对axios的封装</span><br><span class="line">    ├── fetch.js</span><br><span class="line">    └── request.js</span><br><span class="line">├── .env.production     // Vue项目生产和测试环境的配置文件</span><br><span class="line">├── .env.development</span><br><span class="line">├── .env.test </span><br><span class="line">└── .vue.config.js      // Vue 配置文件</span><br></pre></td></tr></table></figure>
+
+<h4 id="fetch-js的设计"><a href="#fetch-js的设计" class="headerlink" title="fetch.js的设计"></a>fetch.js的设计</h4><ul>
+<li>JWT / Session &amp; Cookie的鉴权方式</li>
+<li>处理status &amp; code的异常提示处理</li>
+<li>处理断网的全局UI组件处理（是从BOM中获取网络状态）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">"@/router/router.js"</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">"@/store/store.js"</span>;</span><br><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 为什么在js文件内需要单独引用message，但是在Vue文件内可以使用this.$message这种内部函数调用，研究下怎么实现一个可以全局使用的Vue组件（即通过Vue.use()注册） </span></span><br><span class="line"><span class="keyword">import</span> &#123; Message &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Warning: 默认打开的是JWT的鉴权方式，若要修改为Session &amp; Cookie的方式来保持会话状态，请将 tokenStyle 修改为： var tokenStyle = 'Session_Cookie' </span></span><br><span class="line"><span class="keyword">var</span> tokenStyle = <span class="string">'JWT'</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 提示函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> tip = <span class="function"><span class="params">msg</span> =&gt;</span> &#123;</span><br><span class="line">  Message.error(msg)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 跳转登录页</span></span><br><span class="line"><span class="comment"> * 携带当前页面路由，为了登录完成后返回当前页面</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> toLogin = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  router.replace(&#123;</span><br><span class="line">    path: <span class="string">'/login'</span>,</span><br><span class="line">    query: &#123;</span><br><span class="line">      redirect: router.currentRoute.fullPath</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 处理常见的几种http协议规范中status的错误</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> statusErrorHandle = <span class="function">(<span class="params">status, other</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 状态码判断</span></span><br><span class="line">  <span class="keyword">switch</span>(status) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">401</span>: <span class="comment">// 401: 未登录状态，跳转登录页</span></span><br><span class="line">      toLogin()</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">403</span>: <span class="comment">// 403: token过期，清除token并跳转登录页</span></span><br><span class="line">      tip(<span class="string">'登录过期，请重新登录'</span>)</span><br><span class="line">      <span class="comment">// 后面会重新对持久层封装， 在后面层重构这部分代码</span></span><br><span class="line">      localStorage.removeItem(<span class="string">"token"</span>);</span><br><span class="line">      store.commit(<span class="string">"loginSuccess"</span>, <span class="literal">null</span>);</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        toLogin()</span><br><span class="line">      &#125;, <span class="number">1000</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">404</span>: <span class="comment">// 404: 请求不存在</span></span><br><span class="line">      tip(<span class="string">'请求的资源不存在'</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="built_in">console</span>.log(other)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 业务层Code的错误处理，这边服务端的code设计错误</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> codeErrorHandler = <span class="function">(<span class="params">errRes</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123; code, msg &#125; = errRes</span><br><span class="line">  <span class="keyword">switch</span> (code) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1403</span>:</span><br><span class="line">      tip(msg);</span><br><span class="line">      localStorage.removeItem(<span class="string">"token"</span>);</span><br><span class="line">      store.commit(<span class="string">"loginSuccess"</span>, <span class="literal">null</span>);</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        toLogin();</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"Unkown code type 😭😭😭"</span>);</span><br><span class="line">      tip(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance = axios.create(&#123;</span><br><span class="line">  timeout: <span class="number">30000</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 请求拦截器</span></span><br><span class="line"><span class="comment"> * 每次请求前，如果存在token则在请求中携带token</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">instance.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (tokenStyle === <span class="string">'JWT'</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> token = store.state.token;</span><br><span class="line">      token &amp;&amp; (config.headers.Authorization = token);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 响应拦截器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">instance.interceptors.response.use(</span><br><span class="line">  <span class="comment">// 请求成功</span></span><br><span class="line">  res =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (res.status === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (res.data.code === <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(res.data);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        codeErrorHandler(res.data);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(res.data);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(res.data);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 请求失败</span></span><br><span class="line">  error =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; response &#125; = error;</span><br><span class="line">    <span class="keyword">if</span> (response) &#123;</span><br><span class="line">      <span class="comment">// 请求已经发出，但是不在2xx的范围</span></span><br><span class="line">      statusErrorHandle(response.status, response.message);</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(response);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 处理断网的情况</span></span><br><span class="line">      <span class="comment">// eg:请求超时或断网时，更新state的network状态</span></span><br><span class="line">      <span class="comment">// network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏</span></span><br><span class="line">      <span class="comment">// 关于断网组件中的刷新重新获取数据，会在断网组件中说明</span></span><br><span class="line">      <span class="keyword">if</span> (!<span class="built_in">window</span>.navigator.onLine) &#123;</span><br><span class="line">        store.commit(<span class="string">'changeNetwork'</span>, <span class="literal">false</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> instance;</span><br></pre></td></tr></table></figure>
+
+
+<h5 id="JWT和Session-Cookie的理解和使用"><a href="#JWT和Session-Cookie的理解和使用" class="headerlink" title="JWT和Session_Cookie的理解和使用"></a>JWT和Session_Cookie的理解和使用</h5>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/11/13/go/go-06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/13/go/go-06/" itemprop="url">02 | GO:WebServer的实现两种文件上传方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T21:02:06+00:00">
+                2019-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h2><h2 id="浅析http请求头的Content-Type"><a href="#浅析http请求头的Content-Type" class="headerlink" title="浅析http请求头的Content-Type"></a>浅析http请求头的Content-Type</h2><h2 id="upload的两种实现方式"><a href="#upload的两种实现方式" class="headerlink" title="upload的两种实现方式"></a>upload的两种实现方式</h2><h3 id="字节流上传"><a href="#字节流上传" class="headerlink" title="字节流上传"></a>字节流上传</h3><ul>
+<li>请求头的Content-Type: application/octet-stream</li>
+<li>使用Post请求，文件字节流传参到RequestBody中（Postman中有binary设置文件流，其实Application/json协议数据传输方式也是通过字节流传递的，服务端在各自的语言中对字节流进行解析）</li>
+<li>缺点：<ol>
+<li>一次只能传输一个文件</li>
+<li>需要client 和 server 协议确定文件类型</li>
+<li>Post的方式只能在body里面设置一个字节流参数，params若要遵循http协议标准，不应该添加参数（当然也可以添加）</li>
+</ol>
+</li>
+</ul>
+<h3 id="r-Body中字节流的读取-amp-写入文件"><a href="#r-Body中字节流的读取-amp-写入文件" class="headerlink" title="r.Body中字节流的读取 &amp; 写入文件"></a>r.Body中字节流的读取 &amp; 写入文件</h3><p>r.Body中读取字节流的方式需要借助Buffer(缓冲器，之前在Node.js中梳理过Buffer的概念，其实在所有语言中，只要涉及到data的字节流，都会对应的使用到Buffer相关的概念)</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">buffer := <span class="built_in">new</span>(bytes.Buffer)</span><br><span class="line">buffer.ReadFrom(r.Body)</span><br><span class="line"><span class="comment">// 创建文件</span></span><br><span class="line"><span class="comment">// 和 chmod 666的概念一样，赋予所有人读和写的权限</span></span><br><span class="line">f, err := os.OpenFile(<span class="string">"./test/"</span> + <span class="string">"demo.pdf"</span>, os.O_WRONLY|os.O_CREATE, <span class="number">0666</span>)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"err"</span>)</span><br><span class="line">	  <span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">defer</span> f.Close()</span><br><span class="line">f.Write(buffer.Bytes())</span><br><span class="line">fmt.Fprintf(w, <span class="string">"上传完毕！！！"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/flyfreelyit/article/details/80291945" target="_blank" rel="noopener">Golang中Buffer的使用</a><br><a href="https://blog.csdn.net/lengyuezuixue/article/details/81152876" target="_blank" rel="noopener">Golang中常见的Reader的拓展关系</a></p>
+<h3 id="表单上传（HTTP规范中的Content-Type不包含此类型，算是协议拓展）"><a href="#表单上传（HTTP规范中的Content-Type不包含此类型，算是协议拓展）" class="headerlink" title="表单上传（HTTP规范中的Content-Type不包含此类型，算是协议拓展）"></a>表单上传（HTTP规范中的Content-Type不包含此类型，算是协议拓展）</h3><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/11/08/mongodb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/08/mongodb/" itemprop="url">MongoDB记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T11:11:12+00:00">
+                2019-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Mac-搭建MongoDB的开发环境"><a href="#Mac-搭建MongoDB的开发环境" class="headerlink" title="Mac 搭建MongoDB的开发环境"></a>Mac 搭建MongoDB的开发环境</h2><h3 id="brew-cask-安装"><a href="#brew-cask-安装" class="headerlink" title="brew cask 安装"></a>brew cask 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 由于MongoDB已经不再开源，只能通过brew cask安装社区版本</span></span><br><span class="line">$ brew tap mongodb/brew</span><br><span class="line">$ brew install mongodb-community</span><br></pre></td></tr></table></figure>
+
+<p>默认创建相关的接口<br>a configuration file: /usr/local/etc/mongod.conf<br>a log directory path: /usr/local/var/log/mongodb<br>a data directory path: /usr/local/var/mongodb</p>
+<h3 id="配置通过CommandLineTool"><a href="#配置通过CommandLineTool" class="headerlink" title="配置通过CommandLineTool"></a>配置通过CommandLineTool</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .zshrc or .bash_profile 配置文件</span></span><br><span class="line"><span class="built_in">export</span> MONGOPATH=/usr/<span class="built_in">local</span>/Cellar/mongodb-community/4.2.1/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$MONGOPATH</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置命令"><a href="#配置命令" class="headerlink" title="配置命令"></a>配置命令</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启MongoDB</span></span><br><span class="line">$ mongod </span><br><span class="line"><span class="comment"># 48错误码 /tmp/mongodb-27017.sock没有权限，解决方法：直接删除</span></span><br><span class="line"><span class="comment"># 100错误码 /data/db 文件夹没有写权限，解决方法：chmod a+w xxx（需要深入了解linux/unix文件权限了）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开mongo repl</span></span><br><span class="line">$ monngo</span><br></pre></td></tr></table></figure>
+
+<h3 id="mongo的命令"><a href="#mongo的命令" class="headerlink" title="mongo的命令"></a>mongo的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 退出mongo</span><br><span class="line">use admin;</span><br><span class="line">db.shutdownServer();</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/11/05/go/go-05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/05/go/go-05/" itemprop="url">Go相关的一些杂项认知</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-05T09:40:47+00:00">
+                2019-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="go的自举"><a href="#go的自举" class="headerlink" title="go的自举"></a>go的自举</h2><h3 id="自举的概念"><a href="#自举的概念" class="headerlink" title="自举的概念"></a>自举的概念</h3><p>就是自己的编译器可以自行编译自己的编译器</p>
+<p>实现方法就是这个编译器的作者用这个语言的一些特性来编写编译器并在该编译器中支持这些自己使用到的特性。<br>首先，第一个编译器肯定是用别的语言写的（不论是C还是Go还是Lisp还是Python），后面的版本才能谈及自举。<br>至于先有鸡还是先有蛋，我可以举个这样的不太恰当的例子：比如我写了一个可以自举的C编译器叫作mycc，不论是编译器本身的执行效率还是生成的代码的质量都远远好于gcc（本故事纯属虚构），但我用的都是标准的C写的，那么我可以就直接用gcc编译mycc的源码，得到一份可以生成高质量代码但本身执行效率低下的mycc，然后当然如果我再用这个生成的mycc编译mycc的源码得到新的一份mycc，新的这份不光会产生和原来那份同等高质量的代码，而且还能拥有比先前版本更高的执行效率（因为前一份是gcc的编译产物，后一份是mycc的编译产物，而mycc生成的代码质量要远好于gcc的）。故事虽然是虚构的，但是道理差不多就是这么个道理。这也就是为什么如果从源码编译安装新版本的gcc的话，往往会“编译——安装”两到三遍的原因。</p>
+<h2 id="go-Module"><a href="#go-Module" class="headerlink" title="go Module"></a>go Module</h2><p>go的包管理的演变</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li><a href="https://www.jianshu.com/p/f66e77cf9602" target="_blank" rel="noopener">go语言版本控制和包依赖管理</a></li>
+</ul>
+<h3 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a>go get</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/11/05/go/go-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/05/go/go-04/" itemprop="url">04 | Go语言异步编程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-05T09:36:35+00:00">
+                2019-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h2><h3 id="Go的携程机制"><a href="#Go的携程机制" class="headerlink" title="Go的携程机制"></a>Go的携程机制</h3><h4 id="Go携程的原理"><a href="#Go携程的原理" class="headerlink" title="Go携程的原理"></a>Go携程的原理</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/11/03/go/go-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/go/go-03/" itemprop="url">03 | Go语言的包依赖</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T23:09:31+00:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="引入外部包"><a href="#引入外部包" class="headerlink" title="引入外部包"></a>引入外部包</h3><ol>
+<li>大驼峰的声明: func、struct、interface 可以被外部引用</li>
+<li>首字母为小写的声明为匿名的</li>
+</ol>
+<ul>
+<li>记录声明的注释应该是完整的句子，即使这看起来有点多余。这种方法使它们在提取到 godoc 文档时格式良好。注释应以所述物品的名称开始，并以句号结束</li>
+</ul>
+<p><a href="https://www.cnblogs.com/nnylee/p/11268526.html" target="_blank" rel="noopener">exported function xxx should have comment or be unexported解决方法</a></p>
+<h3 id="添加外部包（github上开源的包）"><a href="#添加外部包（github上开源的包）" class="headerlink" title="添加外部包（github上开源的包）"></a>添加外部包（github上开源的包）</h3><ol>
+<li>添加当前目录到GOPATH: linux/unix(mac)的分隔符为 <strong>‘:’</strong><br><code>GOPATH=&quot;/home/www/gopath1:/home/www/gopath2&quot;</code></li>
+<li>导入github包的命令<br><code>go get -u github.com/easierway/concurrent_map</code></li>
+</ol>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li>go get 时默认安装到第一个GOPATH路径</li>
+</ul>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><h4 id="Go依赖管理的缺陷"><a href="#Go依赖管理的缺陷" class="headerlink" title="Go依赖管理的缺陷"></a>Go依赖管理的缺陷</h4><ol>
+<li>同一环境下，无法做到不同项目使用同一包的不同版本</li>
+<li>无法管理对包的特定版本的依赖</li>
+</ol>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>Go 1.5 release版本之后引入了vendor目录</p>
+<h4 id="常用的依赖管理工具"><a href="#常用的依赖管理工具" class="headerlink" title="常用的依赖管理工具"></a>常用的依赖管理工具</h4><p>godep glide dep</p>
+<h4 id="go-1-11-的-go-module"><a href="#go-1-11-的-go-module" class="headerlink" title="go 1.11 的 go module"></a>go 1.11 的 go module</h4><h5 id="go-modules命令"><a href="#go-modules命令" class="headerlink" title="go modules命令"></a>go modules命令</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> mod init</span><br></pre></td></tr></table></figure>
+
+<h5 id="自建包的依赖"><a href="#自建包的依赖" class="headerlink" title="自建包的依赖"></a>自建包的依赖</h5><p>由于使用go modules管理依赖，当前项目下自建的package(非main package的)的引入方式有两种</p>
+<ul>
+<li>将当前项目的路径加入到GOPATH下(TODO: 未验证是否会与go modules冲突)<br><code>import (&quot;xxx&quot;) // 直接引入package的方式</code></li>
+<li>不加入GOPATH，package的管理方式使用go modules<br><code>import (&quot;{app}/xxx&quot;) // app是当前项目生成module(go mod init {app})时候配置名称</code></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/11/02/vue/sass-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/02/vue/sass-01/" itemprop="url">Vue中的样式详解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-02T11:31:19+00:00">
+                2019-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Sass语法"><a href="#Sass语法" class="headerlink" title="Sass语法"></a>Sass语法</h2><h2 id="CSS的书写规范"><a href="#CSS的书写规范" class="headerlink" title="CSS的书写规范"></a>CSS的书写规范</h2><h2 id="覆盖开源组件中的CSS"><a href="#覆盖开源组件中的CSS" class="headerlink" title="覆盖开源组件中的CSS"></a>覆盖开源组件中的CSS</h2><h2 id="提取全局通用的样式文件"><a href="#提取全局通用的样式文件" class="headerlink" title="提取全局通用的样式文件"></a>提取全局通用的样式文件</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/24/node/node-05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/24/node/node-05/" itemprop="url">node-05</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T16:40:33+00:00">
+                2019-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="BFF-实例架构"><a href="#BFF-实例架构" class="headerlink" title="BFF 实例架构"></a>BFF 实例架构</h2><p>TODO: 了解lazy-load的前端技术</p>
+<h2 id="BFF-技术预研"><a href="#BFF-技术预研" class="headerlink" title="BFF 技术预研"></a>BFF 技术预研</h2><ul>
+<li>Node.js 基础</li>
+<li>向前提供 HTTP 服务</li>
+<li>向后进行 RPC 通信</li>
+</ul>
+<h2 id="极客时间BFF重构需求"><a href="#极客时间BFF重构需求" class="headerlink" title="极客时间BFF重构需求"></a>极客时间BFF重构需求</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/21/go/go-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/21/go/go-02/" itemprop="url">02 | Go语言基本教程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T12:27:40+00:00">
+                2019-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>go1.8版本之后如果没有GOPATH使用默认</p>
+<h2 id="第一个go程序"><a href="#第一个go程序" class="headerlink" title="第一个go程序"></a>第一个go程序</h2><h3 id="应用程序入口"><a href="#应用程序入口" class="headerlink" title="应用程序入口"></a>应用程序入口</h3><ul>
+<li>必须是 main 包: package main(目录可以不是main)</li>
+<li>必须是 main 方法: func main() {}</li>
+<li>文件名不一定是 main.go</li>
+</ul>
+<h3 id="应用程序返回值"><a href="#应用程序返回值" class="headerlink" title="应用程序返回值"></a>应用程序返回值</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.Exit(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序的入参"><a href="#应用程序的入参" class="headerlink" title="应用程序的入参"></a>应用程序的入参</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.Args[]</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量、常量与其他语言的差异"><a href="#变量、常量与其他语言的差异" class="headerlink" title="变量、常量与其他语言的差异"></a>变量、常量与其他语言的差异</h2><h3 id="编写测试程序（类似于JUnit-这里为了方便学习代码测试）"><a href="#编写测试程序（类似于JUnit-这里为了方便学习代码测试）" class="headerlink" title="编写测试程序（类似于JUnit, 这里为了方便学习代码测试）"></a>编写测试程序（类似于JUnit, 这里为了方便学习代码测试）</h3><ol>
+<li>源码文件以 _test 结尾： xxx_test.go</li>
+<li>测试方法名以 Test 开头： func TestXXX(t *testing.T) {…}</li>
+</ol>
+<p>注意：</p>
+<ul>
+<li>go test -v xxx_test.go 才能输出 t.Log 里的文字</li>
+<li>如果你使用的是 vs code 编辑器的话，安装好了go的相关配置，会在测试文件中看到 <code>run test | debug test</code>的提示，你点击 <code>run test</code> 之后在下面看不到 <code>t.Log()</code> 输出的内容就请把 <code>&quot;go.testFlags&quot;: [&quot;-v&quot;],</code> 这行代码加入到你的 settings.json 文件中（设置 Workspace Settings。打开 .vscode/settings.json）</li>
+</ul>
+<h3 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种写法</span></span><br><span class="line"><span class="keyword">var</span> a <span class="keyword">int</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b <span class="keyword">int</span> = <span class="number">2</span></span><br><span class="line"><span class="comment">// 第二种写法</span></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">  a <span class="keyword">int</span> = <span class="number">1</span></span><br><span class="line">  b <span class="keyword">int</span> = <span class="number">2</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// 第三种写法(自动类型推断)</span></span><br><span class="line">a := <span class="number">1</span></span><br><span class="line">b := <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>go推崇简单的代码方式，选择一种就好了，第三种最简洁（但是会不会和swift一样有性能问题）</p>
+<p>变量赋值与其他编程语言的区别</p>
+<ul>
+<li>赋值可以进行自动类型判断</li>
+<li>在一个赋值语句中可以对多个变量同时赋值</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b = b, a</span><br></pre></td></tr></table></figure>
+
+<h3 id="常量与其他编程语言的差异"><a href="#常量与其他编程语言的差异" class="headerlink" title="常量与其他编程语言的差异"></a>常量与其他编程语言的差异</h3><ul>
+<li>快速设置连续值<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>( </span><br><span class="line">  Monday = <span class="literal">iota</span> + <span class="number">1</span></span><br><span class="line">  Tuesday</span><br><span class="line">  Wednesday</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  Readable = <span class="number">1</span> &lt;&lt; <span class="literal">iota</span></span><br><span class="line">  Writable</span><br><span class="line">  Executable</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="与其他编程语言的差异："><a href="#与其他编程语言的差异：" class="headerlink" title="与其他编程语言的差异："></a>与其他编程语言的差异：</h3><ul>
+<li>Go语言不允许隐式类型转换（c/c++允许小类型向大的隐式转换）</li>
+<li>别名和原有类型也不能进行隐式类型转换</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> type_test</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"testing"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> MyInt = <span class="keyword">int64</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestImplicit</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	<span class="comment">// var a int = 1</span></span><br><span class="line">	<span class="keyword">var</span> a <span class="keyword">int32</span> = <span class="number">1</span></span><br><span class="line">	<span class="keyword">var</span> b <span class="keyword">int64</span></span><br><span class="line">	<span class="comment">// b = a</span></span><br><span class="line">	b = <span class="keyword">int64</span>(a)</span><br><span class="line">	<span class="keyword">var</span> c MyInt</span><br><span class="line">	<span class="comment">// c = b</span></span><br><span class="line">	c = MyInt(b)</span><br><span class="line">	t.Log(a, b, c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="预定义值在Math模块"><a href="#预定义值在Math模块" class="headerlink" title="预定义值在Math模块"></a>预定义值在Math模块</h3><h3 id="go的内存"><a href="#go的内存" class="headerlink" title="go的内存"></a>go的内存</h3><p>go内存是垃圾回收的，但是为了高效，也支持指针</p>
+<ul>
+<li>支持指针，但是不支持指针运算</li>
+<li>string是值类型，其默认的初始化值是空字符串</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestPoint</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	a := <span class="number">1</span></span><br><span class="line">	aPtr := &amp;a</span><br><span class="line">	<span class="comment">// aPtr += 1</span></span><br><span class="line">	t.Log(a, aPtr)</span><br><span class="line">	t.Logf(<span class="string">"%T %T"</span>, a, aPtr)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestString</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	<span class="keyword">var</span> s <span class="keyword">string</span></span><br><span class="line">	t.Log(<span class="string">"*"</span> + s + <span class="string">"*"</span>)</span><br><span class="line">	t.Log(<span class="built_in">len</span>(s))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><ul>
+<li>禁止了前置++，–自增自减的运算</li>
+<li>用 == 比较数组<ul>
+<li>相同维数且相同个数元素的数组才可以比较</li>
+<li>两个数组的元素都相等才相等</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestCompareArray</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	a := [...]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">	b := [...]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line">	<span class="comment">// c := [...]int&#123;1, 2, 3, 4, 5&#125;</span></span><br><span class="line">	d := [...]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line">	t.Log(a == b)</span><br><span class="line">	t.Log(a == d)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>&amp;^ 按位清零</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> &amp;^ <span class="number">0</span> -- <span class="number">1</span></span><br><span class="line"><span class="number">1</span> &amp;^ <span class="number">1</span> -- <span class="number">0</span></span><br><span class="line"><span class="number">0</span> &amp;^ <span class="number">1</span> -- <span class="number">0</span></span><br><span class="line"><span class="number">0</span> &amp;^ <span class="number">0</span> -- <span class="number">0</span></span><br><span class="line"><span class="comment">// 右边为0，左边值，右边为1，左边置为0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 按位清零</span></span><br><span class="line"><span class="keyword">const</span>(</span><br><span class="line">	Readable = <span class="number">1</span> &lt;&lt; <span class="literal">iota</span></span><br><span class="line">	Writable</span><br><span class="line">	Executable</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestBitClear</span></span> &#123;</span><br><span class="line">	a := Readable</span><br><span class="line">	a &amp;^ Readable</span><br><span class="line">	a &amp;^ Executable</span><br><span class="line">	t.Log(a&amp;Readable == Readable, a&amp;Writable == Writable, a&amp;Executable == Executable)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="循环和条件"><a href="#循环和条件" class="headerlink" title="循环和条件"></a>循环和条件</h2><h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>只支持for循环</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n := <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> n &lt; <span class="number">5</span> &#123;</span><br><span class="line">	t.Log(n)</span><br><span class="line">	n++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="if条件"><a href="#if条件" class="headerlink" title="if条件"></a>if条件</h3><p>与其他主要编程语言的差异</p>
+<ol>
+<li>condition 表达式结果必须为布尔值</li>
+<li>支持变量赋值（和swift一样）<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">var</span> declaration; condition &#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// go的常用用法，类似于tuple</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestIfMultiSet</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	<span class="keyword">if</span> v, err = foo(); err == <span class="literal">nil</span> &#123;</span><br><span class="line">		t.Log(<span class="string">"1 == 1"</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		t.Log(<span class="string">"1 != 1"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="switch条件"><a href="#switch条件" class="headerlink" title="switch条件"></a>switch条件</h3><ul>
+<li>默认有break </li>
+<li>单个case后面有多个元素</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> condition</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"testing"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// func TestIfMultiSet(t *testing.T)  &#123;</span></span><br><span class="line"><span class="comment">// 	if v, err = foo(); err == nil &#123;</span></span><br><span class="line"><span class="comment">// 		t.Log("1 == 1")</span></span><br><span class="line"><span class="comment">// 	&#125; else &#123;</span></span><br><span class="line"><span class="comment">// 		t.Log("1 != 1")</span></span><br><span class="line"><span class="comment">// 	&#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestSwitchMultiCase</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">		<span class="comment">// switch i &#123;</span></span><br><span class="line">		<span class="comment">// 	case 0, 2: </span></span><br><span class="line">		<span class="comment">// 		t.Log("Even")</span></span><br><span class="line">		<span class="comment">// 	case 1, 3, 5:</span></span><br><span class="line">		<span class="comment">// 		t.Log("Odd")</span></span><br><span class="line">		<span class="comment">// 	default:</span></span><br><span class="line">		<span class="comment">// 		t.Log("unknown")</span></span><br><span class="line">		<span class="comment">// &#125;</span></span><br><span class="line">		/</span><br><span class="line">		<span class="comment">// 注意下面的i</span></span><br><span class="line">		<span class="keyword">switch</span> &#123;</span><br><span class="line">			<span class="keyword">case</span> i%<span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">				t.Log(<span class="string">"Even"</span>)</span><br><span class="line">			<span class="keyword">case</span> i%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">				t.Log(<span class="string">"Odd"</span>)</span><br><span class="line">			<span class="keyword">default</span>: </span><br><span class="line">				t.Log(<span class="string">"unknown"</span>)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组和切片"><a href="#数组和切片" class="headerlink" title="数组和切片"></a>数组和切片</h2><h3 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a [<span class="number">3</span>]<span class="keyword">int</span></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">b := [<span class="number">3</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">c := [<span class="number">2</span>][<span class="number">2</span>]<span class="keyword">int</span>&#123;&#123;<span class="number">1</span>, <span class="number">2</span>&#125;, &#123;<span class="number">3</span>, <span class="number">4</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line">d := [...]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h3><p>slice 用起来可以简单的看做是可变数组，实际是go的结构体<br><img src="/2019/10/21/go/go-02/slice.png" alt="slice"></p>
+<ul>
+<li>ptr 指向连续的内存空间，指向数组</li>
+<li>len 元素个数</li>
+<li>cap 内部数组的容量</li>
+</ul>
+<p>=&gt; 代码理解len和cap的区别</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s := []<span class="keyword">int</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="slice的增长"><a href="#slice的增长" class="headerlink" title="slice的增长"></a>slice的增长</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestSliceGrowing</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	s := []<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">		s = <span class="built_in">append</span>(s, i)</span><br><span class="line">		t.Log(<span class="built_in">len</span>(s), <span class="built_in">cap</span>(s))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">1</span> <span class="number">1</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">2</span> <span class="number">2</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">3</span> <span class="number">4</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">4</span> <span class="number">4</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">5</span> <span class="number">8</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">6</span> <span class="number">8</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">7</span> <span class="number">8</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">8</span> <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>s = append(s, 1): cap的变化显示结构体指向的连续存储空间增长时，是创建新的一片连续空间(地址发生了变化)，所以需要拷贝赋值，会影响性能<br><img src="/2019/10/21/go/go-02/sliceme.png" alt="slice_me"></p>
+<ul>
+<li>多个slice共享存储空间（通过指针寻找数据内存地址）</li>
+<li>修改一个，内存中的数据改变，都是一起改变的<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestSliceShareMemory</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	year := []<span class="keyword">string</span>&#123;<span class="string">"Jan"</span>, <span class="string">"Feb"</span>, <span class="string">"Mar"</span>, <span class="string">"Apr"</span>, <span class="string">"May"</span>, <span class="string">"Jun"</span>, <span class="string">"Jul"</span>, <span class="string">"Aug"</span>, <span class="string">"Sep"</span>, <span class="string">"Oct"</span>, <span class="string">"Nov"</span>, <span class="string">"Dec"</span>&#125;</span><br><span class="line">	Q2 := year[<span class="number">3</span>:<span class="number">6</span>]</span><br><span class="line">	t.Log(Q2, <span class="built_in">len</span>(Q2), <span class="built_in">cap</span>(Q2))</span><br><span class="line">	summer := year[<span class="number">5</span>:<span class="number">8</span>]</span><br><span class="line">	t.Log(summer, <span class="built_in">len</span>(summer), <span class="built_in">cap</span>(summer))</span><br><span class="line">	summer[<span class="number">0</span>] = <span class="string">"Unknown"</span></span><br><span class="line">	t.Log(Q2)</span><br><span class="line">	t.Log(year)</span><br><span class="line">&#125;</span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">36</span>: [Apr May Jun] <span class="number">3</span> <span class="number">9</span></span><br><span class="line"><span class="comment">// 为什么是cap是9，从截取的Apr开始后面是9个，cap指向的是后面连续的存储空间</span></span><br><span class="line">Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">38</span>: [Jun Jul Aug] <span class="number">3</span> <span class="number">7</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">40</span>: [Apr May Unknown]</span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">41</span>: [Jan Feb Mar Apr May Unknown Jul Aug Sep Oct Nov Dec]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="数组和切片的区别"><a href="#数组和切片的区别" class="headerlink" title="数组和切片的区别"></a>数组和切片的区别</h3><ol>
+<li>容量是否可伸缩（数组不可变，切片可变）</li>
+<li>是否可以进行比较（切片不可比较，只能和nil比较）</li>
+</ol>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h3 id="Map的声明"><a href="#Map的声明" class="headerlink" title="Map的声明"></a>Map的声明</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">m1 := <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span>&#123;<span class="string">"one"</span>: <span class="number">1</span>, <span class="string">"two"</span>: <span class="number">2</span>, <span class="string">"three"</span>: <span class="number">3</span>&#125;</span><br><span class="line">m2 := <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">m2[<span class="string">"one"</span>] = <span class="number">1</span></span><br><span class="line">和 slice 的内存方式是一样的，是共享内存的方式</span><br><span class="line">m3 := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span>, <span class="number">10</span> <span class="comment">/*Initial Capacity*/</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Map的key-value"><a href="#Map的key-value" class="headerlink" title="Map的key-value"></a>Map的key-value</h3><ul>
+<li>和主流语言不一样，m[key] 取value的时候如果key不存在，返回0而不是nil， 这样是无法判断是key不存在还是value真的是0</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// go 的解决方法</span></span><br><span class="line"><span class="keyword">if</span> v, ok := m1[<span class="number">3</span>]; ok &#123;</span><br><span class="line">	t.Log(<span class="string">"Key 3's value is %d"</span>, v)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	t.Log(<span class="string">"Key 3 is not existing."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="map的遍历"><a href="#map的遍历" class="headerlink" title="map的遍历"></a>map的遍历</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">m := <span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>: <span class="number">1</span>, <span class="number">2</span>: <span class="number">4</span>, <span class="number">3</span>: <span class="number">8</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">range</span> m &#123;</span><br><span class="line">	t.Log(k,v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="map实现工厂模式（value为func，func在go里面是一等公民）"><a href="#map实现工厂模式（value为func，func在go里面是一等公民）" class="headerlink" title="map实现工厂模式（value为func，func在go里面是一等公民）"></a>map实现工厂模式（value为func，func在go里面是一等公民）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m := <span class="keyword">map</span>[<span class="keyword">int</span>]<span class="function"><span class="keyword">func</span><span class="params">(op <span class="keyword">int</span>)</span> <span class="title">int</span></span>&#123;&#125;</span><br><span class="line">m1 = <span class="function"><span class="keyword">func</span><span class="params">(op <span class="keyword">int</span>)</span> <span class="title">int</span></span>&#123; <span class="keyword">return</span> op &#125;</span><br><span class="line">m2 = <span class="function"><span class="keyword">func</span><span class="params">(op <span class="keyword">int</span>)</span> <span class="title">int</span></span>&#123; <span class="keyword">return</span> op * op&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现Set-map-type-bool"><a href="#实现Set-map-type-bool" class="headerlink" title="实现Set map[type]bool"></a>实现Set map[type]bool</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestMapForSet</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	mySet := <span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">bool</span>&#123;&#125;</span><br><span class="line">	mySet[<span class="number">1</span>] = <span class="literal">true</span></span><br><span class="line">	n := <span class="number">1</span></span><br><span class="line">	<span class="comment">// n := 3</span></span><br><span class="line">	<span class="keyword">if</span> mySet[n] &#123;</span><br><span class="line">		t.Log(<span class="string">"1 is existing"</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		t.Logf(<span class="string">"%d is not existing"</span>, n)</span><br><span class="line">	&#125;</span><br><span class="line">	mySet[<span class="number">3</span>] = <span class="literal">true</span></span><br><span class="line">	t.Log(<span class="built_in">len</span>(mySet))</span><br><span class="line"></span><br><span class="line">	<span class="built_in">delete</span>(mySet, <span class="number">1</span>)</span><br><span class="line">	n = <span class="number">1</span></span><br><span class="line">	<span class="keyword">if</span> mySet[n] &#123;</span><br><span class="line">		t.Log(<span class="string">"1 is existing"</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		t.Logf(<span class="string">"%d is not existing"</span>, n)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Func"><a href="#Func" class="headerlink" title="Func"></a>Func</h2><h3 id="Func-1"><a href="#Func-1" class="headerlink" title="Func"></a>Func</h3><ul>
+<li>go中的函数是一等公民</li>
+<li>go函数可以接受多个传参</li>
+<li>defer延时函数</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">returnMultiValues</span><span class="params">()</span> <span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> rand.Intn(<span class="number">10</span>), rand.Intn(<span class="number">20</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="行为的定义和实现"><a href="#行为的定义和实现" class="headerlink" title="行为的定义和实现"></a>行为的定义和实现</h3><h4 id="go的对象的声明"><a href="#go的对象的声明" class="headerlink" title="go的对象的声明"></a>go的对象的声明</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 结构体(对象，类似OC的对象就是结构体指针)</span></span><br><span class="line"><span class="keyword">type</span> Employee <span class="keyword">struct</span> &#123;</span><br><span class="line">	ID:  	<span class="keyword">string</span></span><br><span class="line">	Name: <span class="keyword">string</span></span><br><span class="line">	Age:	<span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestCreateObj</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	e := Employee&#123;<span class="string">"0"</span>, <span class="string">"Bob"</span>, <span class="number">20</span>&#125;</span><br><span class="line">	e1 := Employee&#123;Name: <span class="string">"Mike"</span>, Age: <span class="number">30</span>&#125;</span><br><span class="line">	e2 := <span class="built_in">new</span>(Employee)</span><br><span class="line">	e2.ID = <span class="string">"2"</span></span><br><span class="line">	e2.Age = <span class="number">22</span></span><br><span class="line">	e2.Name = <span class="string">"Rose"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>new(Employee)返回的是指针类型</li>
+<li>go中访问指针的成员不需要-&gt;, 点语法可以直接访问</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Arthas</p>
+              <p class="site-description motion-element" itemprop="description">Stay foolish, stay hungry!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arthas</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

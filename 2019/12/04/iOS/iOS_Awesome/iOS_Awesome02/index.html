@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS开发工具,iOS架构,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="什么是组件化开发为什么需要组件化开发组件化技术预研CocoaPods私有仓库CocoaPods私有仓库的搭建是组件化开发一个很重要的技术点，除非是完全迁移到Swift + Carthage的团队，但是现阶段动态化的框架方案极度依赖OC的runtime能力，所以暂时CocoaPods的私有库还是主流(当然Swift私有库也是可以通过pod的framework的方式管理)。 CocoaPods too">
+<meta name="keywords" content="iOS开发工具,iOS架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS组件化">
+<meta property="og:url" content="http://arthasmay.github.io/2019/12/04/iOS/iOS_Awesome/iOS_Awesome02/index.html">
+<meta property="og:site_name" content="Arthas的技术小栈">
+<meta property="og:description" content="什么是组件化开发为什么需要组件化开发组件化技术预研CocoaPods私有仓库CocoaPods私有仓库的搭建是组件化开发一个很重要的技术点，除非是完全迁移到Swift + Carthage的团队，但是现阶段动态化的框架方案极度依赖OC的runtime能力，所以暂时CocoaPods的私有库还是主流(当然Swift私有库也是可以通过pod的framework的方式管理)。 CocoaPods too">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-05-12T00:04:35.131Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS组件化">
+<meta name="twitter:description" content="什么是组件化开发为什么需要组件化开发组件化技术预研CocoaPods私有仓库CocoaPods私有仓库的搭建是组件化开发一个很重要的技术点，除非是完全迁移到Swift + Carthage的团队，但是现阶段动态化的框架方案极度依赖OC的runtime能力，所以暂时CocoaPods的私有库还是主流(当然Swift私有库也是可以通过pod的framework的方式管理)。 CocoaPods too">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://arthasmay.github.io/2019/12/04/iOS/iOS_Awesome/iOS_Awesome02/">
+
+
+
+
+
+  <title>iOS组件化 | Arthas的技术小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Arthas的技术小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知其然，知其所以然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/12/04/iOS/iOS_Awesome/iOS_Awesome02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS组件化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T10:17:56+00:00">
+                2019-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是组件化开发"><a href="#什么是组件化开发" class="headerlink" title="什么是组件化开发"></a>什么是组件化开发</h2><h2 id="为什么需要组件化开发"><a href="#为什么需要组件化开发" class="headerlink" title="为什么需要组件化开发"></a>为什么需要组件化开发</h2><h2 id="组件化技术预研"><a href="#组件化技术预研" class="headerlink" title="组件化技术预研"></a>组件化技术预研</h2><h3 id="CocoaPods私有仓库"><a href="#CocoaPods私有仓库" class="headerlink" title="CocoaPods私有仓库"></a>CocoaPods私有仓库</h3><p>CocoaPods私有仓库的搭建是组件化开发一个很重要的技术点，除非是完全迁移到Swift + Carthage的团队，但是现阶段动态化的框架方案极度依赖OC的runtime能力，所以暂时CocoaPods的私有库还是主流(当然Swift私有库也是可以通过pod的framework的方式管理)。</p>
+<h4 id="CocoaPods-tools规划"><a href="#CocoaPods-tools规划" class="headerlink" title="CocoaPods tools规划"></a>CocoaPods tools规划</h4><ol>
+<li>RTPrivateSpecs仓库: 管理所有私有库的podspec文件</li>
+<li>RTNetwork、RTKit这类仓库: 存储私有库源码</li>
+<li>通过 GUI 管理私有仓库的 update、push和打tag等私有库的CI</li>
+</ol>
+<h4 id="创建pods私有库的流程"><a href="#创建pods私有库的流程" class="headerlink" title="创建pods私有库的流程"></a>创建pods私有库的流程</h4><h5 id="一、创建spec-Repo"><a href="#一、创建spec-Repo" class="headerlink" title="一、创建spec Repo:"></a>一、创建spec Repo:</h5><ol>
+<li><p>在Gitlab上创建Pods私有仓库: RTPrivateSpecs<br>这个仓库是用来保存未来所有私有库.podspec文件，包括版本的管理</p>
+</li>
+<li><p>添加私有库 RTPrivateSpecs 的私有Spec Repo     </p>
+<ul>
+<li>.cocoapods/repos 中的master是官方的Spec Repo</li>
+<li>执行添加Spec Repo的命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># XXPrivateSpecs: 私有Spec Repo的仓库name</span></span><br><span class="line"><span class="comment"># https://github.com/xxx/mySpecs.git: 私有Spec Repo的仓库地址，如果团队要使用SSH, 请确保所有人已经配置好ssh</span></span><br><span class="line"><span class="variable">$pod</span> repo add XXPrivateSpecs https://github.com/xxx/mySpecs.git</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>创建私有库源码库:</p>
+<ul>
+<li>创建私有源码库的两种方式:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据Pods官方模板创建:</span></span><br><span class="line"><span class="variable">$pod</span> lib create RTKit</span><br><span class="line"><span class="comment"># 自定义源码库，添加.podspec </span></span><br><span class="line"><span class="variable">$pod</span> spsc create RTKit</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>spec文件的配置:</p>
+<ul>
+<li>spec文件是Ruby的脚本文件，这边只列举一些常用的配置<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Pod::Spec.new <span class="keyword">do</span> <span class="params">|s|</span></span><br><span class="line">  <span class="comment"># 私有库名</span></span><br><span class="line">  s.name         = <span class="string">'RTKit'</span></span><br><span class="line">  <span class="comment"># 摘要介绍</span></span><br><span class="line">  s.summary      = <span class="string">'Network layer for iOS.'</span></span><br><span class="line">  <span class="comment"># 版本号: 这个必须和source的tag对应好</span></span><br><span class="line">  s.version      = <span class="string">'0.0.1'</span></span><br><span class="line">  <span class="comment"># 这个必须在git仓库配置的，不然后面执行pod repo push的时候是不会验证通过的</span></span><br><span class="line">  s.license      = &#123; <span class="symbol">:type</span> =&gt; <span class="string">'MIT'</span>, <span class="symbol">:file</span> =&gt; <span class="string">'LICENSE'</span> &#125;</span><br><span class="line">  s.authors      = &#123; <span class="string">'arthas'</span> =&gt; <span class="string">'arthasmay@gmail.com'</span> &#125;</span><br><span class="line">  s.social_media_url = <span class="string">'https://arthasmay.github.io'</span></span><br><span class="line">  s.homepage     = <span class="string">'https://github.com/../RTKit'</span></span><br><span class="line">  s.platform     = <span class="symbol">:ios</span>, <span class="string">'7.0'</span></span><br><span class="line">  s.ios.deployment_target = <span class="string">'10.0'</span></span><br><span class="line">  <span class="comment"># 源码仓库，最好是https的，防止团队有成员没有配置ssh</span></span><br><span class="line">  s.source       = &#123; <span class="symbol">:git</span> =&gt; <span class="string">'git@code.xxx.com:xxx/rtnetwork.git'</span>, <span class="symbol">:tag</span> =&gt; s.version.to_s &#125;</span><br><span class="line">  </span><br><span class="line">  s.requires_arc = <span class="literal">true</span></span><br><span class="line">  s.source_files = <span class="string">'*.&#123;h,m&#125;'</span></span><br><span class="line">  s.public_header_files = <span class="string">'*.&#123;h&#125;'</span></span><br><span class="line">  </span><br><span class="line">  s.frameworks = <span class="string">'UIKit'</span>, <span class="string">'CoreFoundation'</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<p>踩坑的地方：</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/75e19c92df50" target="_blank" rel="noopener">Podsepc语法说明</a></li>
+<li>MIT license 中必须和 s.author 对应，arthas&lt;<a href="mailto:arthasmay@gmail.com" target="_blank" rel="noopener">arthasmay@gmail.com</a>&gt;，我觉得不需要</li>
+<li>后面会拆分成submodules，这块的内容后面补充</li>
+</ul>
+<ol start="5">
+<li><p>上传私有库源码</p>
+<ul>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将本地代码关联和上传远程仓库</span></span><br><span class="line"><span class="variable">$git</span> init</span><br><span class="line"><span class="variable">$git</span> remote add origin git@code.xxx.com:xxx/rtcao.git</span><br><span class="line"><span class="variable">$git</span> add . </span><br><span class="line"><span class="variable">$git</span> commit -m <span class="string">"Commit tag 0.0.1"</span></span><br><span class="line"><span class="variable">$git</span> push -u origin master</span><br><span class="line"><span class="comment"># 打上pods版本version对应的tag</span></span><br><span class="line"><span class="variable">$git</span> tag 0.0.1</span><br><span class="line"><span class="variable">$git</span> push --tags</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>校验.podspec文件</p>
+<ul>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在podspec所在目录执行 or 指定校验文件</span></span><br><span class="line"><span class="variable">$pod</span> spec lint //[xxx]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>将依赖库的spec文件push到spec仓库</p>
+<ul>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 仓库名 spec文件名字</span></span><br><span class="line"><span class="variable">$pod</span> repo push RTPrivateSpecs RTNetwork.podspec</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<p>注意：<br>如果创建的用来存储podspec的仓库处于无文件的空状态，那在pod repo push的时候会碰到下面的问题</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">创建一个空的仓库后，git pull/push 报错,报错信息如下</span><br><span class="line">Your configuration specifies to merge with the ref &apos;refs/heads/master&apos; from the remote, but no such ref was fetched.</span><br><span class="line">这是正常的，在本地目录添加一个文件，commit 后 push 即可。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><a href="https://segmentfault.com/a/1190000012787100" target="_blank" rel="noopener">错误解决参考</a></p>
+<ol start="8">
+<li><p>验证私有库的使用</p>
+<ul>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看私有库的文件树：</span></span><br><span class="line"><span class="variable">$tree</span> -L 2</span><br><span class="line"><span class="comment"># 文件树：</span></span><br><span class="line">.</span><br><span class="line">├── README.md</span><br><span class="line">└── RTKit</span><br><span class="line">    └── 0.0.1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>项目验证</p>
+<ul>
+<li>在Podfile文件添加：<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># podfile写入依赖</span></span><br><span class="line">source <span class="symbol">https:</span>/<span class="regexp">/code.xxx.com/xxx</span><span class="regexp">/rtprivatespecs.git</span></span><br><span class="line"><span class="regexp">pod 'RTKit'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<p>执行pod install</p>
+<h5 id="Pods私有仓库的升级-文档待完善"><a href="#Pods私有仓库的升级-文档待完善" class="headerlink" title="Pods私有仓库的升级(文档待完善)"></a>Pods私有仓库的升级(文档待完善)</h5><h4 id="Pods相关GUI工具-工具开发待完成"><a href="#Pods相关GUI工具-工具开发待完成" class="headerlink" title="Pods相关GUI工具(工具开发待完成)"></a>Pods相关GUI工具(工具开发待完成)</h4><h3 id="动态化方案"><a href="#动态化方案" class="headerlink" title="动态化方案"></a>动态化方案</h3><h4 id="路由：逻辑-页面和业务逻辑的分发"><a href="#路由：逻辑-页面和业务逻辑的分发" class="headerlink" title="路由：逻辑(页面和业务逻辑的分发)"></a>路由：逻辑(页面和业务逻辑的分发)</h4><h4 id="hybird开发：Web-amp-flutter的跨平台开发"><a href="#hybird开发：Web-amp-flutter的跨平台开发" class="headerlink" title="hybird开发：Web &amp; flutter的跨平台开发"></a>hybird开发：Web &amp; flutter的跨平台开发</h4><h3 id="组件化的颗粒度选择"><a href="#组件化的颗粒度选择" class="headerlink" title="组件化的颗粒度选择"></a>组件化的颗粒度选择</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发工具/" rel="tag"># iOS开发工具</a>
+          
+            <a href="/tags/iOS架构/" rel="tag"># iOS架构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/28/iOS/iOS_Awesome/iOS_Awesome01/" rel="next" title="iOS_Awesome_01 | 一些iOS常见的问题和答案">
+                <i class="fa fa-chevron-left"></i> iOS_Awesome_01 | 一些iOS常见的问题和答案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/22/playground/linux/system_01/" rel="prev" title="程序员的折腾：Manjara的安装和环境配置">
+                程序员的折腾：Manjara的安装和环境配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Arthas</p>
+              <p class="site-description motion-element" itemprop="description">Stay foolish, stay hungry!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是组件化开发"><span class="nav-number">1.</span> <span class="nav-text">什么是组件化开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么需要组件化开发"><span class="nav-number">2.</span> <span class="nav-text">为什么需要组件化开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件化技术预研"><span class="nav-number">3.</span> <span class="nav-text">组件化技术预研</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods私有仓库"><span class="nav-number">3.1.</span> <span class="nav-text">CocoaPods私有仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CocoaPods-tools规划"><span class="nav-number">3.1.1.</span> <span class="nav-text">CocoaPods tools规划</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建pods私有库的流程"><span class="nav-number">3.1.2.</span> <span class="nav-text">创建pods私有库的流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、创建spec-Repo"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">一、创建spec Repo:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pods私有仓库的升级-文档待完善"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">Pods私有仓库的升级(文档待完善)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pods相关GUI工具-工具开发待完成"><span class="nav-number">3.1.3.</span> <span class="nav-text">Pods相关GUI工具(工具开发待完成)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态化方案"><span class="nav-number">3.2.</span> <span class="nav-text">动态化方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由：逻辑-页面和业务逻辑的分发"><span class="nav-number">3.2.1.</span> <span class="nav-text">路由：逻辑(页面和业务逻辑的分发)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hybird开发：Web-amp-flutter的跨平台开发"><span class="nav-number">3.2.2.</span> <span class="nav-text">hybird开发：Web &amp; flutter的跨平台开发</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件化的颗粒度选择"><span class="nav-number">3.3.</span> <span class="nav-text">组件化的颗粒度选择</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arthas</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Go,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="go1.8版本之后如果没有GOPATH使用默认 第一个go程序应用程序入口 必须是 main 包: package main(目录可以不是main) 必须是 main 方法: func main() {} 文件名不一定是 main.go  应用程序返回值1os.Exit(0)  应用程序的入参1os.Args[]  变量、常量与其他语言的差异编写测试程序（类似于JUnit, 这里为了方便学习代码测">
+<meta name="keywords" content="Go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02 | Go语言基本教程">
+<meta property="og:url" content="http://arthasmay.github.io/2019/10/21/go/go-02/index.html">
+<meta property="og:site_name" content="Arthas的技术小栈">
+<meta property="og:description" content="go1.8版本之后如果没有GOPATH使用默认 第一个go程序应用程序入口 必须是 main 包: package main(目录可以不是main) 必须是 main 方法: func main() {} 文件名不一定是 main.go  应用程序返回值1os.Exit(0)  应用程序的入参1os.Args[]  变量、常量与其他语言的差异编写测试程序（类似于JUnit, 这里为了方便学习代码测">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://arthasmay.github.io/2019/10/21/go/go-02/slice.png">
+<meta property="og:image" content="http://arthasmay.github.io/2019/10/21/go/go-02/sliceme.png">
+<meta property="og:updated_time" content="2020-05-12T00:04:35.123Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="02 | Go语言基本教程">
+<meta name="twitter:description" content="go1.8版本之后如果没有GOPATH使用默认 第一个go程序应用程序入口 必须是 main 包: package main(目录可以不是main) 必须是 main 方法: func main() {} 文件名不一定是 main.go  应用程序返回值1os.Exit(0)  应用程序的入参1os.Args[]  变量、常量与其他语言的差异编写测试程序（类似于JUnit, 这里为了方便学习代码测">
+<meta name="twitter:image" content="http://arthasmay.github.io/2019/10/21/go/go-02/slice.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://arthasmay.github.io/2019/10/21/go/go-02/">
+
+
+
+
+
+  <title>02 | Go语言基本教程 | Arthas的技术小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Arthas的技术小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知其然，知其所以然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arthasmay.github.io/2019/10/21/go/go-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthas">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arthas的技术小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">02 | Go语言基本教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T12:27:40+00:00">
+                2019-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>go1.8版本之后如果没有GOPATH使用默认</p>
+<h2 id="第一个go程序"><a href="#第一个go程序" class="headerlink" title="第一个go程序"></a>第一个go程序</h2><h3 id="应用程序入口"><a href="#应用程序入口" class="headerlink" title="应用程序入口"></a>应用程序入口</h3><ul>
+<li>必须是 main 包: package main(目录可以不是main)</li>
+<li>必须是 main 方法: func main() {}</li>
+<li>文件名不一定是 main.go</li>
+</ul>
+<h3 id="应用程序返回值"><a href="#应用程序返回值" class="headerlink" title="应用程序返回值"></a>应用程序返回值</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.Exit(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序的入参"><a href="#应用程序的入参" class="headerlink" title="应用程序的入参"></a>应用程序的入参</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.Args[]</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量、常量与其他语言的差异"><a href="#变量、常量与其他语言的差异" class="headerlink" title="变量、常量与其他语言的差异"></a>变量、常量与其他语言的差异</h2><h3 id="编写测试程序（类似于JUnit-这里为了方便学习代码测试）"><a href="#编写测试程序（类似于JUnit-这里为了方便学习代码测试）" class="headerlink" title="编写测试程序（类似于JUnit, 这里为了方便学习代码测试）"></a>编写测试程序（类似于JUnit, 这里为了方便学习代码测试）</h3><ol>
+<li>源码文件以 _test 结尾： xxx_test.go</li>
+<li>测试方法名以 Test 开头： func TestXXX(t *testing.T) {…}</li>
+</ol>
+<p>注意：</p>
+<ul>
+<li>go test -v xxx_test.go 才能输出 t.Log 里的文字</li>
+<li>如果你使用的是 vs code 编辑器的话，安装好了go的相关配置，会在测试文件中看到 <code>run test | debug test</code>的提示，你点击 <code>run test</code> 之后在下面看不到 <code>t.Log()</code> 输出的内容就请把 <code>&quot;go.testFlags&quot;: [&quot;-v&quot;],</code> 这行代码加入到你的 settings.json 文件中（设置 Workspace Settings。打开 .vscode/settings.json）</li>
+</ul>
+<h3 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种写法</span></span><br><span class="line"><span class="keyword">var</span> a <span class="keyword">int</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b <span class="keyword">int</span> = <span class="number">2</span></span><br><span class="line"><span class="comment">// 第二种写法</span></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">  a <span class="keyword">int</span> = <span class="number">1</span></span><br><span class="line">  b <span class="keyword">int</span> = <span class="number">2</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// 第三种写法(自动类型推断)</span></span><br><span class="line">a := <span class="number">1</span></span><br><span class="line">b := <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>go推崇简单的代码方式，选择一种就好了，第三种最简洁（但是会不会和swift一样有性能问题）</p>
+<p>变量赋值与其他编程语言的区别</p>
+<ul>
+<li>赋值可以进行自动类型判断</li>
+<li>在一个赋值语句中可以对多个变量同时赋值</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b = b, a</span><br></pre></td></tr></table></figure>
+
+<h3 id="常量与其他编程语言的差异"><a href="#常量与其他编程语言的差异" class="headerlink" title="常量与其他编程语言的差异"></a>常量与其他编程语言的差异</h3><ul>
+<li>快速设置连续值<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>( </span><br><span class="line">  Monday = <span class="literal">iota</span> + <span class="number">1</span></span><br><span class="line">  Tuesday</span><br><span class="line">  Wednesday</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  Readable = <span class="number">1</span> &lt;&lt; <span class="literal">iota</span></span><br><span class="line">  Writable</span><br><span class="line">  Executable</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="与其他编程语言的差异："><a href="#与其他编程语言的差异：" class="headerlink" title="与其他编程语言的差异："></a>与其他编程语言的差异：</h3><ul>
+<li>Go语言不允许隐式类型转换（c/c++允许小类型向大的隐式转换）</li>
+<li>别名和原有类型也不能进行隐式类型转换</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> type_test</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"testing"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> MyInt = <span class="keyword">int64</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestImplicit</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	<span class="comment">// var a int = 1</span></span><br><span class="line">	<span class="keyword">var</span> a <span class="keyword">int32</span> = <span class="number">1</span></span><br><span class="line">	<span class="keyword">var</span> b <span class="keyword">int64</span></span><br><span class="line">	<span class="comment">// b = a</span></span><br><span class="line">	b = <span class="keyword">int64</span>(a)</span><br><span class="line">	<span class="keyword">var</span> c MyInt</span><br><span class="line">	<span class="comment">// c = b</span></span><br><span class="line">	c = MyInt(b)</span><br><span class="line">	t.Log(a, b, c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="预定义值在Math模块"><a href="#预定义值在Math模块" class="headerlink" title="预定义值在Math模块"></a>预定义值在Math模块</h3><h3 id="go的内存"><a href="#go的内存" class="headerlink" title="go的内存"></a>go的内存</h3><p>go内存是垃圾回收的，但是为了高效，也支持指针</p>
+<ul>
+<li>支持指针，但是不支持指针运算</li>
+<li>string是值类型，其默认的初始化值是空字符串</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestPoint</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	a := <span class="number">1</span></span><br><span class="line">	aPtr := &amp;a</span><br><span class="line">	<span class="comment">// aPtr += 1</span></span><br><span class="line">	t.Log(a, aPtr)</span><br><span class="line">	t.Logf(<span class="string">"%T %T"</span>, a, aPtr)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestString</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	<span class="keyword">var</span> s <span class="keyword">string</span></span><br><span class="line">	t.Log(<span class="string">"*"</span> + s + <span class="string">"*"</span>)</span><br><span class="line">	t.Log(<span class="built_in">len</span>(s))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><ul>
+<li>禁止了前置++，–自增自减的运算</li>
+<li>用 == 比较数组<ul>
+<li>相同维数且相同个数元素的数组才可以比较</li>
+<li>两个数组的元素都相等才相等</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestCompareArray</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	a := [...]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">	b := [...]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line">	<span class="comment">// c := [...]int&#123;1, 2, 3, 4, 5&#125;</span></span><br><span class="line">	d := [...]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line">	t.Log(a == b)</span><br><span class="line">	t.Log(a == d)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>&amp;^ 按位清零</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> &amp;^ <span class="number">0</span> -- <span class="number">1</span></span><br><span class="line"><span class="number">1</span> &amp;^ <span class="number">1</span> -- <span class="number">0</span></span><br><span class="line"><span class="number">0</span> &amp;^ <span class="number">1</span> -- <span class="number">0</span></span><br><span class="line"><span class="number">0</span> &amp;^ <span class="number">0</span> -- <span class="number">0</span></span><br><span class="line"><span class="comment">// 右边为0，左边值，右边为1，左边置为0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 按位清零</span></span><br><span class="line"><span class="keyword">const</span>(</span><br><span class="line">	Readable = <span class="number">1</span> &lt;&lt; <span class="literal">iota</span></span><br><span class="line">	Writable</span><br><span class="line">	Executable</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestBitClear</span></span> &#123;</span><br><span class="line">	a := Readable</span><br><span class="line">	a &amp;^ Readable</span><br><span class="line">	a &amp;^ Executable</span><br><span class="line">	t.Log(a&amp;Readable == Readable, a&amp;Writable == Writable, a&amp;Executable == Executable)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="循环和条件"><a href="#循环和条件" class="headerlink" title="循环和条件"></a>循环和条件</h2><h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>只支持for循环</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n := <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> n &lt; <span class="number">5</span> &#123;</span><br><span class="line">	t.Log(n)</span><br><span class="line">	n++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="if条件"><a href="#if条件" class="headerlink" title="if条件"></a>if条件</h3><p>与其他主要编程语言的差异</p>
+<ol>
+<li>condition 表达式结果必须为布尔值</li>
+<li>支持变量赋值（和swift一样）<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">var</span> declaration; condition &#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// go的常用用法，类似于tuple</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestIfMultiSet</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	<span class="keyword">if</span> v, err = foo(); err == <span class="literal">nil</span> &#123;</span><br><span class="line">		t.Log(<span class="string">"1 == 1"</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		t.Log(<span class="string">"1 != 1"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="switch条件"><a href="#switch条件" class="headerlink" title="switch条件"></a>switch条件</h3><ul>
+<li>默认有break </li>
+<li>单个case后面有多个元素</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> condition</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"testing"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// func TestIfMultiSet(t *testing.T)  &#123;</span></span><br><span class="line"><span class="comment">// 	if v, err = foo(); err == nil &#123;</span></span><br><span class="line"><span class="comment">// 		t.Log("1 == 1")</span></span><br><span class="line"><span class="comment">// 	&#125; else &#123;</span></span><br><span class="line"><span class="comment">// 		t.Log("1 != 1")</span></span><br><span class="line"><span class="comment">// 	&#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestSwitchMultiCase</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">		<span class="comment">// switch i &#123;</span></span><br><span class="line">		<span class="comment">// 	case 0, 2: </span></span><br><span class="line">		<span class="comment">// 		t.Log("Even")</span></span><br><span class="line">		<span class="comment">// 	case 1, 3, 5:</span></span><br><span class="line">		<span class="comment">// 		t.Log("Odd")</span></span><br><span class="line">		<span class="comment">// 	default:</span></span><br><span class="line">		<span class="comment">// 		t.Log("unknown")</span></span><br><span class="line">		<span class="comment">// &#125;</span></span><br><span class="line">		/</span><br><span class="line">		<span class="comment">// 注意下面的i</span></span><br><span class="line">		<span class="keyword">switch</span> &#123;</span><br><span class="line">			<span class="keyword">case</span> i%<span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">				t.Log(<span class="string">"Even"</span>)</span><br><span class="line">			<span class="keyword">case</span> i%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">				t.Log(<span class="string">"Odd"</span>)</span><br><span class="line">			<span class="keyword">default</span>: </span><br><span class="line">				t.Log(<span class="string">"unknown"</span>)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组和切片"><a href="#数组和切片" class="headerlink" title="数组和切片"></a>数组和切片</h2><h3 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a [<span class="number">3</span>]<span class="keyword">int</span></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">b := [<span class="number">3</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">c := [<span class="number">2</span>][<span class="number">2</span>]<span class="keyword">int</span>&#123;&#123;<span class="number">1</span>, <span class="number">2</span>&#125;, &#123;<span class="number">3</span>, <span class="number">4</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line">d := [...]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h3><p>slice 用起来可以简单的看做是可变数组，实际是go的结构体<br><img src="/2019/10/21/go/go-02/slice.png" alt="slice"></p>
+<ul>
+<li>ptr 指向连续的内存空间，指向数组</li>
+<li>len 元素个数</li>
+<li>cap 内部数组的容量</li>
+</ul>
+<p>=&gt; 代码理解len和cap的区别</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s := []<span class="keyword">int</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="slice的增长"><a href="#slice的增长" class="headerlink" title="slice的增长"></a>slice的增长</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestSliceGrowing</span><span class="params">(t *testing.T)</span></span>  &#123;</span><br><span class="line">	s := []<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">		s = <span class="built_in">append</span>(s, i)</span><br><span class="line">		t.Log(<span class="built_in">len</span>(s), <span class="built_in">cap</span>(s))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">1</span> <span class="number">1</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">2</span> <span class="number">2</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">3</span> <span class="number">4</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">4</span> <span class="number">4</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">5</span> <span class="number">8</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">6</span> <span class="number">8</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">7</span> <span class="number">8</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">29</span>: <span class="number">8</span> <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>s = append(s, 1): cap的变化显示结构体指向的连续存储空间增长时，是创建新的一片连续空间(地址发生了变化)，所以需要拷贝赋值，会影响性能<br><img src="/2019/10/21/go/go-02/sliceme.png" alt="slice_me"></p>
+<ul>
+<li>多个slice共享存储空间（通过指针寻找数据内存地址）</li>
+<li>修改一个，内存中的数据改变，都是一起改变的<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestSliceShareMemory</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	year := []<span class="keyword">string</span>&#123;<span class="string">"Jan"</span>, <span class="string">"Feb"</span>, <span class="string">"Mar"</span>, <span class="string">"Apr"</span>, <span class="string">"May"</span>, <span class="string">"Jun"</span>, <span class="string">"Jul"</span>, <span class="string">"Aug"</span>, <span class="string">"Sep"</span>, <span class="string">"Oct"</span>, <span class="string">"Nov"</span>, <span class="string">"Dec"</span>&#125;</span><br><span class="line">	Q2 := year[<span class="number">3</span>:<span class="number">6</span>]</span><br><span class="line">	t.Log(Q2, <span class="built_in">len</span>(Q2), <span class="built_in">cap</span>(Q2))</span><br><span class="line">	summer := year[<span class="number">5</span>:<span class="number">8</span>]</span><br><span class="line">	t.Log(summer, <span class="built_in">len</span>(summer), <span class="built_in">cap</span>(summer))</span><br><span class="line">	summer[<span class="number">0</span>] = <span class="string">"Unknown"</span></span><br><span class="line">	t.Log(Q2)</span><br><span class="line">	t.Log(year)</span><br><span class="line">&#125;</span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">36</span>: [Apr May Jun] <span class="number">3</span> <span class="number">9</span></span><br><span class="line"><span class="comment">// 为什么是cap是9，从截取的Apr开始后面是9个，cap指向的是后面连续的存储空间</span></span><br><span class="line">Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">38</span>: [Jun Jul Aug] <span class="number">3</span> <span class="number">7</span></span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">40</span>: [Apr May Unknown]</span><br><span class="line">/Users/silence/go_learing/src/ch6/slice_test/slice_test.<span class="keyword">go</span>:<span class="number">41</span>: [Jan Feb Mar Apr May Unknown Jul Aug Sep Oct Nov Dec]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="数组和切片的区别"><a href="#数组和切片的区别" class="headerlink" title="数组和切片的区别"></a>数组和切片的区别</h3><ol>
+<li>容量是否可伸缩（数组不可变，切片可变）</li>
+<li>是否可以进行比较（切片不可比较，只能和nil比较）</li>
+</ol>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h3 id="Map的声明"><a href="#Map的声明" class="headerlink" title="Map的声明"></a>Map的声明</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">m1 := <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span>&#123;<span class="string">"one"</span>: <span class="number">1</span>, <span class="string">"two"</span>: <span class="number">2</span>, <span class="string">"three"</span>: <span class="number">3</span>&#125;</span><br><span class="line">m2 := <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">m2[<span class="string">"one"</span>] = <span class="number">1</span></span><br><span class="line">和 slice 的内存方式是一样的，是共享内存的方式</span><br><span class="line">m3 := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">int</span>, <span class="number">10</span> <span class="comment">/*Initial Capacity*/</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Map的key-value"><a href="#Map的key-value" class="headerlink" title="Map的key-value"></a>Map的key-value</h3><ul>
+<li>和主流语言不一样，m[key] 取value的时候如果key不存在，返回0而不是nil， 这样是无法判断是key不存在还是value真的是0</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// go 的解决方法</span></span><br><span class="line"><span class="keyword">if</span> v, ok := m1[<span class="number">3</span>]; ok &#123;</span><br><span class="line">	t.Log(<span class="string">"Key 3's value is %d"</span>, v)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	t.Log(<span class="string">"Key 3 is not existing."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="map的遍历"><a href="#map的遍历" class="headerlink" title="map的遍历"></a>map的遍历</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">m := <span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>: <span class="number">1</span>, <span class="number">2</span>: <span class="number">4</span>, <span class="number">3</span>: <span class="number">8</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">range</span> m &#123;</span><br><span class="line">	t.Log(k,v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="map实现工厂模式（value为func，func在go里面是一等公民）"><a href="#map实现工厂模式（value为func，func在go里面是一等公民）" class="headerlink" title="map实现工厂模式（value为func，func在go里面是一等公民）"></a>map实现工厂模式（value为func，func在go里面是一等公民）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m := <span class="keyword">map</span>[<span class="keyword">int</span>]<span class="function"><span class="keyword">func</span><span class="params">(op <span class="keyword">int</span>)</span> <span class="title">int</span></span>&#123;&#125;</span><br><span class="line">m1 = <span class="function"><span class="keyword">func</span><span class="params">(op <span class="keyword">int</span>)</span> <span class="title">int</span></span>&#123; <span class="keyword">return</span> op &#125;</span><br><span class="line">m2 = <span class="function"><span class="keyword">func</span><span class="params">(op <span class="keyword">int</span>)</span> <span class="title">int</span></span>&#123; <span class="keyword">return</span> op * op&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现Set-map-type-bool"><a href="#实现Set-map-type-bool" class="headerlink" title="实现Set map[type]bool"></a>实现Set map[type]bool</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestMapForSet</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	mySet := <span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">bool</span>&#123;&#125;</span><br><span class="line">	mySet[<span class="number">1</span>] = <span class="literal">true</span></span><br><span class="line">	n := <span class="number">1</span></span><br><span class="line">	<span class="comment">// n := 3</span></span><br><span class="line">	<span class="keyword">if</span> mySet[n] &#123;</span><br><span class="line">		t.Log(<span class="string">"1 is existing"</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		t.Logf(<span class="string">"%d is not existing"</span>, n)</span><br><span class="line">	&#125;</span><br><span class="line">	mySet[<span class="number">3</span>] = <span class="literal">true</span></span><br><span class="line">	t.Log(<span class="built_in">len</span>(mySet))</span><br><span class="line"></span><br><span class="line">	<span class="built_in">delete</span>(mySet, <span class="number">1</span>)</span><br><span class="line">	n = <span class="number">1</span></span><br><span class="line">	<span class="keyword">if</span> mySet[n] &#123;</span><br><span class="line">		t.Log(<span class="string">"1 is existing"</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		t.Logf(<span class="string">"%d is not existing"</span>, n)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Func"><a href="#Func" class="headerlink" title="Func"></a>Func</h2><h3 id="Func-1"><a href="#Func-1" class="headerlink" title="Func"></a>Func</h3><ul>
+<li>go中的函数是一等公民</li>
+<li>go函数可以接受多个传参</li>
+<li>defer延时函数</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">returnMultiValues</span><span class="params">()</span> <span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> rand.Intn(<span class="number">10</span>), rand.Intn(<span class="number">20</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="行为的定义和实现"><a href="#行为的定义和实现" class="headerlink" title="行为的定义和实现"></a>行为的定义和实现</h3><h4 id="go的对象的声明"><a href="#go的对象的声明" class="headerlink" title="go的对象的声明"></a>go的对象的声明</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 结构体(对象，类似OC的对象就是结构体指针)</span></span><br><span class="line"><span class="keyword">type</span> Employee <span class="keyword">struct</span> &#123;</span><br><span class="line">	ID:  	<span class="keyword">string</span></span><br><span class="line">	Name: <span class="keyword">string</span></span><br><span class="line">	Age:	<span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestCreateObj</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	e := Employee&#123;<span class="string">"0"</span>, <span class="string">"Bob"</span>, <span class="number">20</span>&#125;</span><br><span class="line">	e1 := Employee&#123;Name: <span class="string">"Mike"</span>, Age: <span class="number">30</span>&#125;</span><br><span class="line">	e2 := <span class="built_in">new</span>(Employee)</span><br><span class="line">	e2.ID = <span class="string">"2"</span></span><br><span class="line">	e2.Age = <span class="number">22</span></span><br><span class="line">	e2.Name = <span class="string">"Rose"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>new(Employee)返回的是指针类型</li>
+<li>go中访问指针的成员不需要-&gt;, 点语法可以直接访问</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Go/" rel="tag"># Go</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/21/node/node-04/" rel="next" title="Node.js(四) | RPC通信">
+                <i class="fa fa-chevron-left"></i> Node.js(四) | RPC通信
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/24/node/node-05/" rel="prev" title="node-05">
+                node-05 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Arthas</p>
+              <p class="site-description motion-element" itemprop="description">Stay foolish, stay hungry!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个go程序"><span class="nav-number">1.</span> <span class="nav-text">第一个go程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序入口"><span class="nav-number">1.1.</span> <span class="nav-text">应用程序入口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序返回值"><span class="nav-number">1.2.</span> <span class="nav-text">应用程序返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序的入参"><span class="nav-number">1.3.</span> <span class="nav-text">应用程序的入参</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量、常量与其他语言的差异"><span class="nav-number">2.</span> <span class="nav-text">变量、常量与其他语言的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编写测试程序（类似于JUnit-这里为了方便学习代码测试）"><span class="nav-number">2.1.</span> <span class="nav-text">编写测试程序（类似于JUnit, 这里为了方便学习代码测试）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量的赋值"><span class="nav-number">2.2.</span> <span class="nav-text">变量的赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量与其他编程语言的差异"><span class="nav-number">2.3.</span> <span class="nav-text">常量与其他编程语言的差异</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#与其他编程语言的差异："><span class="nav-number">3.1.</span> <span class="nav-text">与其他编程语言的差异：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预定义值在Math模块"><span class="nav-number">3.2.</span> <span class="nav-text">预定义值在Math模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#go的内存"><span class="nav-number">3.3.</span> <span class="nav-text">go的内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算数运算符"><span class="nav-number">4.1.</span> <span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位运算符"><span class="nav-number">4.2.</span> <span class="nav-text">位运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环和条件"><span class="nav-number">5.</span> <span class="nav-text">循环和条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">5.1.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if条件"><span class="nav-number">5.2.</span> <span class="nav-text">if条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch条件"><span class="nav-number">5.3.</span> <span class="nav-text">switch条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组和切片"><span class="nav-number">6.</span> <span class="nav-text">数组和切片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的声明"><span class="nav-number">6.1.</span> <span class="nav-text">数组的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slice"><span class="nav-number">6.2.</span> <span class="nav-text">slice</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#slice的增长"><span class="nav-number">6.2.1.</span> <span class="nav-text">slice的增长</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组和切片的区别"><span class="nav-number">6.3.</span> <span class="nav-text">数组和切片的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map"><span class="nav-number">7.</span> <span class="nav-text">Map</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map的声明"><span class="nav-number">7.1.</span> <span class="nav-text">Map的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map的key-value"><span class="nav-number">7.2.</span> <span class="nav-text">Map的key-value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map的遍历"><span class="nav-number">7.3.</span> <span class="nav-text">map的遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map实现工厂模式（value为func，func在go里面是一等公民）"><span class="nav-number">7.4.</span> <span class="nav-text">map实现工厂模式（value为func，func在go里面是一等公民）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现Set-map-type-bool"><span class="nav-number">7.5.</span> <span class="nav-text">实现Set map[type]bool</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Func"><span class="nav-number">8.</span> <span class="nav-text">Func</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Func-1"><span class="nav-number">8.1.</span> <span class="nav-text">Func</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">9.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行为的定义和实现"><span class="nav-number">9.1.</span> <span class="nav-text">行为的定义和实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#go的对象的声明"><span class="nav-number">9.1.1.</span> <span class="nav-text">go的对象的声明</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Arthas</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
